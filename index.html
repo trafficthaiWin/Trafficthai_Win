@@ -1,137 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win 老師的泰語教室</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        nav { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
+        header { background: #e67e22; color: white; padding: 3rem 1rem; text-align: center; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #e67e22; border-bottom: 2px solid #e67e22; padding-bottom: 5px; }
+        .btn { display: inline-block; background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Win 老師的泰語教室 - 線上泰語教學&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 基本樣式重置 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { line-height: 1.6; color: #333; background-color: #f9f9f9; }</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 導覽列 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav { background: #2c3e50; color: white; padding: 1rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-around; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav a { color: white; text-decoration: none; font-weight: bold; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 主視覺區 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1528181304800-2f140819898f?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80');<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                 </span>background-size: cover; background-position: center; height: 60vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header h1 { font-size: 3rem; margin-bottom: 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header p { font-size: 1.2rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 區塊容器 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 1000px; margin: 2rem auto; padding: 0 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>section { margin-bottom: 3rem; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 { border-left: 5px solid #e67e22; padding-left: 10px; margin-bottom: 20px; color: #2c3e50; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 經歷與課程卡片 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card h3 { color: #e67e22; margin-bottom: 10px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 招生資訊按鈕 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-button { display: inline-block; background: #e67e22; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; transition: 0.3s; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-button:hover { background: #d35400; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* 頁尾 */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 2rem; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#about"&gt;關於我&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#experience"&gt;教學經歷&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#courses"&gt;招生資訊&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#contact"&gt;聯絡報名&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Sawatdee Krab! 我是 Win&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;專業線上泰語老師 | 讓泰文學習變得簡單又有趣&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="about"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;關於我&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;你好！我是 Win，目前定居於泰國普吉島。我致力於透過系統化的拼音與聲調教學，幫助學生從零開始掌握泰語。無論你是為了旅遊、工作還是追星，我都能為你量身打造適合的課程。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="experience"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;教學經歷&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;線上教學經驗&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;累積超過 500+ 小時教學時數，擅長初級發音與中級口說培訓。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;泰國在地生活&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;持有 DTV 簽證長期居留，能分享最地道的泰國文化與實用生活泰語。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="courses"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;目前招生中&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;基礎泰語發音班&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;從字母、聲調到拼音規則，打好最穩固的基礎。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;費用：&lt;/strong&gt; 洽談報價&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#contact" class="cta-button"&gt;查看課表&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;中級實用口說班&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;針對已具備拼音能力的同學，強化日常對話與語感。&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;strong&gt;費用：&lt;/strong&gt; 洽談報價&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#contact" class="cta-button"&gt;預約試聽&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;聯絡報名&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;有任何課程需求，歡迎透過以下方式聯繫我：&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-top: 10px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>📧 Email: your-email@example.com&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>💬 LINE ID: your-line-id</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;© 2026 Win Thai Language. All Rights Reserved.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// 簡單的平滑滾動效果</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('nav a').forEach(anchor =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>anchor.addEventListener('click', function(e) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.querySelector(this.getAttribute('href')).scrollIntoView({</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>behavior: 'smooth'</p>
-<p class="p1"><span class="Apple-converted-space">                </span>});</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <nav>Win 老師的泰語教室</nav>
+    <header>
+        <h1>Sawatdee Krab! 我是 Win</h1>
+        <p>專業線上泰語老師 | 定居普吉島的在地教學</p>
+    </header>
+    <div class="container">
+        <section>
+            <h2>關於我</h2>
+            <p>目前定居於泰國普吉島，提供系統化的泰語課程。我使用專屬的羅馬拼音與聲調系統，讓學生能精準掌握泰語發音。</p>
+        </section>
+        <section>
+            <h2>招收中課程</h2>
+            <ul>
+                <li><strong>基礎發音班：</strong>從零開始，掌握拼音規則。</li>
+                <li><strong>中級口說班：</strong>強化語感，對話如流。</li>
+            </ul>
+            <a href="mailto:your-email@example.com" class="btn">聯絡報名</a>
+        </section>
+    </div>
 </body>
 </html>
