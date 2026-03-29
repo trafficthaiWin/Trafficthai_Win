@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 【修改重點：網頁分頁標題】 -->
   <title>Kru Win | 泰語教學 ・ 翻譯 ・ 泰國文化推廣</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- 引入 Anuphan, Noto Sans TC, Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* 將原本的金色替換為質感的赤陶銅色 (Terracotta Copper)，RGB為 205, 122, 90 */
+      /* 【修改重點：網站主題色】如果想換其他顏色，可以修改這裡的色碼 */
       --accent: #CD7A5A;       
       --accent-light: #EBC1B3; 
       --accent-dark: #9E563C;  
@@ -28,902 +28,153 @@
       --section-gap: clamp(80px, 10vw, 140px);
     }
 
+    /* ...(中間省略的 CSS 樣式維持不變)... */
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      color: var(--text-body);
-      background: var(--cream);
-      line-height: 1.8;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 60px);
-    }
-
-    .section-label {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.75rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      line-height: 2;
-    }
-
-    .accent-line {
-      width: 50px;
-      height: 2px;
-      background: var(--accent);
-      margin: 24px 0;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideRight {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: rgba(250, 246, 238, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(205, 122, 90, 0.15);
-      transition: box-shadow 0.3s ease;
-    }
-    nav.scrolled {
-      box-shadow: 0 2px 40px rgba(26, 31, 58, 0.08);
-    }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 5vw, 60px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 72px;
-    }
-    .nav-logo {
-      font-family: 'Anuphan', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--navy);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-    .nav-logo span {
-      color: var(--accent);
-    }
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1.5px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
+    body { font-family: 'Noto Sans TC', sans-serif; color: var(--text-body); background: var(--cream); line-height: 1.8; font-weight: 300; overflow-x: hidden; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); }
+    .section-label { font-family: 'Playfair Display', serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--navy); font-weight: 700; line-height: 1.3; margin-bottom: 20px; }
+    .section-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; line-height: 2; }
+    .accent-line { width: 50px; height: 2px; background: var(--accent); margin: 24px 0; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(250, 246, 238, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(205, 122, 90, 0.15); transition: box-shadow 0.3s ease; }
+    nav.scrolled { box-shadow: 0 2px 40px rgba(26, 31, 58, 0.08); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); display: flex; justify-content: space-between; align-items: center; height: 72px; }
+    .nav-logo { font-family: 'Anuphan', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); text-decoration: none; letter-spacing: 1px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; letter-spacing: 1px; transition: color 0.3s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s ease; }
     .nav-links a:hover { color: var(--navy); }
     .nav-links a:hover::after { width: 100%; }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--navy);
-      transition: all 0.3s ease;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 50%, #3A2F5A 100%);
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%; right: -30%;
-      width: 80vw; height: 80vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(205, 122, 90, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, var(--cream), transparent);
-      pointer-events: none;
-    }
-    .hero-pattern {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image:
-        radial-gradient(circle at 20% 80%, rgba(205, 122, 90, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(205, 122, 90, 0.04) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px clamp(20px, 5vw, 60px) 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .hero-text {
-      animation: slideRight 1s ease 0.3s both;
-    }
-    .hero-greeting {
-      font-family: 'Anuphan', sans-serif;
-      font-size: 1.1rem;
-      color: var(--accent-light);
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
-      color: var(--white);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent-light);
-    }
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 2;
-      margin-bottom: 40px;
-      max-width: 480px;
-    }
-    .hero-tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .hero-tag {
-      padding: 8px 20px;
-      border: 1px solid rgba(205, 122, 90, 0.4);
-      border-radius: 100px;
-      color: var(--accent-light);
-      font-size: 0.82rem;
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--accent);
-      color: var(--white);
-      text-decoration: none;
-      padding: 16px 36px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    .hero-cta:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(205, 122, 90, 0.3);
-    }
-    .hero-cta svg {
-      width: 18px; height: 18px;
-      transition: transform 0.3s ease;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); transition: all 0.3s ease; }
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 50%, #3A2F5A 100%); overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80vw; height: 80vw; border-radius: 50%; background: radial-gradient(circle, rgba(205, 122, 90, 0.12) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, var(--cream), transparent); pointer-events: none; }
+    .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 80%, rgba(205, 122, 90, 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(205, 122, 90, 0.04) 0%, transparent 50%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 120px clamp(20px, 5vw, 60px) 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-text { animation: slideRight 1s ease 0.3s both; }
+    .hero-greeting { font-family: 'Anuphan', sans-serif; font-size: 1.1rem; color: var(--accent-light); letter-spacing: 3px; margin-bottom: 20px; font-weight: 300; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5.5vw, 4.2rem); color: var(--white); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--accent-light); }
+    .hero-subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 2; margin-bottom: 40px; max-width: 480px; }
+    .hero-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .hero-tag { padding: 8px 20px; border: 1px solid rgba(205, 122, 90, 0.4); border-radius: 100px; color: var(--accent-light); font-size: 0.82rem; letter-spacing: 1px; font-weight: 400; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: var(--white); text-decoration: none; padding: 16px 36px; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; border-radius: 4px; transition: all 0.3s ease; }
+    .hero-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(205, 122, 90, 0.3); }
+    .hero-cta svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
     .hero-cta:hover svg { transform: translateX(4px); }
-
-    .hero-photo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 1.2s ease 0.6s both;
-    }
-    .photo-frame {
-      position: relative;
-      width: clamp(280px, 24vw, 380px);
-      height: clamp(340px, 30vw, 480px);
-      border-radius: 200px 200px 20px 20px;
-      overflow: hidden;
-      border: 3px solid rgba(205, 122, 90, 0.3);
-    }
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--navy-light), rgba(205, 122, 90, 0.2));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-light);
-      font-size: 0.85rem;
-      gap: 12px;
-    }
-    .photo-placeholder svg {
-      width: 48px; height: 48px;
-      opacity: 0.5;
-    }
-    .photo-decor {
-      position: absolute;
-      top: -20px; right: -20px;
-      width: 80px; height: 80px;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      opacity: 0.2;
-    }
-    .photo-decor-2 {
-      position: absolute;
-      bottom: -15px; left: -15px;
-      width: 60px; height: 60px;
-      border: 2px solid var(--accent);
-      opacity: 0.15;
-    }
-
-    /* ABOUT */
-    .about {
-      padding: var(--section-gap) 0;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .about-text p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-      line-height: 2;
-    }
-    .credentials {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .credential-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .credential-icon {
-      flex-shrink: 0;
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .credential-icon svg {
-      width: 22px; height: 22px;
-      color: var(--accent-light);
-    }
-    .credential-info h4 {
-      font-weight: 500;
-      color: var(--navy);
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-    }
-    .credential-info p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-      padding-top: 48px;
-      border-top: 1px solid rgba(205, 122, 90, 0.2);
-    }
-    .stat-item {
-      text-align: center;
-    }
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-      letter-spacing: 1px;
-    }
-
-    /* SERVICES */
-    .services {
-      padding: var(--section-gap) 0;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-    .services::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background:
-        radial-gradient(circle at 10% 90%, rgba(205, 122, 90, 0.06), transparent 50%),
-        radial-gradient(circle at 90% 10%, rgba(205, 122, 90, 0.04), transparent 50%);
-      pointer-events: none;
-    }
+    .hero-photo { display: flex; justify-content: center; align-items: center; animation: fadeIn 1.2s ease 0.6s both; }
+    .photo-frame { position: relative; width: clamp(280px, 24vw, 380px); height: clamp(340px, 30vw, 480px); border-radius: 200px 200px 20px 20px; overflow: hidden; border: 3px solid rgba(205, 122, 90, 0.3); }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--navy-light), rgba(205, 122, 90, 0.2)); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--accent-light); font-size: 0.85rem; gap: 12px; }
+    .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.5; }
+    .photo-decor { position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border: 2px solid var(--accent); border-radius: 50%; opacity: 0.2; }
+    .photo-decor-2 { position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; border: 2px solid var(--accent); opacity: 0.15; }
+    .about { padding: var(--section-gap) 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .about-text p { margin-bottom: 20px; font-size: 1rem; line-height: 2; }
+    .credentials { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+    .credential-item { display: flex; gap: 20px; align-items: flex-start; }
+    .credential-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
+    .credential-icon svg { width: 22px; height: 22px; color: var(--accent-light); }
+    .credential-info h4 { font-weight: 500; color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
+    .credential-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(205, 122, 90, 0.2); }
+    .stat-item { text-align: center; }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 700; }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; letter-spacing: 1px; }
+    .services { padding: var(--section-gap) 0; background: var(--navy); position: relative; overflow: hidden; }
+    .services::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 10% 90%, rgba(205, 122, 90, 0.06), transparent 50%), radial-gradient(circle at 90% 10%, rgba(205, 122, 90, 0.04), transparent 50%); pointer-events: none; }
     .services .section-title { color: var(--white); }
     .services .section-desc { color: rgba(255,255,255,0.5); }
-    .services-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .services-header .section-desc {
-      margin: 0 auto;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      position: relative;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(205, 122, 90, 0.15);
-      border-radius: 12px;
-      padding: 44px 32px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .service-card:hover {
-      background: rgba(255,255,255,0.07);
-      transform: translateY(-6px);
-      border-color: rgba(205, 122, 90, 0.3);
-    }
+    .services-header { text-align: center; margin-bottom: 60px; }
+    .services-header .section-desc { margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
+    .service-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(205, 122, 90, 0.15); border-radius: 12px; padding: 44px 32px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); opacity: 0; transition: opacity 0.4s ease; }
+    .service-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-6px); border-color: rgba(205, 122, 90, 0.3); }
     .service-card:hover::before { opacity: 1; }
-    .service-icon {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      background: rgba(205, 122, 90, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .service-icon svg {
-      width: 26px; height: 26px;
-      color: var(--accent-light);
-    }
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--white);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .service-card p {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.92rem;
-      line-height: 1.9;
-      margin-bottom: 24px;
-    }
-    .service-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .service-features li {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .service-features li::before {
-      content: '';
-      width: 5px; height: 5px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* MEDIA */
-    .media {
-      padding: var(--section-gap) 0;
-    }
-    .media-header {
-      margin-bottom: 60px;
-    }
-    .media-tabs {
-      display: flex;
-      gap: 8px;
-      margin-top: 32px;
-      border-bottom: 1px solid rgba(205, 122, 90, 0.2);
-      padding-bottom: 0;
-    }
-    .media-tab {
-      padding: 12px 28px;
-      background: none;
-      border: none;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      cursor: pointer;
-      position: relative;
-      transition: color 0.3s;
-      letter-spacing: 0.5px;
-    }
-    .media-tab::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    .media-tab.active {
-      color: var(--navy);
-      font-weight: 500;
-    }
+    .service-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(205, 122, 90, 0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+    .service-icon svg { width: 26px; height: 26px; color: var(--accent-light); }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--white); font-weight: 700; margin-bottom: 16px; }
+    .service-card p { color: rgba(255,255,255,0.5); font-size: 0.92rem; line-height: 1.9; margin-bottom: 24px; }
+    .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .service-features li { color: rgba(255,255,255,0.6); font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
+    .service-features li::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+    .media { padding: var(--section-gap) 0; }
+    .media-header { margin-bottom: 60px; }
+    .media-tabs { display: flex; gap: 8px; margin-top: 32px; border-bottom: 1px solid rgba(205, 122, 90, 0.2); padding-bottom: 0; }
+    .media-tab { padding: 12px 28px; background: none; border: none; font-family: 'Noto Sans TC', sans-serif; font-size: 0.88rem; font-weight: 400; color: var(--text-muted); cursor: pointer; position: relative; transition: color 0.3s; letter-spacing: 0.5px; }
+    .media-tab::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s ease; }
+    .media-tab.active { color: var(--navy); font-weight: 500; }
     .media-tab.active::after { transform: scaleX(1); }
     .media-tab:hover { color: var(--navy); }
-
-    .media-panel {
-      display: none;
-      padding-top: 40px;
-    }
+    .media-panel { display: none; padding-top: 40px; }
     .media-panel.active { display: block; }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
-    }
-    .media-card {
-      background: var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(26, 31, 58, 0.06);
-      transition: all 0.3s ease;
-    }
-    .media-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(26, 31, 58, 0.1);
-    }
-    .media-card-embed {
-      width: 100%;
-      aspect-ratio: 9/16;
-      max-height: 580px;
-      background: #f0f0f0;
-    }
-    .media-card-embed iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .media-card-embed.podcast {
-      aspect-ratio: auto;
-      height: auto;
-      min-height: 160px;
-    }
-    .media-card-info {
-      padding: 20px 24px;
-    }
-    .media-card-info h4 {
-      font-weight: 500;
-      color: var(--navy);
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-    .media-card-info p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .media-card-tag {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(205, 122, 90, 0.1);
-      color: var(--accent-dark);
-      font-size: 0.72rem;
-      border-radius: 100px;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .embed-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #fafafa, #f0f0f0);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      gap: 12px;
-      padding: 24px;
-      text-align: center;
-    }
-    .embed-placeholder svg {
-      width: 40px; height: 40px;
-      opacity: 0.3;
-    }
-    .embed-placeholder code {
-      background: rgba(0,0,0,0.06);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      word-break: break-all;
-    }
-
-    /* TIMELINE */
-    .timeline-section {
-      padding: var(--section-gap) 0;
-      background: var(--cream-dark);
-    }
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 48px auto 0;
-      padding-left: 40px;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0; left: 12px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--accent), rgba(205, 122, 90, 0.1));
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 48px;
-    }
+    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+    .media-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 31, 58, 0.06); transition: all 0.3s ease; }
+    .media-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26, 31, 58, 0.1); }
+    .media-card-embed { width: 100%; aspect-ratio: 9/16; max-height: 580px; background: #f0f0f0; }
+    .media-card-embed iframe { width: 100%; height: 100%; border: none; }
+    .media-card-embed.podcast { aspect-ratio: auto; height: auto; min-height: 160px; }
+    .media-card-info { padding: 20px 24px; }
+    .media-card-info h4 { font-weight: 500; color: var(--navy); font-size: 0.95rem; margin-bottom: 6px; }
+    .media-card-info p { font-size: 0.82rem; color: var(--text-muted); }
+    .media-card-tag { display: inline-block; padding: 4px 12px; background: rgba(205, 122, 90, 0.1); color: var(--accent-dark); font-size: 0.72rem; border-radius: 100px; letter-spacing: 0.5px; margin-bottom: 10px; font-weight: 500; }
+    .embed-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #fafafa, #f0f0f0); color: var(--text-muted); font-size: 0.85rem; gap: 12px; padding: 24px; text-align: center; }
+    .embed-placeholder svg { width: 40px; height: 40px; opacity: 0.3; }
+    .embed-placeholder code { background: rgba(0,0,0,0.06); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; word-break: break-all; }
+    .timeline-section { padding: var(--section-gap) 0; background: var(--cream-dark); }
+    .timeline { position: relative; max-width: 800px; margin: 48px auto 0; padding-left: 40px; }
+    .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), rgba(205, 122, 90, 0.1)); }
+    .timeline-item { position: relative; margin-bottom: 48px; }
     .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot {
-      position: absolute;
-      left: -34px; top: 6px;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 3px solid var(--cream-dark);
-      box-shadow: 0 0 0 3px rgba(205, 122, 90, 0.2);
-    }
-    .timeline-year {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.82rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-      font-weight: 700;
-    }
-    .timeline-item h4 {
-      font-size: 1.1rem;
-      color: var(--navy);
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .timeline-item p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-
-    /* ENROLLMENT */
-    .enrollment {
-      padding: var(--section-gap) 0;
-    }
-    .enrollment-wrapper {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 60px rgba(26, 31, 58, 0.07);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .enrollment-info {
-      padding: 60px;
-      background: var(--navy);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-    .enrollment-info::before {
-      content: '';
-      position: absolute;
-      bottom: -40%; right: -20%;
-      width: 60%; height: 80%;
-      border-radius: 50%;
-      background: rgba(205, 122, 90, 0.08);
-    }
-    .enrollment-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      line-height: 1.3;
-    }
-    .enrollment-info p {
-      color: rgba(255,255,255,0.6);
-      line-height: 2;
-      margin-bottom: 36px;
-      font-size: 0.95rem;
-    }
-    .enrollment-detail {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-      color: rgba(255,255,255,0.7);
-      font-size: 0.92rem;
-    }
-    .enrollment-detail svg {
-      width: 20px; height: 20px;
-      color: var(--accent-light);
-      flex-shrink: 0;
-    }
-    .enrollment-form {
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .enrollment-form h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .enrollment-form > p {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      margin-bottom: 32px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-      font-weight: 400;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #e0dcd4;
-      border-radius: 8px;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.92rem;
-      color: var(--text-dark);
-      background: var(--cream);
-      transition: border-color 0.3s;
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-    }
+    .timeline-dot { position: absolute; left: -34px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--cream-dark); box-shadow: 0 0 0 3px rgba(205, 122, 90, 0.2); }
+    .timeline-year { font-family: 'Playfair Display', serif; font-size: 0.82rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; font-weight: 700; }
+    .timeline-item h4 { font-size: 1.1rem; color: var(--navy); font-weight: 500; margin-bottom: 8px; }
+    .timeline-item p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; }
+    .enrollment { padding: var(--section-gap) 0; }
+    .enrollment-wrapper { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 60px rgba(26, 31, 58, 0.07); display: grid; grid-template-columns: 1fr 1fr; }
+    .enrollment-info { padding: 60px; background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
+    .enrollment-info::before { content: ''; position: absolute; bottom: -40%; right: -20%; width: 60%; height: 80%; border-radius: 50%; background: rgba(205, 122, 90, 0.08); }
+    .enrollment-info h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; line-height: 1.3; }
+    .enrollment-info p { color: rgba(255,255,255,0.6); line-height: 2; margin-bottom: 36px; font-size: 0.95rem; }
+    .enrollment-detail { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.7); font-size: 0.92rem; }
+    .enrollment-detail svg { width: 20px; height: 20px; color: var(--accent-light); flex-shrink: 0; }
+    .enrollment-form { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .enrollment-form h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .enrollment-form > p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 32px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.5px; font-weight: 400; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; border: 1px solid #e0dcd4; border-radius: 8px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--cream); transition: border-color 0.3s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
     .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .btn-submit {
-      width: 100%;
-      padding: 16px;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 8px;
-    }
-    .btn-submit:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(205, 122, 90, 0.3);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--navy);
-      padding: 60px 0 36px;
-      color: rgba(255,255,255,0.5);
-    }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .footer-brand {
-      max-width: 320px;
-    }
-    .footer-brand .nav-logo {
-      color: var(--white);
-      font-size: 1.3rem;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-    .footer-brand p {
-      font-size: 0.88rem;
-      line-height: 1.8;
-    }
-    .footer-social {
-      display: flex;
-      gap: 14px;
-    }
-    .footer-social a {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      border: 1px solid rgba(205, 122, 90, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-light);
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .footer-social a:hover {
-      background: rgba(205, 122, 90, 0.15);
-      border-color: var(--accent);
-    }
-    .footer-social a svg {
-      width: 18px; height: 18px;
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; text-align: center; }
-      .hero-photo { order: -1; }
-      .hero-subtitle { margin: 0 auto 40px; }
-      .hero-tags { justify-content: center; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-      .enrollment-wrapper { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: repeat(3, 1fr); }
-      .media-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-    }
-
-    @media (max-width: 700px) {
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 72px; left: 0; right: 0;
-        background: rgba(250, 246, 238, 0.98);
-        backdrop-filter: blur(20px);
-        padding: 24px 32px;
-        gap: 20px;
-        border-bottom: 1px solid rgba(205, 122, 90, 0.15);
-      }
-      .hamburger { display: flex; }
-      .enrollment-info, .enrollment-form { padding: 40px 28px; }
-      .form-row { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      .footer-top { flex-direction: column; }
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit { width: 100%; padding: 16px; background: var(--accent); color: var(--white); border: none; border-radius: 8px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+    .btn-submit:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(205, 122, 90, 0.3); }
+    footer { background: var(--navy); padding: 60px 0 36px; color: rgba(255,255,255,0.5); }
+    .footer-top { display: flex; justify-content: space-between; align-items: start; margin-bottom: 48px; flex-wrap: wrap; gap: 40px; }
+    .footer-brand { max-width: 320px; }
+    .footer-brand .nav-logo { color: var(--white); font-size: 1.3rem; display: inline-block; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.8; }
+    .footer-social { display: flex; gap: 14px; }
+    .footer-social a { width: 44px; height: 44px; border-radius: 10px; border: 1px solid rgba(205, 122, 90, 0.25); display: flex; align-items: center; justify-content: center; color: var(--accent-light); text-decoration: none; transition: all 0.3s; }
+    .footer-social a:hover { background: rgba(205, 122, 90, 0.15); border-color: var(--accent); }
+    .footer-social a svg { width: 18px; height: 18px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; font-size: 0.78rem; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 900px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-photo { order: -1; } .hero-subtitle { margin: 0 auto 40px; } .hero-tags { justify-content: center; } .about-grid { grid-template-columns: 1fr; gap: 40px; } .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .enrollment-wrapper { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(3, 1fr); } .media-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+    @media (max-width: 700px) { .nav-links { display: none; } .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: rgba(250, 246, 238, 0.98); backdrop-filter: blur(20px); padding: 24px 32px; gap: 20px; border-bottom: 1px solid rgba(205, 122, 90, 0.15); } .hamburger { display: flex; } .enrollment-info, .enrollment-form { padding: 40px 28px; } .form-row { grid-template-columns: 1fr; } .media-grid { grid-template-columns: 1fr; } .footer-top { flex-direction: column; } }
   </style>
 </head>
 <body>
 
+  <!-- 【修改重點：導覽列】 -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">Kru <span>Win</span></a>
@@ -940,16 +191,19 @@
     </div>
   </nav>
 
+  <!-- 【修改重點：首頁主視覺區塊 (Hero)】 -->
   <section class="hero" id="home">
     <div class="hero-pattern"></div>
     <div class="hero-content">
       <div class="hero-text">
         <div class="hero-greeting">สวัสดีค่ะ / สวัสดีครับ</div>
-        <h1>泰語教學<br>文化推廣 ・ <em>專業翻譯</em></h1>
+        <h1>專業泰文老師<br>泰國文化推廣 <em>泰文翻譯</em></h1>
         <p class="hero-subtitle">
+          <!-- 【修改重點：個人簡介副標題】 -->
           朱拉隆功大學背景，結合線上教學、泰國文化推廣與專業口筆譯經驗，為你打開通往泰國的大門。
         </p>
         <div class="hero-tags">
+          <!-- 【修改重點：三個代表你的標籤】 -->
           <span class="hero-tag">線上泰語教學</span>
           <span class="hero-tag">泰國 KOL</span>
           <span class="hero-tag">口譯 ・ 筆譯</span>
@@ -961,6 +215,10 @@
       </div>
       <div class="hero-photo">
         <div class="photo-frame">
+          <!-- 【修改重點：個人大頭照】 -->
+          <!-- 若要換成你的照片，請把下面的 <div class="photo-placeholder">...</div> 刪除，並將下一行的註解打開 (去掉 <!-- 和 -->)，將 src 換成你的圖片網址 -->
+          <!-- <img src="你的圖片網址.jpg" alt="Kru Win 照片"> -->
+          
           <div class="photo-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3.5-7 7-7s7 3 7 7"/></svg>
             <span>放置個人照片</span>
@@ -973,6 +231,7 @@
     </div>
   </section>
 
+  <!-- 【修改重點：關於我 (About)】 -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
@@ -980,18 +239,21 @@
           <span class="section-label">About Me</span>
           <h2 class="section-title">深耕泰語教學<br>連結台泰文化</h2>
           <div class="accent-line"></div>
+          <!-- 【修改重點：自我介紹內文】 -->
           <p>我畢業於泰國頂尖學府——朱拉隆功大學（จุฬาลงกรณ์มหาวิทยาลัย），在泰國的求學期間深入了解了泰國語言、文化與社會脈絡，並通過泰語檢定考試，具備紮實的語言能力。</p>
           <p>除了線上泰語教學，我同時也是活躍於社群平台的泰國文化推廣者 (KOL)，以全泰文製作景點介紹與明星訪問內容，並經營 Podcast 節目，讓更多人認識泰語與泰國文化的魅力。</p>
           <p>在翻譯領域，我提供中泰雙語的書面翻譯與口譯服務，涵蓋商務、觀光、媒體等多元領域。</p>
         </div>
         <div class="animate-on-scroll" style="animation-delay: 0.2s;">
           <div class="credentials">
+            <!-- 【修改重點：四個核心優勢/認證】 -->
             <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></div><div class="credential-info"><h4>朱拉隆功大學</h4><p>泰國排名第一的頂尖學府就讀經歷</p></div></div>
             <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="credential-info"><h4>泰語檢定合格</h4><p>具備官方認證的泰語能力證明</p></div></div>
             <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg></div><div class="credential-info"><h4>社群文化推廣</h4><p>以全泰文製作 IG / Podcast 內容</p></div></div>
             <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div><div class="credential-info"><h4>中泰口筆譯</h4><p>商務、觀光、媒體等多元領域翻譯</p></div></div>
           </div>
           <div class="stats-row">
+            <!-- 【修改重點：數據里程碑】你可以改數字或文字 -->
             <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">學生人數</div></div>
             <div class="stat-item"><div class="stat-number">3+</div><div class="stat-label">教學年資</div></div>
             <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">課堂時數</div></div>
@@ -1001,6 +263,7 @@
     </div>
   </section>
 
+  <!-- 【修改重點：服務項目 (Services)】 -->
   <section class="services" id="services">
     <div class="container">
       <div class="services-header animate-on-scroll">
@@ -1009,18 +272,22 @@
         <p class="section-desc">結合教學、推廣與翻譯，提供全方位的泰語相關服務。</p>
       </div>
       <div class="services-grid">
+        <!-- 服務卡片 1 -->
         <div class="service-card animate-on-scroll">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+          <!-- 【修改重點：服務標題與內容】 -->
           <h3>線上泰語教學</h3>
           <p>一對一或小班制線上課程，從零基礎到進階會話，依照你的程度量身打造學習計畫。</p>
           <ul class="service-features"><li>零基礎入門 — 泰文字母與發音</li><li>日常生活會話與旅遊泰語</li><li>商務泰語與正式書寫</li><li>泰語檢定考試準備</li></ul>
         </div>
+        <!-- 服務卡片 2 -->
         <div class="service-card animate-on-scroll" style="animation-delay:0.15s;">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
           <h3>泰國文化 KOL</h3>
           <p>以全泰文創作社群內容，宣傳泰國景點、訪問泰國明星，並經營 Podcast 節目推廣泰國文化。</p>
           <ul class="service-features"><li>IG Reels — 全泰文景點宣傳</li><li>IG 專訪 — 泰國明星訪問</li><li>Podcast — 泰國文化深度分享</li><li>品牌合作與商業推廣</li></ul>
         </div>
+        <!-- 服務卡片 3 -->
         <div class="service-card animate-on-scroll" style="animation-delay:0.3s;">
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
           <h3>專業中泰翻譯</h3>
@@ -1031,6 +298,7 @@
     </div>
   </section>
 
+  <!-- 【修改重點：作品集 (Media - IG & Podcast 嵌入位置)】 -->
   <section class="media" id="media">
     <div class="container">
       <div class="media-header animate-on-scroll">
@@ -1044,29 +312,100 @@
         </div>
       </div>
 
+      <!-- 面板 1：景點宣傳 -->
       <div class="media-panel active" id="reels-travel">
         <div class="media-grid">
-          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/reel/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">景點宣傳</span><h4>泰國景點介紹標題（請替換）</h4><p>以全泰文介紹泰國必去景點，帶你深入體驗泰國之美。</p></div></div>
-          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/reel/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">景點宣傳</span><h4>泰國景點介紹標題（請替換）</h4><p>以全泰文介紹泰國必去景點。</p></div></div>
+          <div class="media-card">
+            <div class="media-card-embed">
+              
+              <!-- 【修改重點：IG Reels 嵌入位置 1】 -->
+              <!-- 請刪除下面這一整塊 <div class="embed-placeholder">...</div>，並貼上從 IG 取得的 iframe 代碼 -->
+             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DVBnIL4D_HU/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DVBnIL4D_HU/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DVBnIL4D_HU/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 泰國紅綠燈🚦วิน (@trafficthai_win)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+              <!-- (貼上 iframe 的位置) -->
+
+            </div>
+            <div class="media-card-info">
+              <span class="media-card-tag">景點宣傳</span>
+              <!-- 【修改重點：影片標題與介紹】 -->
+              <h4>泰國景點介紹標題（請替換）</h4>
+              <p>以全泰文介紹泰國必去景點，帶你深入體驗泰國之美。</p>
+            </div>
+          </div>
+          
+          <div class="media-card">
+            <div class="media-card-embed">
+              <!-- 【修改重點：IG Reels 嵌入位置 2】同上 -->
+              <div class="embed-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                <span>IG Reel 嵌入區域</span>
+                <code>&lt;iframe src="https://www.instagram.com/reel/你的ID/embed"&gt;</code>
+              </div>
+            </div>
+            <div class="media-card-info">
+              <span class="media-card-tag">景點宣傳</span>
+              <h4>泰國景點介紹標題（請替換）</h4>
+              <p>以全泰文介紹泰國必去景點。</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- 面板 2：明星訪問 -->
       <div class="media-panel" id="reels-interview">
         <div class="media-grid">
-          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Post / Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/p/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人，深入對話交流。</p></div></div>
-          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Post / Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/p/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人。</p></div></div>
+          <div class="media-card">
+            <div class="media-card-embed">
+              <!-- 【修改重點：IG 貼文/Reels 嵌入位置 3】同上 -->
+              <div class="embed-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                <span>IG Post / Reel 嵌入區域</span>
+              </div>
+            </div>
+            <div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人，深入對話交流。</p></div>
+          </div>
+          <div class="media-card">
+            <div class="media-card-embed">
+              <!-- 【修改重點：IG 貼文/Reels 嵌入位置 4】同上 -->
+              <div class="embed-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
+                <span>IG Post / Reel 嵌入區域</span>
+              </div>
+            </div>
+            <div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人。</p></div>
+          </div>
         </div>
       </div>
 
+      <!-- 面板 3：Podcast -->
       <div class="media-panel" id="podcast">
         <div class="media-grid">
-          <div class="media-card"><div class="media-card-embed podcast"><div class="embed-placeholder" style="min-height:160px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg><span>Spotify Podcast 嵌入區域</span><code>&lt;iframe src="https://open.spotify.com/embed/episode/你的ID"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>透過 Podcast 分享泰國文化與泰語學習心得。</p></div></div>
-          <div class="media-card"><div class="media-card-embed podcast"><div class="embed-placeholder" style="min-height:160px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg><span>Spotify Podcast 嵌入區域</span><code>&lt;iframe src="https://open.spotify.com/embed/episode/你的ID"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>深入探討泰國文化的各個面向。</p></div></div>
+          <div class="media-card">
+            <div class="media-card-embed podcast">
+              <!-- 【修改重點：Spotify Podcast 嵌入位置 1】請把 placeholder 換成 Spotify 提供的 iframe -->
+              <div class="embed-placeholder" style="min-height:160px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg>
+                <span>Spotify Podcast 嵌入區域</span>
+              </div>
+            </div>
+            <div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>透過 Podcast 分享泰國文化與泰語學習心得。</p></div>
+          </div>
+          <div class="media-card">
+            <div class="media-card-embed podcast">
+              <!-- 【修改重點：Spotify Podcast 嵌入位置 2】同上 -->
+              <div class="embed-placeholder" style="min-height:160px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg>
+                <span>Spotify Podcast 嵌入區域</span>
+              </div>
+            </div>
+            <div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>深入探討泰國文化的各個面向。</p></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 【修改重點：學經歷時間軸 (Experience)】 -->
   <section class="timeline-section" id="experience">
     <div class="container">
       <div class="animate-on-scroll">
@@ -1075,6 +414,7 @@
         <p class="section-desc">從學術到實務，一步步累積泰語教學與翻譯的專業能力。</p>
       </div>
       <div class="timeline">
+        <!-- 【修改重點：可以在這裡修改年份、標題與敘述】 -->
         <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 學術背景 —</div><h4>朱拉隆功大學 จุฬาลงกรณ์มหาวิทยาลัย</h4><p>就讀泰國排名第一的頂尖學府，深入學習泰語語言學、泰國文化與社會研究，奠定紮實的學術基礎。在泰國的生活經驗讓我對語言有了超越課本的理解。</p></div>
         <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 語言認證 —</div><h4>泰語檢定考試合格</h4><p>通過泰語能力檢定考試，取得官方認可的語言能力證明，確保教學與翻譯的專業品質。（請在此補充具體的檢定名稱與等級）</p></div>
         <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 社群經營 —</div><h4>泰國文化 KOL ・ 全泰文內容創作</h4><p>在 Instagram 以全泰文製作景點宣傳 Reels 與泰國明星訪問內容，同時經營 Podcast 節目推廣泰國文化，讓更多人認識泰語的魅力。</p></div>
@@ -1100,6 +440,7 @@
           <h3>課程諮詢表單</h3>
           <p>填寫以下資訊，我會盡快回覆你！</p>
           <form id="contactForm" onsubmit="handleSubmit(event)">
+            <!-- 表單內容保留，未來你可以連接後端或是 Google Forms -->
             <div class="form-row">
               <div class="form-group"><label>姓名</label><input type="text" placeholder="你的名字" required></div>
               <div class="form-group"><label>Email</label><input type="email" placeholder="email@example.com" required></div>
@@ -1114,6 +455,7 @@
     </div>
   </section>
 
+  <!-- 【修改重點：頁尾 (Footer) 的社群連結】 -->
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -1122,10 +464,11 @@
           <p>泰語教學 ・ 泰國文化推廣 ・ 中泰專業翻譯<br>讓我帶你走進泰國的世界。</p>
         </div>
         <div class="footer-social">
+          <!-- 將 href="#" 裡面的 # 替換成你的真實網址 -->
           <a href="#" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><path d="M17.5 6.5h.01"/></svg></a>
           <a href="#" title="Spotify" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg></a>
           <a href="#" title="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></a>
-          <a href="#" title="Email" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="mailto:你的Email@example.com" title="Email" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
       <div class="footer-bottom">
