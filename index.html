@@ -1,37 +1,1175 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win 老師的泰語教室</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        nav { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
-        header { background: #e67e22; color: white; padding: 3rem 1rem; text-align: center; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #e67e22; border-bottom: 2px solid #e67e22; padding-bottom: 5px; }
-        .btn { display: inline-block; background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kru Win | 泰語教學 ・ 翻譯 ・ 泰國文化推廣</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 引入 Anuphan, Noto Sans TC, Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* 將原本的金色替換為質感的赤陶銅色 (Terracotta Copper)，RGB為 205, 122, 90 */
+      --accent: #CD7A5A;       
+      --accent-light: #EBC1B3; 
+      --accent-dark: #9E563C;  
+      
+      --navy: #1A1F3A;
+      --navy-light: #2A3158;
+      --cream: #FAF6EE;
+      --cream-dark: #F0E8D8;
+      --text-dark: #1A1A1A;
+      --text-body: #3A3A3A;
+      --text-muted: #7A7A7A;
+      --white: #FFFFFF;
+      --section-gap: clamp(80px, 10vw, 140px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: var(--text-body);
+      background: var(--cream);
+      line-height: 1.8;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 60px);
+    }
+
+    .section-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 2;
+    }
+
+    .accent-line {
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+      margin: 24px 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250, 246, 238, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(205, 122, 90, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    nav.scrolled {
+      box-shadow: 0 2px 40px rgba(26, 31, 58, 0.08);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 60px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+    .nav-logo {
+      font-family: 'Anuphan', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      transition: all 0.3s ease;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 50%, #3A2F5A 100%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -30%;
+      width: 80vw; height: 80vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(205, 122, 90, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--cream), transparent);
+      pointer-events: none;
+    }
+    .hero-pattern {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(205, 122, 90, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(205, 122, 90, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px clamp(20px, 5vw, 60px) 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-text {
+      animation: slideRight 1s ease 0.3s both;
+    }
+    .hero-greeting {
+      font-family: 'Anuphan', sans-serif;
+      font-size: 1.1rem;
+      color: var(--accent-light);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 2;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .hero-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-tag {
+      padding: 8px 20px;
+      border: 1px solid rgba(205, 122, 90, 0.4);
+      border-radius: 100px;
+      color: var(--accent-light);
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .hero-cta:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(205, 122, 90, 0.3);
+    }
+    .hero-cta svg {
+      width: 18px; height: 18px;
+      transition: transform 0.3s ease;
+    }
+    .hero-cta:hover svg { transform: translateX(4px); }
+
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1.2s ease 0.6s both;
+    }
+    .photo-frame {
+      position: relative;
+      width: clamp(280px, 24vw, 380px);
+      height: clamp(340px, 30vw, 480px);
+      border-radius: 200px 200px 20px 20px;
+      overflow: hidden;
+      border: 3px solid rgba(205, 122, 90, 0.3);
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--navy-light), rgba(205, 122, 90, 0.2));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-light);
+      font-size: 0.85rem;
+      gap: 12px;
+    }
+    .photo-placeholder svg {
+      width: 48px; height: 48px;
+      opacity: 0.5;
+    }
+    .photo-decor {
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      opacity: 0.2;
+    }
+    .photo-decor-2 {
+      position: absolute;
+      bottom: -15px; left: -15px;
+      width: 60px; height: 60px;
+      border: 2px solid var(--accent);
+      opacity: 0.15;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: var(--section-gap) 0;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 2;
+    }
+    .credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .credential-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .credential-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .credential-icon svg {
+      width: 22px; height: 22px;
+      color: var(--accent-light);
+    }
+    .credential-info h4 {
+      font-weight: 500;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .credential-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(205, 122, 90, 0.2);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      letter-spacing: 1px;
+    }
+
+    /* SERVICES */
+    .services {
+      padding: var(--section-gap) 0;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .services::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(circle at 10% 90%, rgba(205, 122, 90, 0.06), transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(205, 122, 90, 0.04), transparent 50%);
+      pointer-events: none;
+    }
+    .services .section-title { color: var(--white); }
+    .services .section-desc { color: rgba(255,255,255,0.5); }
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .services-header .section-desc {
+      margin: 0 auto;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(205, 122, 90, 0.15);
+      border-radius: 12px;
+      padding: 44px 32px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .service-card:hover {
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-6px);
+      border-color: rgba(205, 122, 90, 0.3);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: rgba(205, 122, 90, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .service-icon svg {
+      width: 26px; height: 26px;
+      color: var(--accent-light);
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .service-card p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.92rem;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .service-features li {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-features li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* MEDIA */
+    .media {
+      padding: var(--section-gap) 0;
+    }
+    .media-header {
+      margin-bottom: 60px;
+    }
+    .media-tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 32px;
+      border-bottom: 1px solid rgba(205, 122, 90, 0.2);
+      padding-bottom: 0;
+    }
+    .media-tab {
+      padding: 12px 28px;
+      background: none;
+      border: none;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .media-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .media-tab.active {
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .media-tab.active::after { transform: scaleX(1); }
+    .media-tab:hover { color: var(--navy); }
+
+    .media-panel {
+      display: none;
+      padding-top: 40px;
+    }
+    .media-panel.active { display: block; }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .media-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26, 31, 58, 0.06);
+      transition: all 0.3s ease;
+    }
+    .media-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 31, 58, 0.1);
+    }
+    .media-card-embed {
+      width: 100%;
+      aspect-ratio: 9/16;
+      max-height: 580px;
+      background: #f0f0f0;
+    }
+    .media-card-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .media-card-embed.podcast {
+      aspect-ratio: auto;
+      height: auto;
+      min-height: 160px;
+    }
+    .media-card-info {
+      padding: 20px 24px;
+    }
+    .media-card-info h4 {
+      font-weight: 500;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+    .media-card-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .media-card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(205, 122, 90, 0.1);
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      border-radius: 100px;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .embed-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fafafa, #f0f0f0);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      gap: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .embed-placeholder svg {
+      width: 40px; height: 40px;
+      opacity: 0.3;
+    }
+    .embed-placeholder code {
+      background: rgba(0,0,0,0.06);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      word-break: break-all;
+    }
+
+    /* TIMELINE */
+    .timeline-section {
+      padding: var(--section-gap) 0;
+      background: var(--cream-dark);
+    }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), rgba(205, 122, 90, 0.1));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 48px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -34px; top: 6px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--cream-dark);
+      box-shadow: 0 0 0 3px rgba(205, 122, 90, 0.2);
+    }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.82rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .timeline-item h4 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .timeline-item p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* ENROLLMENT */
+    .enrollment {
+      padding: var(--section-gap) 0;
+    }
+    .enrollment-wrapper {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 60px rgba(26, 31, 58, 0.07);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .enrollment-info {
+      padding: 60px;
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .enrollment-info::before {
+      content: '';
+      position: absolute;
+      bottom: -40%; right: -20%;
+      width: 60%; height: 80%;
+      border-radius: 50%;
+      background: rgba(205, 122, 90, 0.08);
+    }
+    .enrollment-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .enrollment-info p {
+      color: rgba(255,255,255,0.6);
+      line-height: 2;
+      margin-bottom: 36px;
+      font-size: 0.95rem;
+    }
+    .enrollment-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+    }
+    .enrollment-detail svg {
+      width: 20px; height: 20px;
+      color: var(--accent-light);
+      flex-shrink: 0;
+    }
+    .enrollment-form {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .enrollment-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .enrollment-form > p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 32px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0dcd4;
+      border-radius: 8px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 8px;
+    }
+    .btn-submit:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(205, 122, 90, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 60px 0 36px;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand {
+      max-width: 320px;
+    }
+    .footer-brand .nav-logo {
+      color: var(--white);
+      font-size: 1.3rem;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+    .footer-social {
+      display: flex;
+      gap: 14px;
+    }
+    .footer-social a {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(205, 122, 90, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .footer-social a:hover {
+      background: rgba(205, 122, 90, 0.15);
+      border-color: var(--accent);
+    }
+    .footer-social a svg {
+      width: 18px; height: 18px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo { order: -1; }
+      .hero-subtitle { margin: 0 auto 40px; }
+      .hero-tags { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .enrollment-wrapper { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); }
+      .media-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px; left: 0; right: 0;
+        background: rgba(250, 246, 238, 0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px 32px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(205, 122, 90, 0.15);
+      }
+      .hamburger { display: flex; }
+      .enrollment-info, .enrollment-form { padding: 40px 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .media-grid { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <nav>Win 老師的泰語教室</nav>
-    <header>
-        <h1>Sawatdee Krab! 我是 Win</h1>
-        <p>專業線上泰語老師 | 定居普吉島的在地教學</p>
-    </header>
-    <div class="container">
-        <section>
-            <h2>關於我</h2>
-            <p>目前定居於泰國普吉島，提供系統化的泰語課程。我使用專屬的羅馬拼音與聲調系統，讓學生能精準掌握泰語發音。</p>
-        </section>
-        <section>
-            <h2>招收中課程</h2>
-            <ul>
-                <li><strong>基礎發音班：</strong>從零開始，掌握拼音規則。</li>
-                <li><strong>中級口說班：</strong>強化語感，對話如流。</li>
-            </ul>
-            <a href="mailto:your-email@example.com" class="btn">聯絡報名</a>
-        </section>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Kru <span>Win</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">關於我</a></li>
+        <li><a href="#services">服務項目</a></li>
+        <li><a href="#media">作品集</a></li>
+        <li><a href="#experience">學經歷</a></li>
+        <li><a href="#enrollment">課程報名</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-greeting">สวัสดีค่ะ / สวัสดีครับ</div>
+        <h1>泰語教學<br>文化推廣 ・ <em>專業翻譯</em></h1>
+        <p class="hero-subtitle">
+          朱拉隆功大學背景，結合線上教學、泰國文化推廣與專業口筆譯經驗，為你打開通往泰國的大門。
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">線上泰語教學</span>
+          <span class="hero-tag">泰國 KOL</span>
+          <span class="hero-tag">口譯 ・ 筆譯</span>
+        </div>
+        <a href="#enrollment" class="hero-cta">
+          預約試聽課程
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3.5-7 7-7s7 3 7 7"/></svg>
+            <span>放置個人照片</span>
+            <span style="font-size:0.72rem;opacity:0.6;">建議尺寸 380×480px</span>
+          </div>
+        </div>
+        <div class="photo-decor"></div>
+        <div class="photo-decor-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text animate-on-scroll">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">深耕泰語教學<br>連結台泰文化</h2>
+          <div class="accent-line"></div>
+          <p>我畢業於泰國頂尖學府——朱拉隆功大學（จุฬาลงกรณ์มหาวิทยาลัย），在泰國的求學期間深入了解了泰國語言、文化與社會脈絡，並通過泰語檢定考試，具備紮實的語言能力。</p>
+          <p>除了線上泰語教學，我同時也是活躍於社群平台的泰國文化推廣者 (KOL)，以全泰文製作景點介紹與明星訪問內容，並經營 Podcast 節目，讓更多人認識泰語與泰國文化的魅力。</p>
+          <p>在翻譯領域，我提供中泰雙語的書面翻譯與口譯服務，涵蓋商務、觀光、媒體等多元領域。</p>
+        </div>
+        <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="credentials">
+            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></div><div class="credential-info"><h4>朱拉隆功大學</h4><p>泰國排名第一的頂尖學府就讀經歷</p></div></div>
+            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="credential-info"><h4>泰語檢定合格</h4><p>具備官方認證的泰語能力證明</p></div></div>
+            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg></div><div class="credential-info"><h4>社群文化推廣</h4><p>以全泰文製作 IG / Podcast 內容</p></div></div>
+            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div><div class="credential-info"><h4>中泰口筆譯</h4><p>商務、觀光、媒體等多元領域翻譯</p></div></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">學生人數</div></div>
+            <div class="stat-item"><div class="stat-number">3+</div><div class="stat-label">教學年資</div></div>
+            <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">課堂時數</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header animate-on-scroll">
+        <span class="section-label">Services</span>
+        <h2 class="section-title">三大專業領域</h2>
+        <p class="section-desc">結合教學、推廣與翻譯，提供全方位的泰語相關服務。</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+          <h3>線上泰語教學</h3>
+          <p>一對一或小班制線上課程，從零基礎到進階會話，依照你的程度量身打造學習計畫。</p>
+          <ul class="service-features"><li>零基礎入門 — 泰文字母與發音</li><li>日常生活會話與旅遊泰語</li><li>商務泰語與正式書寫</li><li>泰語檢定考試準備</li></ul>
+        </div>
+        <div class="service-card animate-on-scroll" style="animation-delay:0.15s;">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+          <h3>泰國文化 KOL</h3>
+          <p>以全泰文創作社群內容，宣傳泰國景點、訪問泰國明星，並經營 Podcast 節目推廣泰國文化。</p>
+          <ul class="service-features"><li>IG Reels — 全泰文景點宣傳</li><li>IG 專訪 — 泰國明星訪問</li><li>Podcast — 泰國文化深度分享</li><li>品牌合作與商業推廣</li></ul>
+        </div>
+        <div class="service-card animate-on-scroll" style="animation-delay:0.3s;">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
+          <h3>專業中泰翻譯</h3>
+          <p>提供精準的中泰雙向翻譯服務，涵蓋書面筆譯與現場口譯，具備多元領域經驗。</p>
+          <ul class="service-features"><li>商務文件與合約翻譯</li><li>觀光導覽與活動口譯</li><li>媒體內容與字幕翻譯</li><li>隨行口譯與會議翻譯</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="media" id="media">
+    <div class="container">
+      <div class="media-header animate-on-scroll">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">作品集</h2>
+        <p class="section-desc">精選社群內容與 Podcast 節目，展現我在泰國文化推廣上的多元面向。</p>
+        <div class="media-tabs">
+          <button class="media-tab active" data-tab="reels-travel">景點宣傳</button>
+          <button class="media-tab" data-tab="reels-interview">明星訪問</button>
+          <button class="media-tab" data-tab="podcast">Podcast</button>
+        </div>
+      </div>
+
+      <div class="media-panel active" id="reels-travel">
+        <div class="media-grid">
+          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/reel/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">景點宣傳</span><h4>泰國景點介紹標題（請替換）</h4><p>以全泰文介紹泰國必去景點，帶你深入體驗泰國之美。</p></div></div>
+          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/reel/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">景點宣傳</span><h4>泰國景點介紹標題（請替換）</h4><p>以全泰文介紹泰國必去景點。</p></div></div>
+        </div>
+      </div>
+
+      <div class="media-panel" id="reels-interview">
+        <div class="media-grid">
+          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Post / Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/p/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人，深入對話交流。</p></div></div>
+          <div class="media-card"><div class="media-card-embed"><div class="embed-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg><span>IG Post / Reel 嵌入區域</span><code>&lt;iframe src="https://www.instagram.com/p/你的ID/embed"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人。</p></div></div>
+        </div>
+      </div>
+
+      <div class="media-panel" id="podcast">
+        <div class="media-grid">
+          <div class="media-card"><div class="media-card-embed podcast"><div class="embed-placeholder" style="min-height:160px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg><span>Spotify Podcast 嵌入區域</span><code>&lt;iframe src="https://open.spotify.com/embed/episode/你的ID"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>透過 Podcast 分享泰國文化與泰語學習心得。</p></div></div>
+          <div class="media-card"><div class="media-card-embed podcast"><div class="embed-placeholder" style="min-height:160px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg><span>Spotify Podcast 嵌入區域</span><code>&lt;iframe src="https://open.spotify.com/embed/episode/你的ID"&gt;</code></div></div><div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>深入探討泰國文化的各個面向。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section" id="experience">
+    <div class="container">
+      <div class="animate-on-scroll">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">學習與經歷</h2>
+        <p class="section-desc">從學術到實務，一步步累積泰語教學與翻譯的專業能力。</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 學術背景 —</div><h4>朱拉隆功大學 จุฬาลงกรณ์มหาวิทยาลัย</h4><p>就讀泰國排名第一的頂尖學府，深入學習泰語語言學、泰國文化與社會研究，奠定紮實的學術基礎。在泰國的生活經驗讓我對語言有了超越課本的理解。</p></div>
+        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 語言認證 —</div><h4>泰語檢定考試合格</h4><p>通過泰語能力檢定考試，取得官方認可的語言能力證明，確保教學與翻譯的專業品質。（請在此補充具體的檢定名稱與等級）</p></div>
+        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 社群經營 —</div><h4>泰國文化 KOL ・ 全泰文內容創作</h4><p>在 Instagram 以全泰文製作景點宣傳 Reels 與泰國明星訪問內容，同時經營 Podcast 節目推廣泰國文化，讓更多人認識泰語的魅力。</p></div>
+        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 翻譯事業 —</div><h4>中泰專業口筆譯</h4><p>提供中泰雙語翻譯服務，涵蓋商務文件、觀光導覽、媒體內容等多元領域，累積豐富的口譯與筆譯實戰經驗。</p></div>
+        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 線上教學 —</div><h4>線上泰語教學・持續至今</h4><p>開設線上泰語課程，從零基礎到進階程度，為學生量身打造學習計畫，幫助超過百位學生踏上泰語學習之路。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="enrollment" id="enrollment">
+    <div class="container">
+      <div class="enrollment-wrapper animate-on-scroll">
+        <div class="enrollment-info">
+          <span class="section-label">Enrollment</span>
+          <h3>開始你的<br>泰語學習之旅</h3>
+          <p>無論你是零基礎的初學者，還是希望精進泰語能力的進階學習者，我都能為你規劃最適合的學習路線。</p>
+          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>一對一 / 小班制教學</span></div>
+          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>彈性時間安排</span></div>
+          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>LINE / Email 諮詢</span></div>
+          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span>免費 15 分鐘程度諮詢</span></div>
+        </div>
+        <div class="enrollment-form">
+          <h3>課程諮詢表單</h3>
+          <p>填寫以下資訊，我會盡快回覆你！</p>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group"><label>姓名</label><input type="text" placeholder="你的名字" required></div>
+              <div class="form-group"><label>Email</label><input type="email" placeholder="email@example.com" required></div>
+            </div>
+            <div class="form-group"><label>LINE ID（選填）</label><input type="text" placeholder="你的 LINE ID"></div>
+            <div class="form-group"><label>有興趣的課程</label><select><option value="">請選擇</option><option>零基礎入門</option><option>日常會話</option><option>商務泰語</option><option>泰語檢定準備</option><option>翻譯服務諮詢</option><option>KOL 合作洽談</option><option>其他</option></select></div>
+            <div class="form-group"><label>備註</label><textarea placeholder="簡述你的學習目標或需求..."></textarea></div>
+            <button type="submit" class="btn-submit">送出諮詢</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">Kru <span>Win</span></a>
+          <p>泰語教學 ・ 泰國文化推廣 ・ 中泰專業翻譯<br>讓我帶你走進泰國的世界。</p>
+        </div>
+        <div class="footer-social">
+          <a href="#" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" title="Spotify" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg></a>
+          <a href="#" title="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></a>
+          <a href="#" title="Email" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Kru Win. All rights reserved.</span>
+        <span>Designed with ♡ for Thai language lovers</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const spans = hamburger.querySelectorAll('span');
+      if (navLinks.classList.contains('open')) { spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; spans[1].style.opacity = '0'; spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { spans[0].style.transform = 'none'; spans[1].style.opacity = '1'; spans[2].style.transform = 'none'; }
+    });
+    navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); const spans = hamburger.querySelectorAll('span'); spans[0].style.transform = 'none'; spans[1].style.opacity = '1'; spans[2].style.transform = 'none'; }); });
+
+    document.querySelectorAll('.media-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.textContent = '已送出！感謝你的諮詢 ✓';
+      btn.style.background = '#2d7a4f';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = '送出諮詢'; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 3000);
+    }
+  </script>
+
 </body>
 </html>
