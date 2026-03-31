@@ -708,6 +708,13 @@
       transform: scale(1.04);
     }
 
+    /* IG 嵌入 iframe 樣式 */
+    .portfolio__media iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .portfolio__info {
       padding: 16px 20px;
     }
@@ -775,6 +782,13 @@
       aspect-ratio: 9 / 16;
       max-width: 240px;
       margin: 0 auto;
+    }
+
+    /* Works 區 IG 嵌入 iframe */
+    .works__card-media iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .works__card-body {
@@ -1418,7 +1432,7 @@
           <p>朱拉隆功大學官方泰文考試成績單</p>
           <!-- ★ 成績單圖片路徑：請將 src 替換為實際圖片路徑，例如 "assets/cert.jpg" -->
           <div class="about__cert-thumb" id="certThumb" onclick="openLightbox()">
-            <img src="images/chula-score.heic" alt="朱大泰文考試成績單" style="width: 150px; border-radius: 5px; cursor: pointer;">
+            <img src="images/chula-score.jpeg" alt="朱大泰文考試成績單" style="width: 150px; border-radius: 5px; cursor: pointer;">
             <div class="about__cert-thumb__overlay">
               <span>點擊查看完整成績單</span>
             </div>
@@ -1437,7 +1451,7 @@
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="關閉">✕</button>
     <!-- ★ 請將 src 替換為實際成績單圖片路徑 -->
-    <img class="lightbox__img" id="lightboxImg" src="images/chula-score.heic" alt="朱大泰文考試成績單完整版" />
+    <img class="lightbox__img" id="lightboxImg" src="images/chula-score.jpeg" alt="朱大泰文考試成績單完整版" />
   </div>
 
   <!-- ==========================================
@@ -1456,83 +1470,170 @@
       <div class="portfolio__tabs reveal">
         <button class="portfolio__tab active" data-filter="all">全部作品</button>
         <button class="portfolio__tab" data-filter="interview">藝人專訪</button>
-        <button class="portfolio__tab" data-filter="explore">泰國探店</button>
+        <button class="portfolio__tab" data-filter="life">泰國生活</button>
         <button class="portfolio__tab" data-filter="collab">品牌合作</button>
       </div>
 
       <div class="portfolio__grid reveal">
-        <!-- ★ 以下作品項目請替換 img src 與 IG 連結 -->
 
-        <!-- 藝人專訪 — Reel 格式 9:16 -->
-        <div class="portfolio__item portfolio__item--reel" data-category="interview">
+        <!-- ========== 藝人專訪 — IG 貼文格式 4:5（共 2 則） ========== -->
+
+        <!-- ★ 藝人專訪貼文 1：請將 C8e3FHoBXoZ 替換為實際 IG 貼文 ID -->
+        <div class="portfolio__item portfolio__item--post" data-category="interview">
           <div class="portfolio__media">
-            <!-- ★ 替換為實際圖片路徑 -->
-            <img src="assets/portfolio/interview-01.jpg" alt="藝人專訪影片 1" />
+            <iframe
+              src="https://www.instagram.com/p/C8e3FHoBXoZ/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="阿燈訪泰星 WIM"
+            ></iframe>
           </div>
           <div class="portfolio__info">
-            <h4>藝人專訪 Reel</h4>
-            <p>專訪翻譯 — 泰文即時口譯</p>
-            <!-- ★ 替換為實際 IG Reels 連結 -->
-            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_1" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+            <h4>藝人專訪</h4>
+            <p>專訪翻譯紀錄</p>
+            <a href="https://www.instagram.com/p/C8e3FHoBXoZ/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
           </div>
         </div>
 
-        <div class="portfolio__item portfolio__item--reel" data-category="interview">
+        <!-- ★ 藝人專訪貼文 2：請將 YOUR_POST_ID_2 替換為實際 IG 貼文 ID -->
+        <div class="portfolio__item portfolio__item--post" data-category="interview">
           <div class="portfolio__media">
-            <img src="assets/portfolio/interview-02.jpg" alt="藝人專訪影片 2" />
+            <iframe
+              src="https://www.instagram.com/p/YOUR_POST_ID_2/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="藝人專訪貼文 2"
+            ></iframe>
           </div>
           <div class="portfolio__info">
             <h4>藝人現場口譯</h4>
             <p>粉絲見面會即時翻譯紀錄</p>
-            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_2" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+            <a href="https://www.instagram.com/p/YOUR_POST_ID_2/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
           </div>
         </div>
 
-        <!-- 泰國探店 — Reel 格式 -->
-        <div class="portfolio__item portfolio__item--reel" data-category="explore">
+        <!-- ========== 泰國生活 — IG Reels 格式 9:16（共 3 則） ========== -->
+
+        <!-- ★ 泰國生活 Reel 1：請將 YOUR_REEL_ID_1 替換為實際 Reel ID -->
+        <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
-            <img src="assets/portfolio/explore-01.jpg" alt="泰國探店影片 1" />
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_REEL_ID_1/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="泰國生活 Reel 1"
+            ></iframe>
+          </div>
+          <div class="portfolio__info">
+            <h4>泰國日常生活</h4>
+            <p>在地人的泰國生活紀錄</p>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_1/" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+          </div>
+        </div>
+
+        <!-- ★ 泰國生活 Reel 2：請將 YOUR_REEL_ID_2 替換為實際 Reel ID -->
+        <div class="portfolio__item portfolio__item--reel" data-category="life">
+          <div class="portfolio__media">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_REEL_ID_2/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="泰國生活 Reel 2"
+            ></iframe>
           </div>
           <div class="portfolio__info">
             <h4>曼谷隱藏美食</h4>
             <p>在地人私藏清單大公開</p>
-            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_3" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_2/" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
 
-        <div class="portfolio__item portfolio__item--reel" data-category="explore">
+        <!-- ★ 泰國生活 Reel 3：請將 YOUR_REEL_ID_3 替換為實際 Reel ID -->
+        <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
-            <img src="assets/portfolio/explore-02.jpg" alt="泰國探店影片 2" />
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_REEL_ID_3/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="泰國生活 Reel 3"
+            ></iframe>
           </div>
           <div class="portfolio__info">
-            <h4>清邁咖啡之旅</h4>
-            <p>文青必訪手沖咖啡店</p>
-            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_4" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+            <h4>泰國文化體驗</h4>
+            <p>深度探索泰國的每一面</p>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_3/" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
 
-        <!-- 品牌合作 — 貼文格式 4:5 -->
+        <!-- ========== 品牌合作 — IG 貼文格式 4:5（共 3 則） ========== -->
+
+        <!-- ★ 品牌合作貼文 1：請將 YOUR_COLLAB_POST_1 替換為實際 IG 貼文 ID -->
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
-            <img src="assets/portfolio/collab-01.jpg" alt="品牌合作貼文 1" />
+            <iframe
+              src="https://www.instagram.com/p/YOUR_COLLAB_POST_1/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="品牌合作貼文 1"
+            ></iframe>
           </div>
           <div class="portfolio__info">
             <h4>品牌聯名合作</h4>
             <p>泰國在地品牌推廣企劃</p>
-            <a href="https://www.instagram.com/p/YOUR_POST_ID_1" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
+            <a href="https://www.instagram.com/p/YOUR_COLLAB_POST_1/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
+        <!-- ★ 品牌合作貼文 2：請將 YOUR_COLLAB_POST_2 替換為實際 IG 貼文 ID -->
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
-            <img src="assets/portfolio/collab-02.jpg" alt="品牌合作貼文 2" />
+            <iframe
+              src="https://www.instagram.com/p/YOUR_COLLAB_POST_2/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="品牌合作貼文 2"
+            ></iframe>
           </div>
           <div class="portfolio__info">
             <h4>旅遊品牌合作</h4>
             <p>飯店 × 旅遊深度體驗</p>
-            <a href="https://www.instagram.com/p/YOUR_POST_ID_2" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
+            <a href="https://www.instagram.com/p/YOUR_COLLAB_POST_2/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
+
+        <!-- ★ 品牌合作貼文 3：請將 YOUR_COLLAB_POST_3 替換為實際 IG 貼文 ID -->
+        <div class="portfolio__item portfolio__item--post" data-category="collab">
+          <div class="portfolio__media">
+            <iframe
+              src="https://www.instagram.com/p/YOUR_COLLAB_POST_3/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="品牌合作貼文 3"
+            ></iframe>
+          </div>
+          <div class="portfolio__info">
+            <h4>生活品牌推廣</h4>
+            <p>泰國好物開箱推薦</p>
+            <a href="https://www.instagram.com/p/YOUR_COLLAB_POST_3/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1550,44 +1651,132 @@
         </p>
       </div>
 
+      <!-- 歌詞翻譯 — 3 個 IG Reels -->
+      <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-bottom:24px;">🎵 歌詞翻譯</h3>
       <div class="works__grid reveal">
-        <!-- 歌詞翻譯 Reel -->
+
+        <!-- ★ 歌詞翻譯 Reel 1：請將 YOUR_LYRICS_REEL_1 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <!-- ★ 替換為實際歌詞翻譯 Reel 截圖 -->
-            <img src="assets/works/lyrics-01.jpg" alt="歌詞翻譯 Reel" />
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_LYRICS_REEL_1/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="歌詞翻譯 Reel 1"
+            ></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">歌詞翻譯</span>
-            <h4>泰文歌曲中譯 Reel</h4>
+            <h4>泰文歌曲中譯</h4>
             <p>精選泰文流行歌曲，以字幕形式呈現中文翻譯，讓台灣粉絲也能感受泰文歌曲的魅力。</p>
-            <!-- ★ 替換為實際 IG 連結 -->
-            <a href="https://www.instagram.com/reel/YOUR_LYRICS_REEL" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
+            <a href="https://www.instagram.com/reel/YOUR_LYRICS_REEL_1/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
-        <!-- 電視節目訪談翻譯 -->
+        <!-- ★ 歌詞翻譯 Reel 2：請將 YOUR_LYRICS_REEL_2 替換為實際 Reel ID -->
         <div class="works__card">
-          <div class="works__card-media">
-            <!-- ★ 替換為實際節目截圖 -->
-            <img src="assets/works/tv-01.jpg" alt="電視節目訪談翻譯" />
+          <div class="works__card-media works__card-media--reel">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_LYRICS_REEL_2/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="歌詞翻譯 Reel 2"
+            ></iframe>
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">歌詞翻譯</span>
+            <h4>熱門泰劇 OST 翻譯</h4>
+            <p>當紅泰劇主題曲中文翻譯，帶你讀懂每句歌詞背後的情感故事。</p>
+            <a href="https://www.instagram.com/reel/YOUR_LYRICS_REEL_2/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
+          </div>
+        </div>
+
+        <!-- ★ 歌詞翻譯 Reel 3：請將 YOUR_LYRICS_REEL_3 替換為實際 Reel ID -->
+        <div class="works__card">
+          <div class="works__card-media works__card-media--reel">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_LYRICS_REEL_3/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="歌詞翻譯 Reel 3"
+            ></iframe>
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">歌詞翻譯</span>
+            <h4>經典泰文情歌翻譯</h4>
+            <p>精心挑選經典泰文歌曲，讓你透過歌詞更深入了解泰國音樂文化。</p>
+            <a href="https://www.instagram.com/reel/YOUR_LYRICS_REEL_3/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 節目訪談翻譯 — 3 個 IG Reels -->
+      <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-top:64px; margin-bottom:24px;">🎬 節目訪談翻譯</h3>
+      <div class="works__grid reveal">
+
+        <!-- ★ 節目訪談 Reel 1：請將 YOUR_TV_REEL_1 替換為實際 Reel ID -->
+        <div class="works__card">
+          <div class="works__card-media works__card-media--reel">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_TV_REEL_1/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="節目訪談翻譯 Reel 1"
+            ></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">節目訪談</span>
             <h4>電視節目即時翻譯</h4>
             <p>參與台灣電視節目的泰文翻譯工作，為藝人訪談提供即時中泰雙語口譯服務。</p>
+            <a href="https://www.instagram.com/reel/YOUR_TV_REEL_1/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
 
-        <!-- 媒體翻譯 -->
+        <!-- ★ 節目訪談 Reel 2：請將 YOUR_TV_REEL_2 替換為實際 Reel ID -->
         <div class="works__card">
-          <div class="works__card-media">
-            <img src="assets/works/media-01.jpg" alt="媒體訪談翻譯" />
+          <div class="works__card-media works__card-media--reel">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_TV_REEL_2/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="節目訪談翻譯 Reel 2"
+            ></iframe>
           </div>
           <div class="works__card-body">
-            <span class="works__card-tag">媒體翻譯</span>
+            <span class="works__card-tag">節目訪談</span>
+            <h4>藝人訪談口譯紀錄</h4>
+            <p>為泰國藝人來台活動提供專業口譯，確保訪談內容精準傳達。</p>
+            <a href="https://www.instagram.com/reel/YOUR_TV_REEL_2/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
+          </div>
+        </div>
+
+        <!-- ★ 節目訪談 Reel 3：請將 YOUR_TV_REEL_3 替換為實際 Reel ID -->
+        <div class="works__card">
+          <div class="works__card-media works__card-media--reel">
+            <iframe
+              src="https://www.instagram.com/reel/YOUR_TV_REEL_3/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="節目訪談翻譯 Reel 3"
+            ></iframe>
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">節目訪談</span>
             <h4>粉絲活動現場口譯</h4>
             <p>大型粉絲見面會、簽唱會的現場即時口譯，確保藝人與粉絲之間的零距離溝通。</p>
+            <a href="https://www.instagram.com/reel/YOUR_TV_REEL_3/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
       </div>
