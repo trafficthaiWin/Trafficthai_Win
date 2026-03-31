@@ -1,533 +1,1865 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 【修改重點：網頁分頁標題】 -->
-  <title>Kru Win | 泰語教學 ・ 翻譯 ・ 泰國文化推廣</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯</title>
+  <meta name="description" content="Win（阿灯）提供專業泰文教學、泰國旅遊 KOL 合作與影視歌詞翻譯服務。持有朱拉隆功大學泰文檢定證明，擁有豐富藝人翻譯與口譯實戰經驗。泰文課程、品牌合作、翻譯委託歡迎聯繫。" />
+  <meta name="keywords" content="泰文教學, 泰文老師, 泰國旅遊, KOL, 泰文翻譯, 歌詞翻譯, 朱拉隆功大學, Win, 阿灯, 泰文課程" />
+  <meta property="og:title" content="Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯" />
+  <meta property="og:description" content="Win（阿灯）— 專業泰文教學、泰國旅遊合作與影視歌詞翻譯。持有朱大泰文檢定證明。" />
+  <meta property="og:type" content="website" />
+  <!-- ★ 請替換為你的 GitHub Pages 網址 -->
+  <meta property="og:url" content="https://your-username.github.io/your-repo/" />
+  <link rel="canonical" href="https://your-username.github.io/your-repo/" />
 
+  <!-- Google Fonts: Anuphan（泰文）+ Noto Sans TC（中文備用） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================
+       CSS 變數與全域設定
+    ============================ */
     :root {
-      /* 【修改重點：網站主題色】如果想換其他顏色，可以修改這裡的色碼 */
-      --accent: #CD7A5A;       
-      --accent-light: #EBC1B3; 
-      --accent-dark: #9E563C;  
-      
-      --navy: #1A1F3A;
-      --navy-light: #2A3158;
-      --cream: #FAF6EE;
-      --cream-dark: #F0E8D8;
-      --text-dark: #1A1A1A;
-      --text-body: #3A3A3A;
-      --text-muted: #7A7A7A;
-      --white: #FFFFFF;
-      --section-gap: clamp(80px, 10vw, 140px);
+      --color-primary: #1a2a6c;
+      --color-primary-light: #2d3f8f;
+      --color-primary-dark: #0f1a45;
+      --color-accent: #e8b84b;
+      --color-accent-soft: #f5dfa0;
+      --color-bg: #ffffff;
+      --color-bg-alt: #f6f7fb;
+      --color-bg-warm: #faf9f7;
+      --color-text: #23272f;
+      --color-text-secondary: #5a6072;
+      --color-text-light: #8b90a0;
+      --color-border: #e2e4ea;
+      --color-border-light: #eff0f4;
+      --font-thai: 'Anuphan', sans-serif;
+      --font-zh: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --font-body: var(--font-zh);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(26,42,108,0.06);
+      --shadow-md: 0 4px 20px rgba(26,42,108,0.08);
+      --shadow-lg: 0 12px 40px rgba(26,42,108,0.12);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* ...(中間省略的 CSS 樣式維持不變)... */
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans TC', sans-serif; color: var(--text-body); background: var(--cream); line-height: 1.8; font-weight: 300; overflow-x: hidden; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); }
-    .section-label { font-family: 'Playfair Display', serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--navy); font-weight: 700; line-height: 1.3; margin-bottom: 20px; }
-    .section-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; line-height: 2; }
-    .accent-line { width: 50px; height: 2px; background: var(--accent); margin: 24px 0; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideRight { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
-    .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(250, 246, 238, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(205, 122, 90, 0.15); transition: box-shadow 0.3s ease; }
-    nav.scrolled { box-shadow: 0 2px 40px rgba(26, 31, 58, 0.08); }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px); display: flex; justify-content: space-between; align-items: center; height: 72px; }
-    .nav-logo { font-family: 'Anuphan', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); text-decoration: none; letter-spacing: 1px; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 400; letter-spacing: 1px; transition: color 0.3s; position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s ease; }
-    .nav-links a:hover { color: var(--navy); }
-    .nav-links a:hover::after { width: 100%; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { width: 24px; height: 2px; background: var(--navy); transition: all 0.3s ease; }
-    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 50%, #3A2F5A 100%); overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80vw; height: 80vw; border-radius: 50%; background: radial-gradient(circle, rgba(205, 122, 90, 0.12) 0%, transparent 70%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, var(--cream), transparent); pointer-events: none; }
-    .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 80%, rgba(205, 122, 90, 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(205, 122, 90, 0.04) 0%, transparent 50%); pointer-events: none; }
-    .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 120px clamp(20px, 5vw, 60px) 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-text { animation: slideRight 1s ease 0.3s both; }
-    .hero-greeting { font-family: 'Anuphan', sans-serif; font-size: 1.1rem; color: var(--accent-light); letter-spacing: 3px; margin-bottom: 20px; font-weight: 300; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5.5vw, 4.2rem); color: var(--white); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
-    .hero h1 em { font-style: italic; color: var(--accent-light); }
-    .hero-subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 2; margin-bottom: 40px; max-width: 480px; }
-    .hero-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
-    .hero-tag { padding: 8px 20px; border: 1px solid rgba(205, 122, 90, 0.4); border-radius: 100px; color: var(--accent-light); font-size: 0.82rem; letter-spacing: 1px; font-weight: 400; }
-    .hero-cta { display: inline-flex; align-items: center; gap: 12px; background: var(--accent); color: var(--white); text-decoration: none; padding: 16px 36px; font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; border-radius: 4px; transition: all 0.3s ease; }
-    .hero-cta:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(205, 122, 90, 0.3); }
-    .hero-cta svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
-    .hero-cta:hover svg { transform: translateX(4px); }
-    .hero-photo { display: flex; justify-content: center; align-items: center; animation: fadeIn 1.2s ease 0.6s both; }
-    .photo-frame { position: relative; width: clamp(280px, 24vw, 380px); height: clamp(340px, 30vw, 480px); border-radius: 200px 200px 20px 20px; overflow: hidden; border: 3px solid rgba(205, 122, 90, 0.3); }
-    .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-    .photo-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--navy-light), rgba(205, 122, 90, 0.2)); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--accent-light); font-size: 0.85rem; gap: 12px; }
-    .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.5; }
-    .photo-decor { position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border: 2px solid var(--accent); border-radius: 50%; opacity: 0.2; }
-    .photo-decor-2 { position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; border: 2px solid var(--accent); opacity: 0.15; }
-    .about { padding: var(--section-gap) 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .about-text p { margin-bottom: 20px; font-size: 1rem; line-height: 2; }
-    .credentials { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-    .credential-item { display: flex; gap: 20px; align-items: flex-start; }
-    .credential-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
-    .credential-icon svg { width: 22px; height: 22px; color: var(--accent-light); }
-    .credential-info h4 { font-weight: 500; color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
-    .credential-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(205, 122, 90, 0.2); }
-    .stat-item { text-align: center; }
-    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 700; }
-    .stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; letter-spacing: 1px; }
-    .services { padding: var(--section-gap) 0; background: var(--navy); position: relative; overflow: hidden; }
-    .services::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 10% 90%, rgba(205, 122, 90, 0.06), transparent 50%), radial-gradient(circle at 90% 10%, rgba(205, 122, 90, 0.04), transparent 50%); pointer-events: none; }
-    .services .section-title { color: var(--white); }
-    .services .section-desc { color: rgba(255,255,255,0.5); }
-    .services-header { text-align: center; margin-bottom: 60px; }
-    .services-header .section-desc { margin: 0 auto; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; position: relative; }
-    .service-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(205, 122, 90, 0.15); border-radius: 12px; padding: 44px 32px; transition: all 0.4s ease; position: relative; overflow: hidden; }
-    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); opacity: 0; transition: opacity 0.4s ease; }
-    .service-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-6px); border-color: rgba(205, 122, 90, 0.3); }
-    .service-card:hover::before { opacity: 1; }
-    .service-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(205, 122, 90, 0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
-    .service-icon svg { width: 26px; height: 26px; color: var(--accent-light); }
-    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--white); font-weight: 700; margin-bottom: 16px; }
-    .service-card p { color: rgba(255,255,255,0.5); font-size: 0.92rem; line-height: 1.9; margin-bottom: 24px; }
-    .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .service-features li { color: rgba(255,255,255,0.6); font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
-    .service-features li::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
-    .media { padding: var(--section-gap) 0; }
-    .media-header { margin-bottom: 60px; }
-    .media-tabs { display: flex; gap: 8px; margin-top: 32px; border-bottom: 1px solid rgba(205, 122, 90, 0.2); padding-bottom: 0; }
-    .media-tab { padding: 12px 28px; background: none; border: none; font-family: 'Noto Sans TC', sans-serif; font-size: 0.88rem; font-weight: 400; color: var(--text-muted); cursor: pointer; position: relative; transition: color 0.3s; letter-spacing: 0.5px; }
-    .media-tab::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s ease; }
-    .media-tab.active { color: var(--navy); font-weight: 500; }
-    .media-tab.active::after { transform: scaleX(1); }
-    .media-tab:hover { color: var(--navy); }
-    .media-panel { display: none; padding-top: 40px; }
-    .media-panel.active { display: block; }
-    
-    /* 【修改重點：將作品集強制設定為 3 欄，並優化響應式】 */
-    .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .media-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(26, 31, 58, 0.06); transition: all 0.3s ease; display: flex; flex-direction: column; }
-    .media-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26, 31, 58, 0.1); }
-    
-    /* 【修改重點：調整影片容器，讓 IG 嵌入更服貼】 */
-    .media-card-embed { width: 100%; height: 580px; background: #fafafa; position: relative; }
-    .media-card-embed iframe, .media-card-embed video { width: 100%; height: 100%; border: none; object-fit: cover; }
-    .media-card-embed.podcast { height: auto; min-height: 160px; }
-    
-    .media-card-info { padding: 20px 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; }
-    .media-card-info h4 { font-weight: 500; color: var(--navy); font-size: 0.95rem; margin-bottom: 6px; }
-    .media-card-info p { font-size: 0.82rem; color: var(--text-muted); }
-    .media-card-tag { display: inline-block; padding: 4px 12px; background: rgba(205, 122, 90, 0.1); color: var(--accent-dark); font-size: 0.72rem; border-radius: 100px; letter-spacing: 0.5px; margin-bottom: 10px; font-weight: 500; align-self: flex-start; }
-    .embed-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #fafafa, #f0f0f0); color: var(--text-muted); font-size: 0.85rem; gap: 12px; padding: 24px; text-align: center; }
-    .embed-placeholder svg { width: 40px; height: 40px; opacity: 0.3; }
-    .embed-placeholder code { background: rgba(0,0,0,0.06); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; word-break: break-all; }
-    .timeline-section { padding: var(--section-gap) 0; background: var(--cream-dark); }
-    .timeline { position: relative; max-width: 800px; margin: 48px auto 0; padding-left: 40px; }
-    .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), rgba(205, 122, 90, 0.1)); }
-    .timeline-item { position: relative; margin-bottom: 48px; }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-dot { position: absolute; left: -34px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--cream-dark); box-shadow: 0 0 0 3px rgba(205, 122, 90, 0.2); }
-    .timeline-year { font-family: 'Playfair Display', serif; font-size: 0.82rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; font-weight: 700; }
-    .timeline-item h4 { font-size: 1.1rem; color: var(--navy); font-weight: 500; margin-bottom: 8px; }
-    .timeline-item p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; }
-    .enrollment { padding: var(--section-gap) 0; }
-    .enrollment-wrapper { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 60px rgba(26, 31, 58, 0.07); display: grid; grid-template-columns: 1fr 1fr; }
-    .enrollment-info { padding: 60px; background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
-    .enrollment-info::before { content: ''; position: absolute; bottom: -40%; right: -20%; width: 60%; height: 80%; border-radius: 50%; background: rgba(205, 122, 90, 0.08); }
-    .enrollment-info h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; line-height: 1.3; }
-    .enrollment-info p { color: rgba(255,255,255,0.6); line-height: 2; margin-bottom: 36px; font-size: 0.95rem; }
-    .enrollment-detail { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.7); font-size: 0.92rem; }
-    .enrollment-detail svg { width: 20px; height: 20px; color: var(--accent-light); flex-shrink: 0; }
-    .enrollment-form { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-    .enrollment-form h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
-    .enrollment-form > p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 32px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.5px; font-weight: 400; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; border: 1px solid #e0dcd4; border-radius: 8px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.92rem; color: var(--text-dark); background: var(--cream); transition: border-color 0.3s; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .btn-submit { width: 100%; padding: 16px; background: var(--accent); color: var(--white); border: none; border-radius: 8px; font-family: 'Noto Sans TC', sans-serif; font-size: 0.95rem; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
-    .btn-submit:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(205, 122, 90, 0.3); }
-    footer { background: var(--navy); padding: 60px 0 36px; color: rgba(255,255,255,0.5); }
-    .footer-top { display: flex; justify-content: space-between; align-items: start; margin-bottom: 48px; flex-wrap: wrap; gap: 40px; }
-    .footer-brand { max-width: 320px; }
-    .footer-brand .nav-logo { color: var(--white); font-size: 1.3rem; display: inline-block; margin-bottom: 16px; }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.8; }
-    .footer-social { display: flex; gap: 14px; }
-    .footer-social a { width: 44px; height: 44px; border-radius: 10px; border: 1px solid rgba(205, 122, 90, 0.25); display: flex; align-items: center; justify-content: center; color: var(--accent-light); text-decoration: none; transition: all 0.3s; }
-    .footer-social a:hover { background: rgba(205, 122, 90, 0.15); border-color: var(--accent); }
-    .footer-social a svg { width: 18px; height: 18px; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; font-size: 0.78rem; flex-wrap: wrap; gap: 12px; }
-    
-    /* 【修改重點：針對平板與手機的排版調整】 */
-    @media (max-width: 1024px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 900px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .hero-photo { order: -1; } .hero-subtitle { margin: 0 auto 40px; } .hero-tags { justify-content: center; } .about-grid { grid-template-columns: 1fr; gap: 40px; } .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .enrollment-wrapper { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 700px) { .nav-links { display: none; } .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: rgba(250, 246, 238, 0.98); backdrop-filter: blur(20px); padding: 24px 32px; gap: 20px; border-bottom: 1px solid rgba(205, 122, 90, 0.15); } .hamburger { display: flex; } .enrollment-info, .enrollment-form { padding: 40px 28px; } .form-row { grid-template-columns: 1fr; } .media-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } .footer-top { flex-direction: column; } .media-card-embed { height: 500px; } }
+    /* ============================
+       Reset & Base
+    ============================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 泰文字使用 Anuphan */
+    .thai, [lang="th"] {
+      font-family: var(--font-thai);
+    }
+
+    /* ============================
+       導覽列 Navbar
+    ============================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border-light);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .navbar__logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar__logo-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .navbar__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .navbar__links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      position: relative;
+      transition: color var(--transition);
+      padding: 4px 0;
+    }
+
+    .navbar__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary);
+      transition: width var(--transition);
+    }
+
+    .navbar__links a:hover,
+    .navbar__links a.active {
+      color: var(--color-primary);
+    }
+
+    .navbar__links a:hover::after,
+    .navbar__links a.active::after {
+      width: 100%;
+    }
+
+    /* 漢堡選單按鈕 */
+    .navbar__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .navbar__toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ============================
+       Hero Section
+    ============================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--color-bg);
+      overflow: hidden;
+      padding-top: 68px;
+    }
+
+    .hero__bg-pattern {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      opacity: 0.035;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 30% 40%, var(--color-primary) 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, var(--color-primary) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero__content {
+      text-align: center;
+      max-width: 800px;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 32px;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .hero__tag .thai {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .hero__title {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+      animation: fadeInUp 0.8s 0.15s ease both;
+    }
+
+    .hero__title span {
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero__title .highlight {
+      color: var(--color-primary);
+      position: relative;
+    }
+
+    .hero__title .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: var(--color-accent-soft);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero__separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0;
+      animation: fadeInUp 0.8s 0.3s ease both;
+    }
+
+    .hero__separator span {
+      font-family: var(--font-thai);
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      font-weight: 300;
+    }
+
+    .hero__separator::before,
+    .hero__separator::after {
+      content: '';
+      width: 48px;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .hero__subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+      max-width: 580px;
+      margin: 0 auto 40px;
+      animation: fadeInUp 0.8s 0.4s ease both;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s 0.55s ease both;
+    }
+
+    /* 按鈕 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn--primary {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--color-primary-light);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+    }
+
+    .btn--outline:hover {
+      background: var(--color-primary);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn--small {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* ============================
+       Section 通用
+    ============================ */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section--alt {
+      background: var(--color-bg-alt);
+    }
+
+    .section--warm {
+      background: var(--color-bg-warm);
+    }
+
+    .section__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section__label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .section__title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .section__desc {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================
+       關於我 About
+    ============================ */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about__text h3 {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .about__text p {
+      color: var(--color-text-secondary);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .about__stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .about__stat-item {
+      text-align: center;
+    }
+
+    .about__stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .about__stat-label {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      margin-top: 6px;
+    }
+
+    /* 認證卡片 */
+    .about__cert-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+      position: sticky;
+      top: 100px;
+    }
+
+    .about__cert-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .about__cert-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-bottom: 20px;
+    }
+
+    .about__cert-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    /* ★ 成績單縮圖：請將 src 替換為實際成績單圖片路徑 */
+    .about__cert-thumb {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .about__cert-thumb:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .about__cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about__cert-thumb__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,42,108,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .about__cert-thumb:hover .about__cert-thumb__overlay {
+      opacity: 1;
+    }
+
+    .about__cert-thumb__overlay span {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ============================
+       Lightbox 燈箱
+    ============================ */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .lightbox__close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .lightbox__img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      transform: scale(0.9);
+      transition: transform 0.35s ease;
+    }
+
+    .lightbox.open .lightbox__img {
+      transform: scale(1);
+    }
+
+    /* ============================
+       社群作品 Portfolio
+    ============================ */
+    .portfolio__tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .portfolio__tab {
+      padding: 10px 24px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 100px;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .portfolio__tab:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .portfolio__tab.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff;
+    }
+
+    .portfolio__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio__item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border-light);
+      transition: var(--transition);
+    }
+
+    .portfolio__item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .portfolio__item[data-category] {
+      display: block;
+    }
+
+    .portfolio__item.hidden {
+      display: none;
+    }
+
+    /* IG Reels 9:16 嚴格比例 */
+    .portfolio__item--reel .portfolio__media {
+      aspect-ratio: 9 / 16;
+    }
+
+    /* 一般貼文 1:1 或 4:5 */
+    .portfolio__item--post .portfolio__media {
+      aspect-ratio: 4 / 5;
+    }
+
+    .portfolio__media {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--color-bg-alt);
+    }
+
+    .portfolio__media img,
+    .portfolio__media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .portfolio__item:hover .portfolio__media img,
+    .portfolio__item:hover .portfolio__media video {
+      transform: scale(1.04);
+    }
+
+    .portfolio__info {
+      padding: 16px 20px;
+    }
+
+    .portfolio__info h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .portfolio__info p {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+
+    .portfolio__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    .portfolio__link:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================
+       專業譯作 Works
+    ============================ */
+    .works__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .works__card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .works__card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .works__card-media {
+      aspect-ratio: 16 / 9;
+      background: var(--color-bg-alt);
+      overflow: hidden;
+    }
+
+    .works__card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .works__card-media--reel {
+      aspect-ratio: 9 / 16;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    .works__card-body {
+      padding: 24px;
+    }
+
+    .works__card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--color-primary);
+      background: rgba(26,42,108,0.06);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .works__card-body h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .works__card-body p {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Spotify 嵌入區 */
+    .works__spotify {
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .works__spotify h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--color-primary-dark);
+    }
+
+    .works__spotify-embed {
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border-light);
+    }
+
+    /* ★ 請替換為實際的 Spotify Podcast 嵌入連結 */
+    .works__spotify-embed iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ============================
+       泰文課程 Courses
+    ============================ */
+    .courses__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .course-card {
+      background: var(--color-bg);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .course-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .course-card:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .course-card__badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: rgba(232,184,75,0.12);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .course-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .course-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .course-card__price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .course-card__price small {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--color-text-light);
+    }
+
+    .course-card__features {
+      list-style: none;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .course-card__features li {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .course-card__features li::before {
+      content: '✓';
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.8rem;
+    }
+
+    /* 講義截圖區 */
+    .courses__materials {
+      margin-top: 64px;
+      text-align: center;
+    }
+
+    .courses__materials h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--color-primary-dark);
+    }
+
+    .courses__materials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .courses__material-item {
+      aspect-ratio: 4 / 3;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+    }
+
+    .courses__material-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ============================
+       聯絡表單 Contact
+    ============================ */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact__info h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 16px;
+    }
+
+    .contact__info p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .contact__channels {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact__channel {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.92rem;
+      color: var(--color-text-secondary);
+    }
+
+    .contact__channel-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* 表單 */
+    .contact__form {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: border-color var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-primary);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235a6072' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .contact__form .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    /* ============================
+       Footer
+    ============================ */
+    .footer {
+      background: var(--color-primary-dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 0 32px;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer__brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer__links a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+
+    .footer__links a:hover {
+      color: #fff;
+    }
+
+    .footer__copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* ============================
+       Animations
+    ============================ */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================
+       RWD 響應式
+    ============================ */
+    @media (max-width: 900px) {
+      .about__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about__cert-card {
+        position: static;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar__links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: transform 0.35s ease, opacity 0.35s ease;
+        box-shadow: var(--shadow-md);
+      }
+
+      .navbar__links.open {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .navbar__links a {
+        display: block;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+
+      .navbar__links a::after { display: none; }
+
+      .navbar__toggle {
+        display: flex;
+      }
+
+      .navbar__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .navbar__toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .navbar__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero__title {
+        font-size: clamp(2rem, 7vw, 2.6rem);
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section__header {
+        margin-bottom: 40px;
+      }
+
+      .portfolio__grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+      }
+
+      .about__stats {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .contact__form {
+        padding: 24px;
+      }
+
+      .footer__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .portfolio__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .courses__grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- 【修改重點：導覽列】 -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Kru <span>Win</span></a>
-      <ul class="nav-links" id="navLinks">
+  <!-- ==========================================
+       導覽列 Navbar
+  ========================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo">
+        <span class="navbar__logo-dot"></span>
+        Win 泰文老師
+      </a>
+      <ul class="navbar__links" id="navLinks">
         <li><a href="#about">關於我</a></li>
-        <li><a href="#services">服務項目</a></li>
-        <li><a href="#media">作品集</a></li>
-        <li><a href="#experience">學經歷</a></li>
-        <li><a href="#enrollment">課程報名</a></li>
+        <li><a href="#portfolio">社群作品</a></li>
+        <li><a href="#works">專業譯作</a></li>
+        <li><a href="#courses">泰文課程</a></li>
+        <li><a href="#contact">聯絡諮詢</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+      <button class="navbar__toggle" id="navToggle" aria-label="選單">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
 
-  <!-- 【修改重點：首頁主視覺區塊 (Hero)】 -->
-  <section class="hero" id="home">
-    <div class="hero-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-greeting">สวัสดีค่ะ / สวัสดีครับ</div>
-        <h1>專業泰文老師<br>泰國文化推廣 <em>泰文翻譯</em></h1>
-        <p class="hero-subtitle">
-          <!-- 【修改重點：個人簡介副標題】 -->
-          朱拉隆功大學背景，結合線上教學、泰國文化推廣與專業口筆譯經驗，為你打開通往泰國的大門。
+  <!-- ==========================================
+       首頁英雄區 Hero
+  ========================================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-pattern"></div>
+    <div class="hero__content">
+      <div class="hero__tag">
+        <span class="thai">สวัสดีค่ะ</span> — 你好，我是 Win（阿灯）
+      </div>
+      <h1 class="hero__title">
+        <span class="highlight">泰文教學</span> ×
+        旅遊靈魂 ×
+        <span class="highlight">專業翻譯</span>
+      </h1>
+      <div class="hero__separator">
+        <span class="thai">✦</span>
+      </div>
+      <p class="hero__subtitle">
+        朱拉隆功大學泰文檢定認證、深耕泰文教學與翻譯多年。<br />
+        從藝人專訪到歌詞影視翻譯，用語言連結台灣與泰國的每一刻。
+      </p>
+      <div class="hero__actions">
+        <a href="#courses" class="btn btn--primary">了解課程方案</a>
+        <a href="#contact" class="btn btn--outline">合作洽詢</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       關於我 About Me
+  ========================================== -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">About Me</span>
+        <h2 class="section__title">關於 Win 老師</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <h3>語言是一座橋——我是造橋的人</h3>
+          <p>
+            我是 Win，大家也叫我阿灯。從對泰文的熱愛出發，一路走進泰國朱拉隆功大學精進語言能力，
+            並在泰國語言學校累積了扎實的教學方法論。多年來，我持續為台灣粉絲與媒體搭建通往泰國文化的橋樑。
+          </p>
+          <p>
+            在翻譯與口譯的實戰場域中，我曾為多位泰國藝人進行專訪翻譯與即時口譯，
+            涵蓋影視節目、音樂歌詞到品牌活動。同時，我也以泰國旅遊 KOL 的身份，
+            創作深度探店內容，與眾多品牌展開商業合作。
+          </p>
+          <p>
+            無論你想學泰文、需要專業翻譯、或尋找泰國在地的合作夥伴，我都期待與你的交集。
+          </p>
+          <div class="about__stats">
+            <div class="about__stat-item">
+              <div class="about__stat-number">5+</div>
+              <div class="about__stat-label">年教學經驗</div>
+            </div>
+            <div class="about__stat-item">
+              <div class="about__stat-number">50+</div>
+              <div class="about__stat-label">翻譯/口譯案件</div>
+            </div>
+            <div class="about__stat-item">
+              <div class="about__stat-number">10K+</div>
+              <div class="about__stat-label">社群粉絲</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 認證卡片 -->
+        <div class="about__cert-card reveal">
+          <div class="about__cert-icon">🎓</div>
+          <h4>朱大泰文檢定認證</h4>
+          <p>朱拉隆功大學官方泰文考試成績單</p>
+          <!-- ★ 成績單圖片路徑：請將 src 替換為實際圖片路徑，例如 "assets/cert.jpg" -->
+          <div class="about__cert-thumb" id="certThumb" onclick="openLightbox()">
+            <img src="assets/cert-placeholder.jpg" alt="朱大泰文考試成績單" onerror="this.style.display='none'" />
+            <div class="about__cert-thumb__overlay">
+              <span>點擊查看完整成績單</span>
+            </div>
+          </div>
+          <button class="btn btn--outline btn--small" onclick="openLightbox()">
+            查看專業認證
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Lightbox 成績單燈箱
+  ========================================== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="關閉">✕</button>
+    <!-- ★ 請將 src 替換為實際成績單圖片路徑 -->
+    <img class="lightbox__img" id="lightboxImg" src="assets/cert-placeholder.jpg" alt="朱大泰文考試成績單完整版" />
+  </div>
+
+  <!-- ==========================================
+       社群作品 Portfolio
+  ========================================== -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Portfolio</span>
+        <h2 class="section__title">社群作品集</h2>
+        <p class="section__desc">
+          從藝人專訪到泰國探店，每一則內容都是文化交流的縮影
         </p>
-        <div class="hero-tags">
-          <!-- 【修改重點：三個代表你的標籤】 -->
-          <span class="hero-tag">線上泰語教學</span>
-          <span class="hero-tag">泰國 KOL</span>
-          <span class="hero-tag">口譯 ・ 筆譯</span>
-        </div>
-        <a href="#enrollment" class="hero-cta">
-          預約試聽課程
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="hero-photo">
-        <div class="photo-frame">
-          <!-- 【修改重點：個人大頭照】 -->
-          <!-- 若要換成你的照片，請把下面的 <div class="photo-placeholder">...</div> 刪除，並將下一行的註解打開 (去掉 <!-- 和 -->)，將 src 換成你的圖片網址 -->
-          <!-- <img src="你的圖片網址.jpg" alt="Kru Win 照片"> -->
-          
-          <div class="photo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-4 3.5-7 7-7s7 3 7 7"/></svg>
-            <span>放置個人照片</span>
-            <span style="font-size:0.72rem;opacity:0.6;">建議尺寸 380×480px</span>
-          </div>
-        </div>
-        <div class="photo-decor"></div>
-        <div class="photo-decor-2"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 【修改重點：關於我 (About)】 -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text animate-on-scroll">
-          <span class="section-label">About Me</span>
-          <h2 class="section-title">深耕泰語教學<br>連結台泰文化</h2>
-          <div class="accent-line"></div>
-          <!-- 【修改重點：自我介紹內文】 -->
-          <p>我畢業於泰國頂尖學府——朱拉隆功大學（จุฬาลงกรณ์มหาวิทยาลัย），在泰國的求學期間深入了解了泰國語言、文化與社會脈絡，並通過泰語檢定考試，具備紮實的語言能力。</p>
-          <p>除了線上泰語教學，我同時也是活躍於社群平台的泰國文化推廣者 (KOL)，以全泰文製作景點介紹與明星訪問內容，並經營 Podcast 節目，讓更多人認識泰語與泰國文化的魅力。</p>
-          <p>在翻譯領域，我提供中泰雙語的書面翻譯與口譯服務，涵蓋商務、觀光、媒體等多元領域。</p>
-        </div>
-        <div class="animate-on-scroll" style="animation-delay: 0.2s;">
-          <div class="credentials">
-            <!-- 【修改重點：四個核心優勢/認證】 -->
-            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></div><div class="credential-info"><h4>朱拉隆功大學</h4><p>泰國排名第一的頂尖學府就讀經歷</p></div></div>
-            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="credential-info"><h4>泰語檢定合格</h4><p>具備官方認證的泰語能力證明</p></div></div>
-            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg></div><div class="credential-info"><h4>社群文化推廣</h4><p>以全泰文製作 IG / Podcast 內容</p></div></div>
-            <div class="credential-item"><div class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div><div class="credential-info"><h4>中泰口筆譯</h4><p>商務、觀光、媒體等多元領域翻譯</p></div></div>
-          </div>
-          <div class="stats-row">
-            <!-- 【修改重點：數據里程碑】你可以改數字或文字 -->
-            <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">學生人數</div></div>
-            <div class="stat-item"><div class="stat-number">3+</div><div class="stat-label">教學年資</div></div>
-            <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">課堂時數</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 【修改重點：服務項目 (Services)】 -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-header animate-on-scroll">
-        <span class="section-label">Services</span>
-        <h2 class="section-title">三大專業領域</h2>
-        <p class="section-desc">結合教學、推廣與翻譯，提供全方位的泰語相關服務。</p>
-      </div>
-      <div class="services-grid">
-        <!-- 服務卡片 1 -->
-        <div class="service-card animate-on-scroll">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
-          <!-- 【修改重點：服務標題與內容】 -->
-          <h3>線上泰語教學</h3>
-          <p>一對一或小班制線上課程，從零基礎到進階會話，依照你的程度量身打造學習計畫。</p>
-          <ul class="service-features"><li>零基礎入門 — 泰文字母與發音</li><li>日常生活會話與旅遊泰語</li><li>商務泰語與正式書寫</li><li>泰語檢定考試準備</li></ul>
-        </div>
-        <!-- 服務卡片 2 -->
-        <div class="service-card animate-on-scroll" style="animation-delay:0.15s;">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
-          <h3>泰國文化 KOL</h3>
-          <p>以全泰文創作社群內容，宣傳泰國景點、訪問泰國明星，並經營 Podcast 節目推廣泰國文化。</p>
-          <ul class="service-features"><li>IG Reels — 全泰文景點宣傳</li><li>IG 專訪 — 泰國明星訪問</li><li>Podcast — 泰國文化深度分享</li><li>品牌合作與商業推廣</li></ul>
-        </div>
-        <!-- 服務卡片 3 -->
-        <div class="service-card animate-on-scroll" style="animation-delay:0.3s;">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h12M9 3v2m1.048 3.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
-          <h3>專業中泰翻譯</h3>
-          <p>提供精準的中泰雙向翻譯服務，涵蓋書面筆譯與現場口譯，具備多元領域經驗。</p>
-          <ul class="service-features"><li>商務文件與合約翻譯</li><li>觀光導覽與活動口譯</li><li>媒體內容與字幕翻譯</li><li>隨行口譯與會議翻譯</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 【修改重點：作品集 (Media - IG & Podcast 嵌入位置)】 -->
-  <section class="media" id="media">
-    <div class="container">
-      <div class="media-header animate-on-scroll">
-        <span class="section-label">Portfolio</span>
-        <h2 class="section-title">作品集</h2>
-        <p class="section-desc">精選社群內容與 Podcast 節目，展現我在泰國文化推廣上的多元面向。</p>
-        <div class="media-tabs">
-          <button class="media-tab active" data-tab="reels-travel">景點宣傳</button>
-          <button class="media-tab" data-tab="reels-interview">明星訪問</button>
-          <button class="media-tab" data-tab="podcast">Podcast</button>
-        </div>
       </div>
 
-      <!-- 面板 1：景點宣傳 -->
-      <div class="media-panel active" id="reels-travel">
-        <div class="media-grid">
-          
-          <!-- 第一個影片：最乾淨的 IG 嵌入模式 -->
-          <div class="media-card">
-            <div class="media-card-embed">
-              <!-- 【修改重點：只需填入你的 ID，並加上 /embed ，這樣能隱藏底下又臭又長的貼文敘述】 -->
-              <iframe src="https://www.instagram.com/reel/DVBnIL4D_HU/embed" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="media-card-info">
-              <span class="media-card-tag">景點宣傳</span>
-              <h4>泰國手搖飲介紹（請替換）</h4>
-              <p>以全泰文介紹泰國必喝的在地飲料，帶你深入體驗泰國之美。</p>
-            </div>
-          </div>
-          
-          <!-- 第二個影片：最乾淨的 IG 嵌入模式 -->
-          <div class="media-card">
-            <div class="media-card-embed">
-              <!-- 若有第二支影片，把 DVBnIL4D_HU 換成新影片的 ID 即可 -->
-              <iframe src="https://www.instagram.com/reel/DVBnIL4D_HU/embed" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-            <div class="media-card-info">
-              <span class="media-card-tag">景點宣傳</span>
-              <h4>泰國景點介紹標題（請替換）</h4>
-              <p>以全泰文介紹泰國必去景點。</p>
-            </div>
-          </div>
-
-          <!-- 第三個影片：純影片檔案模式 (如果你不想要任何 IG 介面，請用這個方法) -->
-          <div class="media-card">
-            <div class="media-card-embed">
-              <!-- 【修改重點：如果你有影片檔(mp4)，放在這裡畫面最乾淨，完全沒有 IG 標題】 -->
-              <!-- 只要將 src="你的影片網址.mp4" 替換掉即可。如果沒有影片檔，可以把這行刪掉，改回上面的 iframe 模式 -->
-              <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls muted poster="你的預覽圖.jpg"></video>
-            </div>
-            <div class="media-card-info">
-              <span class="media-card-tag">景點宣傳</span>
-              <h4>無 IG 介面的純影片範例</h4>
-              <p>如果你手邊有原始影片檔，直接用這個方式放入，畫面最漂亮、不會有任何黑邊或 IG 帳號標題。</p>
-            </div>
-          </div>
-
-        </div>
+      <div class="portfolio__tabs reveal">
+        <button class="portfolio__tab active" data-filter="all">全部作品</button>
+        <button class="portfolio__tab" data-filter="interview">藝人專訪</button>
+        <button class="portfolio__tab" data-filter="explore">泰國探店</button>
+        <button class="portfolio__tab" data-filter="collab">品牌合作</button>
       </div>
 
-      <!-- 面板 2：明星訪問 -->
-      <div class="media-panel" id="reels-interview">
-        <div class="media-grid">
-          <div class="media-card">
-            <div class="media-card-embed">
-              <!-- 【修改重點：IG 貼文/Reels 嵌入位置 3】同上 -->
-              <div class="embed-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
-                <span>IG Post / Reel 嵌入區域</span>
-              </div>
-            </div>
-            <div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人，深入對話交流。</p></div>
+      <div class="portfolio__grid reveal">
+        <!-- ★ 以下作品項目請替換 img src 與 IG 連結 -->
+
+        <!-- 藝人專訪 — Reel 格式 9:16 -->
+        <div class="portfolio__item portfolio__item--reel" data-category="interview">
+          <div class="portfolio__media">
+            <!-- ★ 替換為實際圖片路徑 -->
+            <img src="assets/portfolio/interview-01.jpg" alt="藝人專訪影片 1" />
           </div>
-          <div class="media-card">
-            <div class="media-card-embed">
-              <!-- 【修改重點：IG 貼文/Reels 嵌入位置 4】同上 -->
-              <div class="embed-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M18 6h.01"/></svg>
-                <span>IG Post / Reel 嵌入區域</span>
-              </div>
-            </div>
-            <div class="media-card-info"><span class="media-card-tag">明星訪問</span><h4>訪問泰國明星標題（請替換）</h4><p>全泰文訪問泰國知名藝人。</p></div>
+          <div class="portfolio__info">
+            <h4>藝人專訪 Reel</h4>
+            <p>專訪翻譯 — 泰文即時口譯</p>
+            <!-- ★ 替換為實際 IG Reels 連結 -->
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_1" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
-      </div>
 
-      <!-- 面板 3：Podcast -->
-      <div class="media-panel" id="podcast">
-        <div class="media-grid">
-          <div class="media-card">
-            <div class="media-card-embed podcast">
-              <!-- 【修改重點：Spotify Podcast 嵌入位置 1】請把 placeholder 換成 Spotify 提供的 iframe -->
-              <div class="embed-placeholder" style="min-height:160px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg>
-                <span>Spotify Podcast 嵌入區域</span>
-              </div>
-            </div>
-            <div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>透過 Podcast 分享泰國文化與泰語學習心得。</p></div>
+        <div class="portfolio__item portfolio__item--reel" data-category="interview">
+          <div class="portfolio__media">
+            <img src="assets/portfolio/interview-02.jpg" alt="藝人專訪影片 2" />
           </div>
-          <div class="media-card">
-            <div class="media-card-embed podcast">
-              <!-- 【修改重點：Spotify Podcast 嵌入位置 2】同上 -->
-              <div class="embed-placeholder" style="min-height:160px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg>
-                <span>Spotify Podcast 嵌入區域</span>
-              </div>
-            </div>
-            <div class="media-card-info"><span class="media-card-tag">Podcast</span><h4>Podcast 節目標題（請替換）</h4><p>深入探討泰國文化的各個面向。</p></div>
+          <div class="portfolio__info">
+            <h4>藝人現場口譯</h4>
+            <p>粉絲見面會即時翻譯紀錄</p>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_2" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+          </div>
+        </div>
+
+        <!-- 泰國探店 — Reel 格式 -->
+        <div class="portfolio__item portfolio__item--reel" data-category="explore">
+          <div class="portfolio__media">
+            <img src="assets/portfolio/explore-01.jpg" alt="泰國探店影片 1" />
+          </div>
+          <div class="portfolio__info">
+            <h4>曼谷隱藏美食</h4>
+            <p>在地人私藏清單大公開</p>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_3" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+          </div>
+        </div>
+
+        <div class="portfolio__item portfolio__item--reel" data-category="explore">
+          <div class="portfolio__media">
+            <img src="assets/portfolio/explore-02.jpg" alt="泰國探店影片 2" />
+          </div>
+          <div class="portfolio__info">
+            <h4>清邁咖啡之旅</h4>
+            <p>文青必訪手沖咖啡店</p>
+            <a href="https://www.instagram.com/reel/YOUR_REEL_ID_4" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
+          </div>
+        </div>
+
+        <!-- 品牌合作 — 貼文格式 4:5 -->
+        <div class="portfolio__item portfolio__item--post" data-category="collab">
+          <div class="portfolio__media">
+            <img src="assets/portfolio/collab-01.jpg" alt="品牌合作貼文 1" />
+          </div>
+          <div class="portfolio__info">
+            <h4>品牌聯名合作</h4>
+            <p>泰國在地品牌推廣企劃</p>
+            <a href="https://www.instagram.com/p/YOUR_POST_ID_1" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
+          </div>
+        </div>
+
+        <div class="portfolio__item portfolio__item--post" data-category="collab">
+          <div class="portfolio__media">
+            <img src="assets/portfolio/collab-02.jpg" alt="品牌合作貼文 2" />
+          </div>
+          <div class="portfolio__info">
+            <h4>旅遊品牌合作</h4>
+            <p>飯店 × 旅遊深度體驗</p>
+            <a href="https://www.instagram.com/p/YOUR_POST_ID_2" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 【修改重點：學經歷時間軸 (Experience)】 -->
-  <section class="timeline-section" id="experience">
+  <!-- ==========================================
+       專業譯作與媒體訪談 Works
+  ========================================== -->
+  <section class="section section--warm" id="works">
     <div class="container">
-      <div class="animate-on-scroll">
-        <span class="section-label">Experience</span>
-        <h2 class="section-title">學習與經歷</h2>
-        <p class="section-desc">從學術到實務，一步步累積泰語教學與翻譯的專業能力。</p>
+      <div class="section__header reveal">
+        <span class="section__label">Works & Media</span>
+        <h2 class="section__title">專業譯作與媒體訪談</h2>
+        <p class="section__desc">
+          歌詞翻譯、電視節目訪談、Podcast——用翻譯說好每個故事
+        </p>
       </div>
-      <div class="timeline">
-        <!-- 【修改重點：可以在這裡修改年份、標題與敘述】 -->
-        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 學術背景 —</div><h4>朱拉隆功大學 จุฬาลงกรณ์มหาวิทยาลัย</h4><p>就讀泰國排名第一的頂尖學府，深入學習泰語語言學、泰國文化與社會研究，奠定紮實的學術基礎。在泰國的生活經驗讓我對語言有了超越課本的理解。</p></div>
-        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 語言認證 —</div><h4>泰語檢定考試合格</h4><p>通過泰語能力檢定考試，取得官方認可的語言能力證明，確保教學與翻譯的專業品質。（請在此補充具體的檢定名稱與等級）</p></div>
-        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 社群經營 —</div><h4>泰國文化 KOL ・ 全泰文內容創作</h4><p>在 Instagram 以全泰文製作景點宣傳 Reels 與泰國明星訪問內容，同時經營 Podcast 節目推廣泰國文化，讓更多人認識泰語的魅力。</p></div>
-        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 翻譯事業 —</div><h4>中泰專業口筆譯</h4><p>提供中泰雙語翻譯服務，涵蓋商務文件、觀光導覽、媒體內容等多元領域，累積豐富的口譯與筆譯實戰經驗。</p></div>
-        <div class="timeline-item animate-on-scroll"><div class="timeline-dot"></div><div class="timeline-year">— 線上教學 —</div><h4>線上泰語教學・持續至今</h4><p>開設線上泰語課程，從零基礎到進階程度，為學生量身打造學習計畫，幫助超過百位學生踏上泰語學習之路。</p></div>
+
+      <div class="works__grid reveal">
+        <!-- 歌詞翻譯 Reel -->
+        <div class="works__card">
+          <div class="works__card-media works__card-media--reel">
+            <!-- ★ 替換為實際歌詞翻譯 Reel 截圖 -->
+            <img src="assets/works/lyrics-01.jpg" alt="歌詞翻譯 Reel" />
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">歌詞翻譯</span>
+            <h4>泰文歌曲中譯 Reel</h4>
+            <p>精選泰文流行歌曲，以字幕形式呈現中文翻譯，讓台灣粉絲也能感受泰文歌曲的魅力。</p>
+            <!-- ★ 替換為實際 IG 連結 -->
+            <a href="https://www.instagram.com/reel/YOUR_LYRICS_REEL" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
+          </div>
+        </div>
+
+        <!-- 電視節目訪談翻譯 -->
+        <div class="works__card">
+          <div class="works__card-media">
+            <!-- ★ 替換為實際節目截圖 -->
+            <img src="assets/works/tv-01.jpg" alt="電視節目訪談翻譯" />
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">節目訪談</span>
+            <h4>電視節目即時翻譯</h4>
+            <p>參與台灣電視節目的泰文翻譯工作，為藝人訪談提供即時中泰雙語口譯服務。</p>
+          </div>
+        </div>
+
+        <!-- 媒體翻譯 -->
+        <div class="works__card">
+          <div class="works__card-media">
+            <img src="assets/works/media-01.jpg" alt="媒體訪談翻譯" />
+          </div>
+          <div class="works__card-body">
+            <span class="works__card-tag">媒體翻譯</span>
+            <h4>粉絲活動現場口譯</h4>
+            <p>大型粉絲見面會、簽唱會的現場即時口譯，確保藝人與粉絲之間的零距離溝通。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spotify Podcast 嵌入 -->
+      <div class="works__spotify reveal">
+        <h3>🎙️ Podcast 節目</h3>
+        <div class="works__spotify-embed">
+          <!--
+            ★ Spotify Podcast 嵌入說明：
+            1. 前往 Spotify 的 Podcast 頁面
+            2. 點擊「分享」→「嵌入 Podcast」
+            3. 複製 <iframe> 程式碼，替換下方佔位符
+          -->
+          <iframe
+            style="border-radius:12px; height:352px;"
+            src="https://open.spotify.com/embed/show/YOUR_PODCAST_ID?utm_source=generator&theme=0"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify Podcast 播放器"
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="enrollment" id="enrollment">
+  <!-- ==========================================
+       泰文課程 Courses
+  ========================================== -->
+  <section class="section section--alt" id="courses">
     <div class="container">
-      <div class="enrollment-wrapper animate-on-scroll">
-        <div class="enrollment-info">
-          <span class="section-label">Enrollment</span>
-          <h3>開始你的<br>泰語學習之旅</h3>
-          <p>無論你是零基礎的初學者，還是希望精進泰語能力的進階學習者，我都能為你規劃最適合的學習路線。</p>
-          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>一對一 / 小班制教學</span></div>
-          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>彈性時間安排</span></div>
-          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>LINE / Email 諮詢</span></div>
-          <div class="enrollment-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span>免費 15 分鐘程度諮詢</span></div>
+      <div class="section__header reveal">
+        <span class="section__label">Thai Courses</span>
+        <h2 class="section__title">泰文課程方案</h2>
+        <p class="section__desc">
+          從零基礎到進階會話，量身打造你的泰文學習計畫
+        </p>
+      </div>
+
+      <div class="courses__grid reveal">
+        <!-- 入門班 -->
+        <div class="course-card">
+          <span class="course-card__badge">熱門選擇</span>
+          <h3>泰文入門班</h3>
+          <p>適合零基礎學員，從泰文字母、聲調到日常基本對話，系統性地建立泰文基礎。</p>
+          <div class="course-card__price">
+            NT$ 洽詢 <small>/ 期</small>
+          </div>
+          <ul class="course-card__features">
+            <li>泰文 44 子音 + 聲調系統</li>
+            <li>旅遊實用會話練習</li>
+            <li>自製精美講義教材</li>
+            <li>小班制教學（1-4人）</li>
+          </ul>
         </div>
-        <div class="enrollment-form">
-          <h3>課程諮詢表單</h3>
-          <p>填寫以下資訊，我會盡快回覆你！</p>
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <!-- 表單內容保留，未來你可以連接後端或是 Google Forms -->
-            <div class="form-row">
-              <div class="form-group"><label>姓名</label><input type="text" placeholder="你的名字" required></div>
-              <div class="form-group"><label>Email</label><input type="email" placeholder="email@example.com" required></div>
-            </div>
-            <div class="form-group"><label>LINE ID（選填）</label><input type="text" placeholder="你的 LINE ID"></div>
-            <div class="form-group"><label>有興趣的課程</label><select><option value="">請選擇</option><option>零基礎入門</option><option>日常會話</option><option>商務泰語</option><option>泰語檢定準備</option><option>翻譯服務諮詢</option><option>KOL 合作洽談</option><option>其他</option></select></div>
-            <div class="form-group"><label>備註</label><textarea placeholder="簡述你的學習目標或需求..."></textarea></div>
-            <button type="submit" class="btn-submit">送出諮詢</button>
-          </form>
+
+        <!-- 進階會話班 -->
+        <div class="course-card">
+          <span class="course-card__badge">深度學習</span>
+          <h3>進階會話班</h3>
+          <p>針對已有基礎的學員，透過時事、影視素材加強聽說能力與閱讀理解。</p>
+          <div class="course-card__price">
+            NT$ 洽詢 <small>/ 期</small>
+          </div>
+          <ul class="course-card__features">
+            <li>泰文新聞與影視素材</li>
+            <li>進階文法與句型應用</li>
+            <li>口說情境模擬演練</li>
+            <li>一對一或小班制</li>
+          </ul>
+        </div>
+
+        <!-- 客製化課程 -->
+        <div class="course-card">
+          <span class="course-card__badge">彈性安排</span>
+          <h3>客製化課程</h3>
+          <p>依照你的需求量身規劃：商務泰文、泰文檢定備考、旅遊速成等皆可安排。</p>
+          <div class="course-card__price">
+            NT$ 洽詢 <small>/ 堂</small>
+          </div>
+          <ul class="course-card__features">
+            <li>依需求客製化課綱</li>
+            <li>時間彈性安排</li>
+            <li>線上 / 實體皆可</li>
+            <li>提供課後複習資源</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 講義截圖區 -->
+      <div class="courses__materials reveal">
+        <h3>📚 自製講義與教學畫面</h3>
+        <div class="courses__materials-grid">
+          <!-- ★ 替換為實際講義截圖或教學畫面圖片 -->
+          <div class="courses__material-item">
+            <img src="assets/courses/material-01.jpg" alt="自製講義截圖 1" onerror="this.outerHTML='<span>講義預覽 1</span>'" />
+          </div>
+          <div class="courses__material-item">
+            <img src="assets/courses/material-02.jpg" alt="自製講義截圖 2" onerror="this.outerHTML='<span>講義預覽 2</span>'" />
+          </div>
+          <div class="courses__material-item">
+            <img src="assets/courses/material-03.jpg" alt="教學畫面截圖" onerror="this.outerHTML='<span>教學畫面</span>'" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 【修改重點：頁尾 (Footer) 的社群連結】 -->
-  <footer>
+  <!-- ==========================================
+       聯絡與諮詢 Contact
+  ========================================== -->
+  <section class="section" id="contact">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="nav-logo">Kru <span>Win</span></a>
-          <p>泰語教學 ・ 泰國文化推廣 ・ 中泰專業翻譯<br>讓我帶你走進泰國的世界。</p>
-        </div>
-        <div class="footer-social">
-          <!-- 將 href="#" 裡面的 # 替換成你的真實網址 -->
-          <a href="#" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><path d="M17.5 6.5h.01"/></svg></a>
-          <a href="#" title="Spotify" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M7 11s2-2 5-2 5 2 5 2M6 7s2.5-2 6-2 6 2 6 2"/></svg></a>
-          <a href="#" title="LINE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></a>
-          <a href="mailto:你的Email@example.com" title="Email" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-        </div>
+      <div class="section__header reveal">
+        <span class="section__label">Contact</span>
+        <h2 class="section__title">聯絡與諮詢</h2>
+        <p class="section__desc">
+          無論是課程諮詢、翻譯委託或 KOL 合作，歡迎來信聊聊
+        </p>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 Kru Win. All rights reserved.</span>
-        <span>Designed with ♡ for Thai language lovers</span>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <h3>期待與你的交集 ✨</h3>
+          <p>
+            填寫右方表單，或透過社群帳號直接聯繫。<br />
+            我會在 1-2 個工作天內回覆你！
+          </p>
+          <ul class="contact__channels">
+            <li class="contact__channel">
+              <span class="contact__channel-icon">📩</span>
+              <!-- ★ 替換為實際 Email -->
+              <span>your-email@example.com</span>
+            </li>
+            <li class="contact__channel">
+              <span class="contact__channel-icon">📷</span>
+              <!-- ★ 替換為實際 IG 帳號 -->
+              <a href="https://www.instagram.com/YOUR_IG_HANDLE" target="_blank" rel="noopener">@YOUR_IG_HANDLE</a>
+            </li>
+            <li class="contact__channel">
+              <span class="contact__channel-icon">🎵</span>
+              <!-- ★ 替換為實際 TikTok 帳號 -->
+              <a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" rel="noopener">@YOUR_TIKTOK</a>
+            </li>
+            <li class="contact__channel">
+              <span class="contact__channel-icon">💬</span>
+              <!-- ★ 替換為實際 LINE ID -->
+              <span>LINE ID: your_line_id</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ★ Formspree 整合說明：
+             1. 前往 https://formspree.io 註冊帳號
+             2. 建立新表單，取得你的 Formspree ID
+             3. 將下方 action 中的 YOUR_FORMSPREE_ID 替換為你的 ID
+        -->
+        <form class="contact__form reveal" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="form-group">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">聯絡主旨</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>請選擇聯絡主旨</option>
+              <option value="泰文課諮詢">泰文課諮詢</option>
+              <option value="泰文 KOL 合作">泰文 KOL 合作</option>
+              <option value="泰文翻譯委託">泰文翻譯委託</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">訊息內容</label>
+            <textarea id="message" name="message" placeholder="請描述您的需求，我會盡快回覆您！" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">送出訊息</button>
+        </form>
       </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer
+  ========================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">Win 泰文老師</span>
+      <ul class="footer__links">
+        <li><a href="#about">關於我</a></li>
+        <li><a href="#portfolio">作品集</a></li>
+        <li><a href="#courses">課程</a></li>
+        <li><a href="#contact">聯絡</a></li>
+      </ul>
+      <p class="footer__copy">
+        © 2026 Win 泰文老師. All rights reserved.
+      </p>
     </div>
   </footer>
 
+  <!-- ==========================================
+       JavaScript
+  ========================================== -->
   <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-
-    const hamburger = document.getElementById('hamburger');
+    /* ============================
+       漢堡選單 Toggle
+    ============================ */
+    const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const spans = hamburger.querySelectorAll('span');
-      if (navLinks.classList.contains('open')) { spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; spans[1].style.opacity = '0'; spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
-      else { spans[0].style.transform = 'none'; spans[1].style.opacity = '1'; spans[2].style.transform = 'none'; }
-    });
-    navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('open'); const spans = hamburger.querySelectorAll('span'); spans[0].style.transform = 'none'; spans[1].style.opacity = '1'; spans[2].style.transform = 'none'; }); });
 
-    document.querySelectorAll('.media-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    // 點擊導覽連結後關閉行動版選單
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
       });
     });
 
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    /* ============================
+       Navbar 捲動效果
+    ============================ */
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
 
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.btn-submit');
-      btn.textContent = '已送出！感謝你的諮詢 ✓';
-      btn.style.background = '#2d7a4f';
-      btn.disabled = true;
-      setTimeout(() => { btn.textContent = '送出諮詢'; btn.style.background = ''; btn.disabled = false; e.target.reset(); }, 3000);
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      navbar.classList.toggle('scrolled', currentScroll > 20);
+      lastScroll = currentScroll;
+    });
+
+    /* ============================
+       Active Nav Link（捲動高亮）
+    ============================ */
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = navLinks.querySelectorAll('a');
+
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+          navAnchors.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
     }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
+
+    /* ============================
+       Lightbox 成績單燈箱
+    ============================ */
+    const lightbox = document.getElementById('lightbox');
+
+    function openLightbox() {
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      // 點擊圖片本身不關閉
+      if (e && e.target.classList.contains('lightbox__img')) return;
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ESC 鍵關閉燈箱
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox(e);
+    });
+
+    /* ============================
+       作品集分類篩選 Tabs
+    ============================ */
+    const tabs = document.querySelectorAll('.portfolio__tab');
+    const items = document.querySelectorAll('.portfolio__item');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // 切換 active 狀態
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+
+        items.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    /* ============================
+       捲動顯示動畫 Reveal on Scroll
+    ============================ */
+    const reveals = document.querySelectorAll('.reveal');
+
+    function handleReveal() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 80) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleReveal);
+    window.addEventListener('load', handleReveal);
   </script>
 
 </body>
