@@ -425,29 +425,52 @@
       font-size: 0.95rem;
     }
 
-    .about__stats {
-      display: flex;
-      gap: 32px;
+    /* 學經歷時間軸 */
+    .about__timeline {
       margin-top: 32px;
       padding-top: 32px;
       border-top: 1px solid var(--color-border-light);
     }
 
-    .about__stat-item {
-      text-align: center;
-    }
-
-    .about__stat-number {
-      font-size: 2rem;
-      font-weight: 700;
+    .about__timeline-title {
+      font-size: 1.1rem;
+      font-weight: 600;
       color: var(--color-primary);
-      line-height: 1;
+      margin-bottom: 20px;
     }
 
-    .about__stat-label {
-      font-size: 0.8rem;
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      padding: 14px 0;
+      position: relative;
+    }
+
+    .timeline-item:not(:last-child) {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .timeline-year {
+      flex-shrink: 0;
+      width: 120px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      padding-top: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    .timeline-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      margin-bottom: 2px;
+    }
+
+    .timeline-content p {
+      font-size: 0.85rem;
       color: var(--color-text-light);
-      margin-top: 6px;
+      margin-bottom: 0;
     }
 
     /* 認證卡片 */
@@ -1225,12 +1248,6 @@
         gap: 12px;
       }
 
-      .about__stats {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
       .contact__form {
         padding: 24px;
       }
@@ -1238,6 +1255,15 @@
       .footer__inner {
         flex-direction: column;
         text-align: center;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .timeline-year {
+        width: auto;
       }
     }
 
@@ -1340,18 +1366,45 @@
           <p>
             無論你想學泰文、需要專業翻譯、或尋找泰國在地的合作夥伴，我都期待與你的交集。
           </p>
-          <div class="about__stats">
-            <div class="about__stat-item">
-              <div class="about__stat-number">5+</div>
-              <div class="about__stat-label">年教學經驗</div>
+
+          <!-- 學經歷時間軸 -->
+          <div class="about__timeline">
+            <h3 class="about__timeline-title">學經歷</h3>
+            <!-- ★ 請替換為你的實際學經歷 -->
+            <div class="timeline-item">
+              <span class="timeline-year">2014 – 2017</span>
+              <div class="timeline-content">
+                <h4>XX 高中</h4>
+                <p>在此填寫簡短說明（可省略）</p>
+              </div>
             </div>
-            <div class="about__stat-item">
-              <div class="about__stat-number">50+</div>
-              <div class="about__stat-label">翻譯/口譯案件</div>
+            <div class="timeline-item">
+              <span class="timeline-year">2017 – 2021</span>
+              <div class="timeline-content">
+                <h4>XX 大學 東南亞語言學程</h4>
+                <p>在此填寫簡短說明（可省略）</p>
+              </div>
             </div>
-            <div class="about__stat-item">
-              <div class="about__stat-number">10K+</div>
-              <div class="about__stat-label">社群粉絲</div>
+            <div class="timeline-item">
+              <span class="timeline-year">2021 – 2023</span>
+              <div class="timeline-content">
+                <h4>XX 研究所</h4>
+                <p>在此填寫簡短說明（可省略）</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">2023</span>
+              <div class="timeline-content">
+                <h4>朱拉隆功大學語言班（CU-ITP）</h4>
+                <p>取得朱大泰文檢定認證</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">2023 – 至今</span>
+              <div class="timeline-content">
+                <h4>泰文教學 / 翻譯口譯 / 旅遊 KOL</h4>
+                <p>專職泰文教學、影視歌詞翻譯與品牌合作</p>
+              </div>
             </div>
           </div>
         </div>
