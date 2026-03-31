@@ -9,18 +9,16 @@
   <meta property="og:title" content="Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯" />
   <meta property="og:description" content="Win（阿燈）— 專業泰文教學、泰國旅遊合作與影視歌詞翻譯。持有朱大泰文檢定證明。" />
   <meta property="og:type" content="website" />
-  <!-- ★ 請替換為你的 GitHub Pages 網址 -->
   <meta property="og:url" content="https://your-username.github.io/your-repo/" />
   <link rel="canonical" href="https://your-username.github.io/your-repo/" />
 
-  <!-- Google Fonts: Anuphan（泰文）+ Noto Sans TC（中文備用） -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================
-       CSS 變數與全域設定
+        CSS 變數與全域設定
     ============================ */
     :root {
       --color-primary: #1a2a6c;
@@ -49,7 +47,7 @@
     }
 
     /* ============================
-       Reset & Base
+        Reset & Base
     ============================ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -84,7 +82,7 @@
     }
 
     /* ============================
-       導覽列 Navbar
+        導覽列 Navbar
     ============================ */
     .navbar {
       position: fixed;
@@ -185,7 +183,7 @@
     }
 
     /* ============================
-       Hero Section
+        Hero Section
     ============================ */
     .hero {
       min-height: 100vh;
@@ -356,7 +354,7 @@
     }
 
     /* ============================
-       Section 通用
+        Section 通用
     ============================ */
     .section {
       padding: 100px 0;
@@ -403,7 +401,7 @@
     }
 
     /* ============================
-       關於我 About
+        關於我 About
     ============================ */
     .about__grid {
       display: grid;
@@ -559,7 +557,7 @@
     }
 
     /* ============================
-       Lightbox 燈箱
+        Lightbox 燈箱
     ============================ */
     .lightbox {
       position: fixed;
@@ -616,7 +614,7 @@
     }
 
     /* ============================
-       社群作品 Portfolio
+        社群作品 Portfolio
     ============================ */
     .portfolio__tabs {
       display: flex;
@@ -745,7 +743,7 @@
     }
 
     /* ============================
-       專業譯作 Works
+        專業譯作 Works
     ============================ */
     .works__grid {
       display: grid;
@@ -849,7 +847,7 @@
     }
 
     /* ============================
-       泰文課程 Courses
+        泰文課程 Courses
     ============================ */
     .courses__grid {
       display: grid;
@@ -865,28 +863,6 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
-    }
-
-    .course-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--color-primary);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .course-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .course-card:hover {
-      border-color: var(--color-primary);
-      box-shadow: var(--shadow-md);
     }
 
     .course-card__badge {
@@ -991,7 +967,7 @@
     }
 
     /* ============================
-       聯絡表單 Contact
+        聯絡表單 Contact
     ============================ */
     .contact__grid {
       display: grid;
@@ -1104,7 +1080,7 @@
     }
 
     /* ============================
-       Footer
+        Footer
     ============================ */
     .footer {
       background: var(--color-primary-dark);
@@ -1152,7 +1128,7 @@
     }
 
     /* ============================
-       Animations
+        Animations
     ============================ */
     @keyframes fadeInUp {
       from {
@@ -1177,7 +1153,7 @@
     }
 
     /* ============================
-       RWD 響應式
+        RWD 響應式
     ============================ */
     @media (max-width: 900px) {
       .about__grid {
@@ -1304,9 +1280,6 @@
 </head>
 <body>
 
-  <!-- ==========================================
-       導覽列 Navbar
-  ========================================== -->
   <nav class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="#hero" class="navbar__logo">
@@ -1328,9 +1301,6 @@
     </div>
   </nav>
 
-  <!-- ==========================================
-       首頁英雄區 Hero
-  ========================================== -->
   <section class="hero" id="hero">
     <div class="hero__bg-pattern"></div>
     <div class="hero__content">
@@ -1356,9 +1326,6 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       關於我 About Me
-  ========================================== -->
   <section class="section section--alt" id="about">
     <div class="container">
       <div class="section__header reveal">
@@ -1381,10 +1348,8 @@
             無論你想學泰文、需要專業翻譯、或尋找泰國在地的合作夥伴，我都期待與你的交集。
           </p>
 
-          <!-- 學經歷時間軸 -->
           <div class="about__timeline">
             <h3 class="about__timeline-title">學經歷</h3>
-            <!-- ★ 請替換為你的實際學經歷 -->
             <div class="timeline-item">
               <span class="timeline-year">2013 – 2017</span>
               <div class="timeline-content">
@@ -1425,12 +1390,10 @@
           </div>
         </div>
 
-        <!-- 認證卡片 -->
         <div class="about__cert-card reveal">
           <div class="about__cert-icon">🎓</div>
           <h4>朱大泰文檢定認證</h4>
           <p>朱拉隆功大學官方泰文考試成績單</p>
-          <!-- ★ 成績單圖片路徑：請將 src 替換為實際圖片路徑，例如 "assets/cert.jpg" -->
           <div class="about__cert-thumb" id="certThumb" onclick="openLightbox()">
             <img src="images/chula-score.jpeg" alt="朱大泰文考試成績單">
             <div class="about__cert-thumb__overlay">
@@ -1445,18 +1408,11 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       Lightbox 成績單燈箱
-  ========================================== -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="關閉">✕</button>
-    <!-- ★ 請將 src 替換為實際成績單圖片路徑 -->
     <img class="lightbox__img" id="lightboxImg" src="images/chula-score.jpeg" alt="朱大泰文考試成績單完整版" />
   </div>
 
-  <!-- ==========================================
-       社群作品 Portfolio
-  ========================================== -->
   <section class="section" id="portfolio">
     <div class="container">
       <div class="section__header reveal">
@@ -1468,57 +1424,14 @@
       </div>
 
       <div class="portfolio__tabs reveal">
-        <button class="portfolio__tab active" data-filter="all">全部作品</button>
-        <button class="portfolio__tab" data-filter="interview">藝人專訪</button>
-        <button class="portfolio__tab" data-filter="life">泰國生活</button>
+        <button class="portfolio__tab active" data-filter="life">泰國生活</button>
         <button class="portfolio__tab" data-filter="collab">品牌合作</button>
+        <button class="portfolio__tab" data-filter="interview">藝人專訪</button>
+        <button class="portfolio__tab" data-filter="all">全部作品</button>
       </div>
 
       <div class="portfolio__grid reveal">
 
-        <!-- ========== 藝人專訪 — IG 貼文格式 4:5（共 2 則） ========== -->
-
-        <!-- ★ 藝人專訪貼文 1：請將 C8e3FHoBXoZ 替換為實際 IG 貼文 ID -->
-        <div class="portfolio__item portfolio__item--post" data-category="interview">
-          <div class="portfolio__media">
-            <iframe
-              src="https://www.instagram.com/p/C8e3FHoBXoZ/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="阿燈訪泰星 WIM"
-            ></iframe>
-          </div>
-          <div class="portfolio__info">
-            <h4>阿燈訪泰星 WIM</h4>
-            <p>泰星 WIM 來台參加音樂祭《So Wonderful Festival - Prelude No.2》，希望透過本次的宣傳讓更多台灣人認識其音樂的魅力。</p>
-            <a href="https://www.instagram.com/p/C8e3FHoBXoZ/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
-          </div>
-        </div>
-
-        <!-- ★ 藝人專訪貼文 2：請將 Cldz4KivMkv 替換為實際 IG 貼文 ID -->
-        <div class="portfolio__item portfolio__item--post" data-category="interview">
-          <div class="portfolio__media">
-            <iframe
-              src="https://www.instagram.com/p/Cldz4KivMkv/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="阿燈訪泰星 Gabe Watkins"
-            ></iframe>
-          </div>
-          <div class="portfolio__info">
-            <h4>阿燈訪泰星 Gabe Watkins</h4>
-            <p>泰澳混血歌手 Gabe Watkins 宣傳新歌 Sunsets，透過訪談了解他對自己音樂的理念，同時也讓大家了解他的過往經歷。</p>
-            <a href="https://www.instagram.com/p/Cldz4KivMkv/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
-          </div>
-        </div>
-
-        <!-- ========== 泰國生活 — IG Reels 格式 9:16（共 3 則） ========== -->
-
-        <!-- ★ 泰國生活 Reel 1：請將 DVBnIL4D_HU 替換為實際 Reel ID -->
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
             <iframe
@@ -1537,7 +1450,6 @@
           </div>
         </div>
 
-        <!-- ★ 泰國生活 Reel 2：請將 DV5RCBoD1rl/ 替換為實際 Reel ID -->
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
             <iframe
@@ -1556,7 +1468,6 @@
           </div>
         </div>
 
-        <!-- ★ 泰國生活 Reel 3：請將 DWZEAnxAQdu 替換為實際 Reel ID -->
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
             <iframe
@@ -1570,14 +1481,11 @@
           </div>
           <div class="portfolio__info">
             <h4>泰國生活日常</h4>
-            <p>深度探索泰國的每一面，從抹茶店的探索到遠端工作的生活分享，最後以逛夜市結束這一天，帶大家見證泰文老師平凡卻有趣的一天。</p>
+            <p>深度探索泰國的每一面，從抹茶店的探索到遠端工作的生活分享，最後以逛夜市結束這一天。</p>
             <a href="https://www.instagram.com/reel/DWZEAnxAQdu/" target="_blank" rel="noopener" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
 
-        <!-- ========== 品牌合作 — IG 貼文格式 4:5（共 3 則） ========== -->
-
-        <!-- ★ 品牌合作貼文 1：請將 DIqlNCkvVo_ 替換為實際 IG 貼文 ID -->
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
             <iframe
@@ -1591,12 +1499,11 @@
           </div>
           <div class="portfolio__info">
             <h4>泰國電影《冥婚鬧泰大》</h4>
-            <p>電影《冥婚鬧泰大》贈票活動，藉由贈票活動向大眾宣傳電影，透過群眾分享的力量，讓更多人看到泰國影視的魅力。</p>
+            <p>電影《冥婚鬧泰大》贈票活動宣傳。</p>
             <a href="https://www.instagram.com/p/DIqlNCkvVo_/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
-        <!-- ★ 品牌合作貼文 2：請將 C-7YgJQvqAr 替換為實際 IG 貼文 ID -->
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
             <iframe
@@ -1610,12 +1517,11 @@
           </div>
           <div class="portfolio__info">
             <h4>泰國樂團專場表演</h4>
-            <p>泰國樂團 Tilly Birds 底台舉辦專場音樂表演，透過貼文宣傳其音樂，搭配贈票活動的響應，促使更多人想要參與活動。</p>
+            <p>泰國樂團 Tilly Birds 專場音樂表演宣傳與贈票。</p>
             <a href="https://www.instagram.com/p/C-7YgJQvqAr/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
-        <!-- ★ 品牌合作貼文 3：請將 DKZSCESvKEj 替換為實際 IG 貼文 ID -->
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
             <iframe
@@ -1624,13 +1530,49 @@
               allowfullscreen="true"
               scrolling="no"
               loading="lazy"
-              title="品牌合作貼文 3"
+              title="品牌合作貼文"
             ></iframe>
           </div>
           <div class="portfolio__info">
             <h4>生活品牌推廣</h4>
-            <p>日常生活好物宣傳，藉由與泰文單字的連結，向大家推廣生活實用好物，讓大家認識新品牌的同時，也能同步學到日常生活常用單字。</p>
+            <p>結合泰文單字學習的生活實用好物推廣。</p>
             <a href="https://www.instagram.com/p/DKZSCESvKEj/" target="_blank" rel="noopener" class="portfolio__link">查看貼文 →</a>
+          </div>
+        </div>
+
+        <div class="portfolio__item portfolio__item--post" data-category="interview">
+          <div class="portfolio__media">
+            <iframe
+              src="https://www.instagram.com/p/C8e3FHoBXoZ/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="阿燈訪泰星 WIM"
+            ></iframe>
+          </div>
+          <div class="portfolio__info">
+            <h4>阿燈訪泰星 WIM</h4>
+            <p>泰星 WIM 來台音樂祭專訪。</p>
+            <a href="https://www.instagram.com/p/C8e3FHoBXoZ/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
+          </div>
+        </div>
+
+        <div class="portfolio__item portfolio__item--post" data-category="interview">
+          <div class="portfolio__media">
+            <iframe
+              src="https://www.instagram.com/p/Cldz4KivMkv/embed/"
+              allowtransparency="true"
+              allowfullscreen="true"
+              scrolling="no"
+              loading="lazy"
+              title="阿燈訪泰星 Gabe Watkins"
+            ></iframe>
+          </div>
+          <div class="portfolio__info">
+            <h4>阿燈訪泰星 Gabe Watkins</h4>
+            <p>泰澳混血歌手 Gabe Watkins 音樂理念訪談。</p>
+            <a href="https://www.instagram.com/p/Cldz4KivMkv/" target="_blank" rel="noopener" class="portfolio__link">前往 Instagram 查看 →</a>
           </div>
         </div>
 
@@ -1638,9 +1580,6 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       專業譯作與媒體訪談 Works
-  ========================================== -->
   <section class="section section--warm" id="works">
     <div class="container">
       <div class="section__header reveal">
@@ -1651,435 +1590,194 @@
         </p>
       </div>
 
-      <!-- 歌詞翻譯 — 3 個 IG Reels -->
       <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-bottom:24px;">🎵 歌詞翻譯</h3>
       <div class="works__grid reveal">
-
-        <!-- ★ 歌詞翻譯 Reel 1：請將 DBtg4eYBRaN 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/DBtg4eYBRaN/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="歌詞翻譯 Reel 1"
-            ></iframe>
+            <iframe src="https://www.instagram.com/reel/DBtg4eYBRaN/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy"></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">歌詞翻譯</span>
-            <h4>泰文歌曲中譯</h4>
-            <p>Jeff Satur - ซ่อนไม่หา。</p>
-            <p>精選泰文流行歌曲，以字幕形式呈現中文翻譯，讓台灣粉絲也能感受泰文歌曲的魅力。</p>
+            <h4>Jeff Satur - ซ่อนไม่หา</h4>
+            <p>精選泰文流行歌曲字幕中譯。</p>
             <a href="https://www.instagram.com/reel/DBtg4eYBRaN/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
-        <!-- ★ 歌詞翻譯 Reel 2：請將 C-xQf6rBy2q 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/C-xQf6rBy2q/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="歌詞翻譯 Reel 2"
-            ></iframe>
+            <iframe src="https://www.instagram.com/reel/C-xQf6rBy2q/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy"></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">歌詞翻譯</span>
-            <h4>當紅泰國樂團歌曲</h4>
-            <p>Tilly Birds - คิด(แต่ไม่)ถึง</p>
-            <p>當紅泰團歌曲中文翻譯，帶你讀懂每句歌詞背後的情感故事。</p>
+            <h4>Tilly Birds - คิด(แต่ไม่)ถึง</h4>
+            <p>當紅泰國樂團歌曲情感翻譯。</p>
             <a href="https://www.instagram.com/reel/C-xQf6rBy2q/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
-        <!-- ★ 歌詞翻譯 Reel 3：請將 DDwW43rhnIx 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/DDwW43rhnIx/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="歌詞翻譯 Reel 3"
-            ></iframe>
+            <iframe src="https://www.instagram.com/reel/DDwW43rhnIx/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy"></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">歌詞翻譯</span>
-            <h4>道地泰國情歌翻譯</h4>
-            <p>Joey Phuwasit - นะหน้าทอง</p>
-            <p>不僅是泰國當紅流行歌曲，泰國人當地也非常火紅的道地情歌，透過歌詞翻譯的方式介紹給更多的台灣人認識。</p>
+            <h4>Joey Phuwasit - นะหน้าทอง</h4>
+            <p>道地泰國流行歌曲中譯分享。</p>
             <a href="https://www.instagram.com/reel/DDwW43rhnIx/" target="_blank" rel="noopener" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
       </div>
 
-      <!-- 節目訪談翻譯 — 3 個 IG Reels -->
       <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-top:64px; margin-bottom:24px;">🎬 節目訪談翻譯</h3>
       <div class="works__grid reveal">
-
-        <!-- ★ 節目訪談 Reel 1：請將 DSDCkK8j1Js 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/DSDCkK8j1Js/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="節目訪談翻譯 Reel 1"
-            ></iframe>
+            <iframe src="https://www.instagram.com/reel/DSDCkK8j1Js/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy"></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">節目訪談</span>
-            <h4>電視節目訪談翻譯</h4>
-            <p>泰國天團 POTATO 上節目分享來台灣參加 JAM JAM ASIA 音樂節的心得。</p>
+            <h4>泰國天團 POTATO 訪談</h4>
+            <p>音樂節 JAM JAM ASIA 心得分享翻譯。</p>
             <a href="https://www.instagram.com/reel/DSDCkK8j1Js/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
 
-        <!-- ★ 節目訪談 Reel 2：請將 DMDKyvpBJtE 替換為實際 Reel ID -->
         <div class="works__card">
           <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/DMDKyvpBJtE/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="節目訪談翻譯 Reel 2"
-            ></iframe>
+            <iframe src="https://www.instagram.com/reel/DMDKyvpBJtE/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy"></iframe>
           </div>
           <div class="works__card-body">
             <span class="works__card-tag">節目訪談</span>
-            <h4>藝人訪談翻譯</h4>
-            <p>泰國藝人 YOURMOOD 來台參加音樂祭表演前，訪談宣傳翻譯，讓更多台灣人認識他。</p>
+            <h4>泰國藝人 YOURMOOD 專訪</h4>
+            <p>來台演出前專訪翻譯。</p>
             <a href="https://www.instagram.com/reel/DMDKyvpBJtE/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
-          </div>
-        </div>
-
-        <!-- ★ 節目訪談 Reel 3：請將 YOUR_TV_REEL_3 替換為實際 Reel ID -->
-        <div class="works__card">
-          <div class="works__card-media works__card-media--reel">
-            <iframe
-              src="https://www.instagram.com/reel/YOUR_TV_REEL_3/embed/"
-              allowtransparency="true"
-              allowfullscreen="true"
-              scrolling="no"
-              loading="lazy"
-              title="節目訪談翻譯 Reel 3"
-            ></iframe>
-          </div>
-          <div class="works__card-body">
-            <span class="works__card-tag">節目訪談</span>
-            <h4>粉絲活動現場口譯</h4>
-            <p>大型粉絲見面會、簽唱會的現場即時口譯，確保藝人與粉絲之間的零距離溝通。</p>
-            <a href="https://www.instagram.com/reel/YOUR_TV_REEL_3/" target="_blank" rel="noopener" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
       </div>
 
-      <!-- Spotify Podcast 嵌入 -->
       <div class="works__spotify reveal">
         <h3>🎙️ Podcast 節目</h3>
         <div class="works__spotify-embed">
-          <!--
-            ★ Spotify Podcast 嵌入說明：
-            1. 前往 Spotify 的 Podcast 頁面
-            2. 點擊「分享」→「嵌入 Podcast」
-            3. 複製 <iframe> 程式碼，替換下方佔位符
-          -->
-          <iframe
-            style="border-radius:12px; height:352px;"
-            src="https://open.spotify.com/embed/show/YOUR_PODCAST_ID?utm_source=generator&theme=0"
-            frameBorder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Spotify Podcast 播放器"
-          ></iframe>
+          <iframe style="border-radius:12px; height:352px;" src="https://open.spotify.com/embed/show/YOUR_PODCAST_ID?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       泰文課程 Courses
-  ========================================== -->
   <section class="section section--alt" id="courses">
     <div class="container">
       <div class="section__header reveal">
         <span class="section__label">Thai Courses</span>
         <h2 class="section__title">泰文課程方案</h2>
-        <p class="section__desc">
-          從零基礎到進階會話，量身打造你的泰文學習計畫
-        </p>
       </div>
-
       <div class="courses__grid reveal">
-        <!-- 入門班 -->
         <div class="course-card">
           <span class="course-card__badge">熱門選擇</span>
           <h3>泰文入門班</h3>
-          <p>適合零基礎學員，從泰文字母、聲調到日常基本對話，系統性地建立泰文基礎。</p>
-          <div class="course-card__price">
-            NT$ 洽詢 <small>/ 期</small>
-          </div>
+          <p>適合零基礎，系統建立發音與日常對話基礎。</p>
+          <div class="course-card__price">NT$ 洽詢 <small>/ 期</small></div>
           <ul class="course-card__features">
-            <li>泰文 44 子音 + 聲調系統</li>
-            <li>旅遊實用會話練習</li>
-            <li>自製精美講義教材</li>
-            <li>小班制教學（1-4人）</li>
+            <li>泰文聲調系統</li>
+            <li>旅遊實用會話</li>
+            <li>自製精美講義</li>
           </ul>
         </div>
-
-        <!-- 進階會話班 -->
         <div class="course-card">
           <span class="course-card__badge">深度學習</span>
           <h3>進階會話班</h3>
-          <p>針對已有基礎的學員，透過時事、影視素材加強聽說能力與閱讀理解。</p>
-          <div class="course-card__price">
-            NT$ 洽詢 <small>/ 期</small>
-          </div>
-          <ul class="course-card__features">
-            <li>泰文新聞與影視素材</li>
-            <li>進階文法與句型應用</li>
-            <li>口說情境模擬演練</li>
-            <li>一對一或小班制</li>
-          </ul>
+          <p>針對已有基礎學員，透過時事與影視加強聽說。</p>
+          <div class="course-card__price">NT$ 洽詢 <small>/ 期</small></div>
         </div>
-
-        <!-- 客製化課程 -->
         <div class="course-card">
           <span class="course-card__badge">彈性安排</span>
           <h3>客製化課程</h3>
-          <p>依照你的需求量身規劃：商務泰文、泰文檢定備考、旅遊速成等皆可安排。</p>
-          <div class="course-card__price">
-            NT$ 洽詢 <small>/ 堂</small>
-          </div>
-          <ul class="course-card__features">
-            <li>依需求客製化課綱</li>
-            <li>時間彈性安排</li>
-            <li>線上 / 實體皆可</li>
-            <li>提供課後複習資源</li>
-          </ul>
+          <p>商務、檢定備考、旅遊速成量身規劃。</p>
+          <div class="course-card__price">NT$ 洽詢 <small>/ 堂</small></div>
         </div>
       </div>
 
-      <!-- 講義截圖區 -->
       <div class="courses__materials reveal">
         <h3>📚 自製講義與教學畫面</h3>
         <div class="courses__materials-grid">
-          <!-- ★ 替換為實際講義截圖或教學畫面圖片 -->
-          <div class="courses__material-item">
-            <img src="assets/courses/material-01.jpg" alt="自製講義截圖 1" onerror="this.outerHTML='<span>講義預覽 1</span>'" />
-          </div>
-          <div class="courses__material-item">
-            <img src="assets/courses/material-02.jpg" alt="自製講義截圖 2" onerror="this.outerHTML='<span>講義預覽 2</span>'" />
-          </div>
-          <div class="courses__material-item">
-            <img src="assets/courses/material-03.jpg" alt="教學畫面截圖" onerror="this.outerHTML='<span>教學畫面</span>'" />
-          </div>
+          <div class="courses__material-item"><span>講義預覽 1</span></div>
+          <div class="courses__material-item"><span>講義預覽 2</span></div>
+          <div class="courses__material-item"><span>教學畫面</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       聯絡與諮詢 Contact
-  ========================================== -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section__header reveal">
         <span class="section__label">Contact</span>
         <h2 class="section__title">聯絡與諮詢</h2>
-        <p class="section__desc">
-          無論是課程諮詢、翻譯委託或 KOL 合作，歡迎來信聊聊
-        </p>
       </div>
-
       <div class="contact__grid">
         <div class="contact__info reveal">
           <h3>期待與你的交集 ✨</h3>
-          <p>
-            填寫右方表單，或透過社群帳號直接聯繫。<br />
-            我會在 1-2 個工作天內回覆你！
-          </p>
+          <p>填寫表單，我會在 1-2 個工作天內回覆你！</p>
           <ul class="contact__channels">
-            <li class="contact__channel">
-              <span class="contact__channel-icon">📩</span>
-              <!-- ★ 替換為實際 Email -->
-              <span>your-email@example.com</span>
-            </li>
-            <li class="contact__channel">
-              <span class="contact__channel-icon">📷</span>
-              <!-- ★ 替換為實際 IG 帳號 -->
-              <a href="https://www.instagram.com/YOUR_IG_HANDLE" target="_blank" rel="noopener">@YOUR_IG_HANDLE</a>
-            </li>
-            <li class="contact__channel">
-              <span class="contact__channel-icon">🎵</span>
-              <!-- ★ 替換為實際 TikTok 帳號 -->
-              <a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" rel="noopener">@YOUR_TIKTOK</a>
-            </li>
-            <li class="contact__channel">
-              <span class="contact__channel-icon">💬</span>
-              <!-- ★ 替換為實際 LINE ID -->
-              <span>LINE ID: your_line_id</span>
-            </li>
+            <li class="contact__channel"><span>📩 your-email@example.com</span></li>
+            <li class="contact__channel"><span>📷 @YOUR_IG_HANDLE</span></li>
           </ul>
         </div>
-
-        <!-- ★ Formspree 整合說明：
-             1. 前往 https://formspree.io 註冊帳號
-             2. 建立新表單，取得你的 Formspree ID
-             3. 將下方 action 中的 YOUR_FORMSPREE_ID 替換為你的 ID
-        -->
         <form class="contact__form reveal" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-          <div class="form-group">
-            <label for="name">姓名</label>
-            <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
+          <div class="form-group"><label for="name">姓名</label><input type="text" id="name" name="name" required /></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required /></div>
           <div class="form-group">
             <label for="subject">聯絡主旨</label>
             <select id="subject" name="subject" required>
-              <option value="" disabled selected>請選擇聯絡主旨</option>
               <option value="泰文課諮詢">泰文課諮詢</option>
               <option value="泰文 KOL 合作">泰文 KOL 合作</option>
               <option value="泰文翻譯委託">泰文翻譯委託</option>
               <option value="其他">其他</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="message">訊息內容</label>
-            <textarea id="message" name="message" placeholder="請描述您的需求，我會盡快回覆您！" required></textarea>
-          </div>
+          <div class="form-group"><label for="message">訊息內容</label><textarea id="message" name="message" required></textarea></div>
           <button type="submit" class="btn btn--primary">送出訊息</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       Footer
-  ========================================== -->
   <footer class="footer">
     <div class="container footer__inner">
       <span class="footer__brand">Win 泰文老師</span>
-      <ul class="footer__links">
-        <li><a href="#about">關於我</a></li>
-        <li><a href="#portfolio">作品集</a></li>
-        <li><a href="#courses">課程</a></li>
-        <li><a href="#contact">聯絡</a></li>
-      </ul>
-      <p class="footer__copy">
-        © 2026 Win 泰文老師. All rights reserved.
-      </p>
+      <p class="footer__copy">© 2026 Win 泰文老師. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ==========================================
-       JavaScript
-  ========================================== -->
   <script>
-    /* ============================
-       漢堡選單 Toggle
-    ============================ */
+    // 漢堡選單
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-
     navToggle.addEventListener('click', () => {
       navToggle.classList.toggle('active');
       navLinks.classList.toggle('open');
     });
 
-    // 點擊導覽連結後關閉行動版選單
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      });
-    });
-
-    /* ============================
-       Navbar 捲動效果
-    ============================ */
+    // Navbar 捲動效果
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-
     window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      navbar.classList.toggle('scrolled', currentScroll > 20);
-      lastScroll = currentScroll;
+      navbar.classList.toggle('scrolled', window.pageYOffset > 20);
     });
 
-    /* ============================
-       Active Nav Link（捲動高亮）
-    ============================ */
-    const sections = document.querySelectorAll('section[id]');
-    const navAnchors = navLinks.querySelectorAll('a');
-
-    function updateActiveNav() {
-      const scrollPos = window.scrollY + 120;
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-        if (scrollPos >= top && scrollPos < top + height) {
-          navAnchors.forEach(a => {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateActiveNav);
-    updateActiveNav();
-
-    /* ============================
-       Lightbox 成績單燈箱
-    ============================ */
+    // Lightbox
     const lightbox = document.getElementById('lightbox');
+    function openLightbox() { lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeLightbox(e) { if (e && e.target.classList.contains('lightbox__img')) return; lightbox.classList.remove('open'); document.body.style.overflow = ''; }
 
-    function openLightbox() {
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox(e) {
-      // 點擊圖片本身不關閉
-      if (e && e.target.classList.contains('lightbox__img')) return;
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    // ESC 鍵關閉燈箱
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox(e);
-    });
-
-    /* ============================
-       作品集分類篩選 Tabs
-    ============================ */
+    // 作品集分類篩選
     const tabs = document.querySelectorAll('.portfolio__tab');
     const items = document.querySelectorAll('.portfolio__item');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // 切換 active 狀態
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
         const filter = tab.dataset.filter;
-
         items.forEach(item => {
           if (filter === 'all' || item.dataset.category === filter) {
             item.classList.remove('hidden');
@@ -2090,24 +1788,26 @@
       });
     });
 
-    /* ============================
-       捲動顯示動畫 Reveal on Scroll
-    ============================ */
-    const reveals = document.querySelectorAll('.reveal');
+    // 初始狀態過濾：確保一進網頁顯示的是「泰國生活」
+    function initPortfolio() {
+        const defaultFilter = 'life';
+        items.forEach(item => {
+          if (item.dataset.category !== defaultFilter) {
+            item.classList.add('hidden');
+          }
+        });
+    }
+    initPortfolio();
 
+    // 捲動顯示動畫
+    const reveals = document.querySelectorAll('.reveal');
     function handleReveal() {
-      const windowHeight = window.innerHeight;
       reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < windowHeight - 80) {
-          el.classList.add('visible');
-        }
+        if (el.getBoundingClientRect().top < window.innerHeight - 80) { el.classList.add('visible'); }
       });
     }
-
     window.addEventListener('scroll', handleReveal);
     window.addEventListener('load', handleReveal);
   </script>
-
 </body>
 </html>
