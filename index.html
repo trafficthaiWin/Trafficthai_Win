@@ -364,7 +364,33 @@
 
     }
 
+    /* ===== Hero 點點裝飾背景 ===== */
+    .hero__dots {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle, var(--color-primary) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.04;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 72%);
+    }
 
+    .hero__dots-accent {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(circle, var(--color-accent) 1.2px, transparent 1.2px);
+      background-size: 64px 64px;
+      background-position: 16px 16px;
+      opacity: 0.045;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 10%, transparent 65%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 10%, transparent 65%);
+    }
 
     .hero__bg-pattern {
 
@@ -983,8 +1009,6 @@
       border-radius: var(--radius-sm);
 
       overflow: hidden;
-
-      margin-bottom: 16px;
 
       cursor: pointer;
 
@@ -2822,7 +2846,8 @@
 
 
   <section class="hero" id="hero">
-
+    <div class="hero__dots"></div>
+    <div class="hero__dots-accent"></div>
     <div class="hero__bg-pattern"></div>
 
     <div class="hero__content">
@@ -3020,12 +3045,6 @@
             </div>
 
           </div>
-
-          <button class="btn btn--outline btn--small" onclick="openLightbox()">
-
-            查看專業認證
-
-          </button>
 
         </div>
 
@@ -3933,18 +3952,6 @@
     </div>
 
   </footer>
-
-
-
-  <!-- 講義圖片放大燈箱 -->
-
-  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-
-    <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="關閉">✕</button>
-
-    <img class="lightbox__img" id="lightboxImg" src="images/chula-score.jpg" alt="朱大泰文考試成績單完整版" />
-
-  </div>
 
 
 
