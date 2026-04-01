@@ -682,6 +682,10 @@
 
     .portfolio__info {
       padding: 16px 20px;
+      position: relative;
+      z-index: 2;
+      margin-top: -60px;
+      background: var(--color-bg-alt);
     }
 
     .portfolio__info h4 {
@@ -943,6 +947,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .courses__material-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
     }
 
     .contact__grid {
@@ -1664,14 +1675,19 @@
       <div class="courses__materials reveal">
         <h3>📚 自製講義與教學畫面</h3>
         <div class="courses__materials-grid">
+          <!-- 圖片範例 -->
           <div class="courses__material-item">
             <img src="assets/courses/material-01.jpg" alt="自製講義截圖 1" onerror="this.outerHTML='<span>講義預覽 1</span>'" />
           </div>
           <div class="courses__material-item">
             <img src="assets/courses/material-02.jpg" alt="自製講義截圖 2" onerror="this.outerHTML='<span>講義預覽 2</span>'" />
           </div>
+          <!-- 影片範例 -->
           <div class="courses__material-item">
-            <img src="assets/courses/material-03.jpg" alt="教學畫面截圖" onerror="this.outerHTML='<span>教學畫面</span>'" />
+            <video src="assets/courses/teaching-demo.mp4" muted playsinline loop
+                   onmouseenter="this.play()" onmouseleave="this.pause()"
+                   onerror="this.outerHTML='<span>教學畫面</span>'"
+                   poster="assets/courses/material-03.jpg"></video>
           </div>
         </div>
       </div>
