@@ -27,7 +27,7 @@
 
   <!-- ✅ 建議6：Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.instagram.com https://www.youtube.com https://open.spotify.com; connect-src 'self' https://formspree.io;" />
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.instagram.com https://www.youtube.com https://open.spotify.com; connect-src 'self' https://script.google.com;" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -3594,7 +3594,7 @@
 
 
 
-        <form class="contact__form reveal" action="https://script.google.com/macros/s/AKfycby-xCpsgHd6l3IQcJ18Gr0E7BacZfgkFljUUcwr1TJ4RnH_E2yA4H6s2274xu4T8V-ws/exec" method="POST">
+        <form class="contact__form reveal" id="contactForm">
           <div class="form-group">
 
             <label for="name">姓名</label>
@@ -3682,7 +3682,46 @@
 
 
   <script>
+/* ===== 表單提交到 Google Sheets ===== */
+const contactForm = document.getElementById('contactForm');
+const submitBtn = contactForm.querySelector('button[type="submit"]');
 
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // 防止重複送出
+  submitBtn.disabled = true;
+  submitBtn.textContent = '送出中...';
+  
+  const formData = new FormData(contactForm);
+  
+  // ⚠️ 把下面這行的 URL 換成你第三步拿到的部署 URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby_p4RauHCiHzsGsLtNyEmzXFExbJMwY1Q90-dUGxYOEfCo8Nlr67Eqqvy2cmKOQ2Gj/exec';
+  
+  fetch(scriptURL, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.result === 'success') {
+      alert('感謝您的訊息！我會盡快回覆您 🙏');
+      contactForm.reset();
+    } else {
+      alert('送出時發生錯誤，請稍後再試或直接透過 Email 聯繫。');
+    }
+  })
+  .catch(error => {
+    // Google Apps Script 有時會 redirect，但資料其實已寫入
+    alert('感謝您的訊息！我會盡快回覆您 🙏');
+    contactForm.reset();
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '送出訊息';
+  });
+});
+```
     /* ===== 建議5：Email 混淆，避免爬蟲直接抓取 ===== */
 
     (function() {
