@@ -9,20 +9,14 @@
   <meta property="og:title" content="Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯" />
   <meta property="og:description" content="Win（阿燈）— 專業泰文教學、泰國旅遊合作與影視歌詞翻譯。持有朱大泰文檢定證明。" />
   <meta property="og:type" content="website" />
-
-  <!-- ✅ 【你需要做的事 #1】把下面兩行的網址換成你的真實網址 -->
-  <meta property="og:url" content="https://your-username.github.io/your-repo/" />
-  <link rel="canonical" href="https://your-username.github.io/your-repo/" />
-
-  <!-- ✅ 社群分享預覽圖（og-cover.svg 要和 index.html 放在同一個資料夾） -->
+  <meta property="og:url" content="https://trafficthaiwin.github.io/Trafficthai_Win/" />
+  <link rel="canonical" href="https://trafficthaiwin.github.io/Trafficthai_Win/" />
   <meta property="og:image" content="og-cover.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Favicon（直接用 emoji，不需要額外圖片） -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚦</text></svg>" />
 
-  <!-- ✅ Google 結構化資料，幫助搜尋引擎理解你是誰 -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +25,7 @@
     "alternateName": "泰國紅綠燈 Win",
     "jobTitle": "泰文教師 / 口譯員 / KOL",
     "description": "朱拉隆功大學泰文檢定認證，專業泰文教學、翻譯口譯與泰國旅遊 KOL",
-    "url": "https://your-username.github.io/your-repo/",
+    "url": "https://trafficthaiwin.github.io/Trafficthai_Win/",
     "sameAs": [
       "https://www.instagram.com/trafficthai_win"
     ],
@@ -998,7 +992,7 @@
     /* ===== Testimonials ===== */
     .testimonials__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
@@ -1171,7 +1165,6 @@
       font-size: 1rem;
     }
 
-    /* Form feedback messages */
     .form-feedback {
       display: none;
       padding: 14px 20px;
@@ -1250,6 +1243,7 @@
       .about__cert-card { position: static; max-width: 360px; margin: 0 auto; }
       .contact__grid { grid-template-columns: 1fr; gap: 40px; }
       .materials__grid, .materials__grid--video { grid-template-columns: repeat(2, 1fr); }
+      .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -1303,6 +1297,7 @@
 
     @media (max-width: 560px) {
       .materials__grid, .materials__grid--video { grid-template-columns: 1fr; }
+      .testimonials__grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -1803,49 +1798,83 @@
 
         </div>
       </div>
-    </div>
 
-      <!-- 學生怎麼說（簡版，嵌入課程區塊） -->
+      <!-- ✅ 學生怎麼說（移入 container 內，與上方影片對齊） -->
       <div class="mini-testimonials reveal" style="margin-top:64px;">
         <h3 style="font-size:1.2rem;font-weight:600;color:var(--color-primary-dark);margin-bottom:8px;text-align:center;">學生怎麼說</h3>
         <p style="font-size:0.92rem;color:var(--color-text-secondary);text-align:center;margin-bottom:32px;">真實的學習回饋，是最好的課程說明</p>
         <div class="testimonials__grid">
 
           <div class="testimonial-card">
-            <p class="testimonial-card__text">在這裡填入第一位學生的真實評語。建議 2–4 句話，說說上課前後的改變，或是推薦 Win 老師的理由。</p>
+            <p class="testimonial-card__text">雖然才上了三節課，但真的超超超滿意！５顆星給好給滿，教得很細又都很實用，所以就又果斷的續課啦嘿嘿，真的很謝謝你的自薦文當初有出現在我的脆。</p>
             <div class="testimonial-card__footer">
               <div class="testimonial-card__avatar">A</div>
               <div>
-                <div class="testimonial-card__name">學生 A（可填真名或暱稱）</div>
-                <div class="testimonial-card__meta">精緻個人班・學習 3 個月</div>
+                <div class="testimonial-card__name">學生 A</div>
+                <div class="testimonial-card__meta">學習 1 個月</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
-            <p class="testimonial-card__text">在這裡填入第二位學生的真實評語。可以聚焦在老師的教學方式、教材品質，或是某個讓你印象深刻的上課時刻。</p>
+            <p class="testimonial-card__text">老師上課會額外補充在泰國生活真實面臨到的有趣事情，不是只有照著講義上教學，我覺得有自身體驗分享更重要，才能有畫面。</p>
             <div class="testimonial-card__footer">
               <div class="testimonial-card__avatar">B</div>
               <div>
-                <div class="testimonial-card__name">學生 B（可填真名或暱稱）</div>
-                <div class="testimonial-card__meta">歡樂團體班・學習 2 個月</div>
+                <div class="testimonial-card__name">學生 B</div>
+                <div class="testimonial-card__meta">學習 3 個月</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
-            <p class="testimonial-card__text">在這裡填入第三位學生的真實評語。例如翻譯委託的客戶也很適合放這裡，說說收到翻譯後的感受。</p>
+            <p class="testimonial-card__text">針對台灣人發音跟學習弱點來教學，以及課外補充很實用。</p>
             <div class="testimonial-card__footer">
               <div class="testimonial-card__avatar">C</div>
               <div>
-                <div class="testimonial-card__name">學生 C（可填真名或暱稱）</div>
-                <div class="testimonial-card__meta">全泰文會話班・學習 6 個月</div>
+                <div class="testimonial-card__name">學生 C</div>
+                <div class="testimonial-card__meta">學習 3 個月</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__text">可以互相練習開口說泰文很棒，阿燈很會給情緒價值，而且會分享有趣的事情，講義編排淺顯易懂又很漂亮。</p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__avatar">D</div>
+              <div>
+                <div class="testimonial-card__name">學生 D</div>
+                <div class="testimonial-card__meta">學習 3 個月</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__text">在課堂上會不斷交叉運用之前有學習過的內容，就算不小心忘記，也可以藉這個機會慢慢熟悉。另外偶爾會穿插泰國文化的小介紹，讓課程內容很貼近日常，彷彿是在與朋友的聊天過程中，自然而然學習到這些知識。。</p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__avatar">E</div>
+              <div>
+                <div class="testimonial-card__name">學生 E</div>
+                <div class="testimonial-card__meta">學習 3 個月</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__text">超喜歡老師的課！沒有什麼壓力，又很有趣！互動跟回家作業都對我很有幫助！。</p>
+            <div class="testimonial-card__footer">
+              <div class="testimonial-card__avatar">F</div>
+              <div>
+                <div class="testimonial-card__name">學生 F</div>
+                <div class="testimonial-card__meta">學習 3 個月</div>
               </div>
             </div>
           </div>
 
         </div>
       </div>
+
+    </div><!-- /.container -->
   </section>
 
 
@@ -1876,7 +1905,6 @@
               <a href="https://www.instagram.com/trafficthai_win" target="_blank" rel="noopener noreferrer">IG：trafficthai_win</a>
             </li>
 
-            <!-- ✅ 【你需要做的事 #3】把 YOUR_LINE_ID 換成你的 LINE ID -->
             <li class="contact__channel">
               <span class="contact__channel-icon">💬</span>
               <a href="https://line.me/ti/p/~YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">LINE：YOUR_LINE_ID</a>
@@ -1910,7 +1938,6 @@
           </div>
           <button type="submit" class="btn btn--primary" id="submitBtn">送出訊息</button>
 
-          <!-- 成功 / 失敗提示（取代原本的 alert 彈窗） -->
           <div class="form-feedback form-feedback--success" id="formSuccess">
             🙏 感謝您的訊息！我會在 1–2 個工作天內回覆您。
           </div>
@@ -1944,7 +1971,7 @@
       }, 400);
     }
 
-    /* ===== 表單送出（取代 alert，改用頁內提示） ===== */
+    /* ===== 表單送出 ===== */
     var contactForm = document.getElementById('contactForm');
     var submitBtn = document.getElementById('submitBtn');
     var formSuccess = document.getElementById('formSuccess');
@@ -1971,7 +1998,6 @@
           }
         })
         .catch(function() {
-          /* Google Apps Script 有時會 redirect，但資料已寫入 */
           formSuccess.style.display = 'block';
           contactForm.reset();
         })
@@ -1991,7 +2017,6 @@
         el.innerHTML = '<a href="ma' + 'ilto:' + addr + '">' + addr + '</a>';
       }
     })();
-    
 
     /* ===== Navbar ===== */
     var navToggle = document.getElementById('navToggle');
