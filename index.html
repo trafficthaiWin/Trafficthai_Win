@@ -1,380 +1,224 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>泰國紅綠燈 Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯</title>
-
   <meta name="description" content="Win（阿燈）提供專業泰文教學、泰國旅遊 KOL 合作與影視歌詞翻譯服務。持有朱拉隆功大學泰文檢定證明，擁有豐富藝人翻譯與口譯實戰經驗。泰文課程、品牌合作、翻譯委託歡迎聯繫。" />
-
   <meta name="keywords" content="泰文教學, 泰文老師, 泰國旅遊, KOL, 泰文翻譯, 歌詞翻譯, 朱拉隆功大學, Win, 阿燈, 泰文課程" />
-
   <meta property="og:title" content="Win 泰文老師｜泰國旅遊 KOL ｜專業泰文翻譯" />
-
   <meta property="og:description" content="Win（阿燈）— 專業泰文教學、泰國旅遊合作與影視歌詞翻譯。持有朱大泰文檢定證明。" />
-
   <meta property="og:type" content="website" />
 
-  <!-- ✅ 建議4：上線前請將下方兩處 URL 替換為你的實際網址 -->
-  <meta property="og:url" content="https://your-username.github.io/your-repo/" />
+  <!-- ✅ 【你需要做的事 #1】把下面兩行的網址換成你的真實網址 -->
+  <meta property="og:url" content="https://Trafficthai_Win.github.io/your-repo/" />
+  <link rel="canonical" href="https://Trafficthai_Win.github.io/your-repo/" />
 
-  <link rel="canonical" href="https://your-username.github.io/your-repo/" />
+  <!-- ✅ 社群分享預覽圖（og-cover.svg 要和 index.html 放在同一個資料夾） -->
+  <meta property="og:image" content="social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- ✅ 建議6：Content Security Policy -->
+  <!-- Favicon（直接用 emoji，不需要額外圖片） -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚦</text></svg>" />
+
+  <!-- ✅ Google 結構化資料，幫助搜尋引擎理解你是誰 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Win（阿燈）",
+    "alternateName": "泰國紅綠燈 Win",
+    "jobTitle": "泰文教師 / 口譯員 / KOL",
+    "description": "朱拉隆功大學泰文檢定認證，專業泰文教學、翻譯口譯與泰國旅遊 KOL",
+    "url": "https://Trafficthai_Win.github.io/your-repo/",
+    "sameAs": [
+      "https://www.instagram.com/trafficthai_win"
+    ],
+    "knowsLanguage": ["zh-Hant", "th", "en"],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "朱拉隆功大學泰文檢定 (CUTFL)",
+      "credentialCategory": "Language Proficiency Certificate"
+    }
+  }
+  </script>
+
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.instagram.com https://www.youtube.com https://open.spotify.com; connect-src 'self' https://script.google.com;" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-
-
   <style>
-
     :root {
-
       --color-primary: #1a2a6c;
-
       --color-primary-light: #2d3f8f;
-
       --color-primary-dark: #0f1a45;
-
       --color-accent: #e8b84b;
-
       --color-accent-soft: #f5dfa0;
-
       --color-bg: #ffffff;
-
       --color-bg-alt: #f6f7fb;
-
       --color-bg-warm: #faf9f7;
-
       --color-text: #23272f;
-
       --color-text-secondary: #5a6072;
-
       --color-text-light: #8b90a0;
-
       --color-border: #e2e4ea;
-
       --color-border-light: #eff0f4;
-
       --font-thai: 'Anuphan', sans-serif;
-
       --font-zh: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-
       --font-body: var(--font-zh);
-
       --radius-sm: 6px;
-
       --radius-md: 12px;
-
       --radius-lg: 20px;
-
       --shadow-sm: 0 1px 3px rgba(26,42,108,0.06);
-
       --shadow-md: 0 4px 20px rgba(26,42,108,0.08);
-
       --shadow-lg: 0 12px 40px rgba(26,42,108,0.12);
-
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     }
-
-
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-
-
     html {
-
       scroll-behavior: smooth;
-
       scroll-padding-top: 72px;
-
       font-size: 16px;
-
     }
-
-
 
     body {
-
       font-family: var(--font-body);
-
       color: var(--color-text);
-
       background: var(--color-bg);
-
       line-height: 1.8;
-
       -webkit-font-smoothing: antialiased;
-
       overflow-x: hidden;
-
     }
-
-
 
     img { max-width: 100%; display: block; }
-
     a { color: inherit; text-decoration: none; }
 
-
-
     .container {
-
       width: 100%;
-
       max-width: 1120px;
-
       margin: 0 auto;
-
       padding: 0 24px;
-
     }
-
-
 
     .thai, [lang="th"] {
-
       font-family: var(--font-thai);
-
     }
 
-
-
+    /* ===== Navbar ===== */
     .navbar {
-
       position: fixed;
-
       top: 0;
-
       left: 0;
-
       width: 100%;
-
       z-index: 1000;
-
       background: rgba(255,255,255,0.92);
-
       backdrop-filter: blur(16px);
-
       -webkit-backdrop-filter: blur(16px);
-
       border-bottom: 1px solid var(--color-border-light);
-
       transition: var(--transition);
-
     }
 
-
-
-    .navbar.scrolled {
-
-      box-shadow: var(--shadow-sm);
-
-    }
-
-
+    .navbar.scrolled { box-shadow: var(--shadow-sm); }
 
     .navbar__inner {
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
       height: 68px;
-
     }
-
-
 
     .navbar__logo {
-
       font-weight: 700;
-
       font-size: 1.15rem;
-
       color: var(--color-primary);
-
       letter-spacing: -0.02em;
-
       display: flex;
-
       align-items: center;
-
       gap: 8px;
-
     }
-
-
 
     .navbar__logo-dot {
-
       width: 8px;
-
       height: 8px;
-
       background: var(--color-accent);
-
       border-radius: 50%;
-
       display: inline-block;
-
     }
-
-
 
     .navbar__links {
-
       display: flex;
-
       align-items: center;
-
       gap: 32px;
-
       list-style: none;
-
     }
-
-
 
     .navbar__links a {
-
       font-size: 0.9rem;
-
       font-weight: 500;
-
       color: var(--color-text-secondary);
-
       position: relative;
-
       transition: color var(--transition);
-
       padding: 4px 0;
-
     }
-
-
 
     .navbar__links a::after {
-
       content: '';
-
       position: absolute;
-
       bottom: -2px;
-
       left: 0;
-
       width: 0;
-
       height: 2px;
-
       background: var(--color-primary);
-
       transition: width var(--transition);
-
     }
-
-
 
     .navbar__links a:hover,
-
-    .navbar__links a.active {
-
-      color: var(--color-primary);
-
-    }
-
-
+    .navbar__links a.active { color: var(--color-primary); }
 
     .navbar__links a:hover::after,
-
-    .navbar__links a.active::after {
-
-      width: 100%;
-
-    }
-
-
+    .navbar__links a.active::after { width: 100%; }
 
     .navbar__toggle {
-
       display: none;
-
       flex-direction: column;
-
       gap: 5px;
-
       background: none;
-
       border: none;
-
       cursor: pointer;
-
       padding: 4px;
-
     }
-
-
 
     .navbar__toggle span {
-
       width: 24px;
-
       height: 2px;
-
       background: var(--color-primary);
-
       border-radius: 2px;
-
       transition: var(--transition);
-
     }
 
-
-
+    /* ===== Hero ===== */
     .hero {
-
       min-height: 100vh;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       position: relative;
-
       background: var(--color-bg);
-
       overflow: hidden;
-
       padding-top: 68px;
-
     }
 
-    /* ===== Hero 點點裝飾背景（加強版） ===== */
     .hero__dots {
       position: absolute;
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      background-image:
-        radial-gradient(circle, var(--color-primary) 1.3px, transparent 1.3px);
+      background-image: radial-gradient(circle, var(--color-primary) 1.3px, transparent 1.3px);
       background-size: 28px 28px;
       opacity: 0.10;
       mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 25%, rgba(0,0,0,0.4) 45%, black 70%);
@@ -386,8 +230,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      background-image:
-        radial-gradient(circle, var(--color-accent) 1.6px, transparent 1.6px);
+      background-image: radial-gradient(circle, var(--color-accent) 1.6px, transparent 1.6px);
       background-size: 56px 56px;
       background-position: 14px 14px;
       opacity: 0.12;
@@ -396,2725 +239,1284 @@
     }
 
     .hero__bg-pattern {
-
       position: absolute;
-
       top: 0;
-
       right: 0;
-
       width: 50%;
-
       height: 100%;
-
       opacity: 0.035;
-
       pointer-events: none;
-
       background-image:
-
         radial-gradient(circle at 30% 40%, var(--color-primary) 1px, transparent 1px),
-
         radial-gradient(circle at 70% 60%, var(--color-primary) 1px, transparent 1px);
-
       background-size: 40px 40px;
-
     }
-
-
 
     .hero__content {
-
       text-align: center;
-
       max-width: 800px;
-
       padding: 60px 24px;
-
       position: relative;
-
       z-index: 1;
-
     }
-
-
 
     .hero__tag {
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 8px;
-
       background: var(--color-bg-alt);
-
       border: 1px solid var(--color-border);
-
       padding: 8px 20px;
-
       border-radius: 100px;
-
       font-size: 0.85rem;
-
       color: var(--color-text-secondary);
-
       margin-bottom: 32px;
-
       animation: fadeInUp 0.8s ease both;
-
     }
 
-
-
-    .hero__tag .thai {
-
-      color: var(--color-primary);
-
-      font-weight: 600;
-
-    }
-
-
+    .hero__tag .thai { color: var(--color-primary); font-weight: 600; }
 
     .hero__title {
-
       font-size: clamp(2.4rem, 6vw, 4rem);
-
       font-weight: 700;
-
       line-height: 1.25;
-
       letter-spacing: -0.03em;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 12px;
-
       animation: fadeInUp 0.8s 0.15s ease both;
-
     }
 
-
-
-    .hero__title span {
-
-      display: inline-block;
-
-      position: relative;
-
-    }
-
-
+    .hero__title span { display: inline-block; position: relative; }
 
     .hero__title .highlight {
-
       color: var(--color-primary);
-
       position: relative;
-
     }
-
-
 
     .hero__title .highlight::after {
-
       content: '';
-
       position: absolute;
-
       bottom: 4px;
-
       left: 0;
-
       width: 100%;
-
       height: 8px;
-
       background: var(--color-accent-soft);
-
       z-index: -1;
-
       border-radius: 4px;
-
     }
-
-
 
     .hero__separator {
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       gap: 16px;
-
       margin: 24px 0;
-
       animation: fadeInUp 0.8s 0.3s ease both;
-
     }
-
-
 
     .hero__separator span {
-
       font-family: var(--font-thai);
-
       font-size: 1.5rem;
-
       color: var(--color-accent);
-
       font-weight: 300;
-
     }
-
-
 
     .hero__separator::before,
-
     .hero__separator::after {
-
       content: '';
-
       width: 48px;
-
       height: 1px;
-
       background: var(--color-border);
-
     }
-
-
 
     .hero__subtitle {
-
       font-size: 1.1rem;
-
       color: var(--color-text-secondary);
-
       line-height: 1.9;
-
       max-width: 580px;
-
       margin: 0 auto 40px;
-
       animation: fadeInUp 0.8s 0.4s ease both;
-
     }
-
-
 
     .hero__actions {
-
       display: flex;
-
       gap: 16px;
-
       justify-content: center;
-
       flex-wrap: wrap;
-
       animation: fadeInUp 0.8s 0.55s ease both;
-
     }
 
-
-
+    /* ===== Buttons ===== */
     .btn {
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 8px;
-
       padding: 14px 32px;
-
       border-radius: var(--radius-sm);
-
       font-size: 0.95rem;
-
       font-weight: 600;
-
       font-family: var(--font-body);
-
       border: none;
-
       cursor: pointer;
-
       transition: var(--transition);
-
     }
-
-
 
     .btn--primary {
-
       background: var(--color-primary);
-
       color: #fff;
-
     }
-
-
 
     .btn--primary:hover {
-
       background: var(--color-primary-light);
-
       transform: translateY(-1px);
-
       box-shadow: var(--shadow-md);
-
     }
-
-
 
     .btn--outline {
-
       background: transparent;
-
       color: var(--color-primary);
-
       border: 1.5px solid var(--color-primary);
-
     }
-
-
 
     .btn--outline:hover {
-
       background: var(--color-primary);
-
       color: #fff;
-
       transform: translateY(-1px);
-
     }
-
-
 
     .btn--small {
-
       padding: 10px 20px;
-
       font-size: 0.85rem;
-
     }
 
-
-
-    .section {
-
-      padding: 100px 0;
-
-    }
-
-
-
-    .section--alt {
-
-      background: var(--color-bg-alt);
-
-    }
-
-
-
-    .section--warm {
-
-      background: var(--color-bg-warm);
-
-    }
-
-
+    /* ===== Section ===== */
+    .section { padding: 100px 0; }
+    .section--alt { background: var(--color-bg-alt); }
+    .section--warm { background: var(--color-bg-warm); }
 
     .section__header {
-
       text-align: center;
-
       margin-bottom: 64px;
-
     }
-
-
 
     .section__label {
-
       display: inline-block;
-
       font-size: 0.8rem;
-
       font-weight: 600;
-
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
-
       color: var(--color-primary);
-
       margin-bottom: 12px;
-
     }
-
-
 
     .section__title {
-
       font-size: clamp(1.8rem, 4vw, 2.5rem);
-
       font-weight: 700;
-
       color: var(--color-primary-dark);
-
       letter-spacing: -0.02em;
-
       line-height: 1.3;
-
     }
-
-
 
     .section__desc {
-
       margin-top: 16px;
-
       font-size: 1rem;
-
       color: var(--color-text-secondary);
-
       max-width: 560px;
-
       margin-left: auto;
-
       margin-right: auto;
-
     }
 
-
-
+    /* ===== About ===== */
     .about__grid {
-
       display: grid;
-
       grid-template-columns: 1fr 340px;
-
       gap: 64px;
-
       align-items: start;
-
     }
-
-
 
     .about__text h3 {
-
       font-size: 1.3rem;
-
       color: var(--color-primary);
-
       margin-bottom: 16px;
-
       font-weight: 600;
-
     }
-
-
 
     .about__text p {
-
       color: var(--color-text-secondary);
-
       margin-bottom: 16px;
-
       font-size: 0.95rem;
-
     }
-
-
 
     .about__timeline {
-
       margin-top: 32px;
-
       padding-top: 32px;
-
       border-top: 1px solid var(--color-border-light);
-
     }
-
-
 
     .about__timeline-title {
-
       font-size: 1.1rem;
-
       font-weight: 600;
-
       color: var(--color-primary);
-
       margin-bottom: 20px;
-
     }
-
-
 
     .timeline-item {
-
       display: flex;
-
       gap: 20px;
-
       padding: 14px 0;
-
       position: relative;
-
     }
 
-
-
-    .timeline-item:not(:last-child) {
-
-      border-bottom: 1px solid var(--color-border-light);
-
-    }
-
-
+    .timeline-item:not(:last-child) { border-bottom: 1px solid var(--color-border-light); }
 
     .timeline-year {
-
       flex-shrink: 0;
-
       width: 120px;
-
       font-size: 0.82rem;
-
       font-weight: 600;
-
       color: var(--color-primary);
-
       padding-top: 2px;
-
       letter-spacing: 0.01em;
-
     }
-
-
 
     .timeline-content h4 {
-
       font-size: 0.95rem;
-
       font-weight: 600;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 2px;
-
     }
-
-
 
     .timeline-content p {
-
       font-size: 0.85rem;
-
       color: var(--color-text-light);
-
       margin-bottom: 0;
-
     }
-
-
 
     .about__cert-card {
-
       background: var(--color-bg);
-
       border: 1px solid var(--color-border);
-
       border-radius: var(--radius-md);
-
       padding: 32px;
-
       text-align: center;
-
       position: sticky;
-
       top: 100px;
-
     }
-
-
 
     .about__cert-card h4 {
-
       font-size: 1rem;
-
       font-weight: 600;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 8px;
-
     }
-
-
 
     .about__cert-card p {
-
       font-size: 0.85rem;
-
       color: var(--color-text-light);
-
       margin-bottom: 20px;
-
     }
-
-
 
     .about__cert-icon {
-
       width: 64px;
-
       height: 64px;
-
       margin: 0 auto 20px;
-
       background: var(--color-bg-alt);
-
       border-radius: var(--radius-md);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       font-size: 1.8rem;
-
     }
-
-
 
     .about__cert-thumb {
-
       width: 100%;
-
       aspect-ratio: 3 / 4;
-
       background: var(--color-bg-alt);
-
       border: 1px solid var(--color-border-light);
-
       border-radius: var(--radius-sm);
-
       overflow: hidden;
-
       cursor: pointer;
-
       transition: var(--transition);
-
       position: relative;
-
     }
-
-
 
     .about__cert-thumb:hover {
-
       box-shadow: var(--shadow-md);
-
       transform: translateY(-2px);
-
     }
 
-
-
-    .about__cert-thumb img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-    }
-
-
+    .about__cert-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
     .about__cert-thumb__overlay {
-
       position: absolute;
-
       inset: 0;
-
       background: rgba(26,42,108,0.5);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       opacity: 0;
-
       transition: var(--transition);
-
     }
 
-
-
-    .about__cert-thumb:hover .about__cert-thumb__overlay {
-
-      opacity: 1;
-
-    }
-
-
+    .about__cert-thumb:hover .about__cert-thumb__overlay { opacity: 1; }
 
     .about__cert-thumb__overlay span {
-
       color: #fff;
-
       font-size: 0.85rem;
-
       font-weight: 600;
-
       background: rgba(0,0,0,0.3);
-
       padding: 8px 16px;
-
       border-radius: var(--radius-sm);
-
     }
 
-
-
+    /* ===== Lightbox ===== */
     .lightbox {
-
       position: fixed;
-
       inset: 0;
-
       z-index: 9999;
-
       background: rgba(0,0,0,0.85);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       opacity: 0;
-
       visibility: hidden;
-
       transition: opacity 0.35s ease, visibility 0.35s ease;
-
       padding: 24px;
-
     }
 
-
-
-    .lightbox.open {
-
-      opacity: 1;
-
-      visibility: visible;
-
-    }
-
-
+    .lightbox.open { opacity: 1; visibility: visible; }
 
     .lightbox__close {
-
       position: absolute;
-
       top: 20px;
-
       right: 24px;
-
       width: 44px;
-
       height: 44px;
-
       border-radius: 50%;
-
       border: none;
-
       background: rgba(255,255,255,0.15);
-
       color: #fff;
-
       font-size: 1.5rem;
-
       cursor: pointer;
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       transition: var(--transition);
-
     }
 
-
-
-    .lightbox__close:hover {
-
-      background: rgba(255,255,255,0.3);
-
-    }
-
-
+    .lightbox__close:hover { background: rgba(255,255,255,0.3); }
 
     .lightbox__img {
-
       max-width: 90%;
-
       max-height: 90vh;
-
       border-radius: var(--radius-md);
-
       box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-
       transform: scale(0.9);
-
       transition: transform 0.35s ease;
-
     }
 
+    .lightbox.open .lightbox__img { transform: scale(1); }
 
-
-    .lightbox.open .lightbox__img {
-
-      transform: scale(1);
-
-    }
-
-
-
+    /* ===== Portfolio ===== */
     .portfolio__tabs {
-
       display: flex;
-
       justify-content: center;
-
       gap: 8px;
-
       margin-bottom: 48px;
-
       flex-wrap: wrap;
-
     }
-
-
 
     .portfolio__tab {
-
       padding: 10px 24px;
-
       border: 1.5px solid var(--color-border);
-
       border-radius: 100px;
-
       background: transparent;
-
       font-family: var(--font-body);
-
       font-size: 0.88rem;
-
       font-weight: 500;
-
       color: var(--color-text-secondary);
-
       cursor: pointer;
-
       transition: var(--transition);
-
     }
 
-
-
-    .portfolio__tab:hover {
-
-      border-color: var(--color-primary);
-
-      color: var(--color-primary);
-
-    }
-
-
+    .portfolio__tab:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
     .portfolio__tab.active {
-
       background: var(--color-primary);
-
       border-color: var(--color-primary);
-
       color: #fff;
-
     }
-
-
 
     .portfolio__grid {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-
       gap: 20px;
-
     }
-
-
 
     .portfolio__item {
-
       position: relative;
-
       border-radius: var(--radius-md);
-
       overflow: hidden;
-
       background: var(--color-bg-alt);
-
       border: 1px solid var(--color-border-light);
-
       transition: var(--transition);
-
     }
-
-
 
     .portfolio__item:hover {
-
       transform: translateY(-4px);
-
       box-shadow: var(--shadow-lg);
-
     }
 
+    .portfolio__item[data-category] { display: block; }
+    .portfolio__item.hidden { display: none; }
 
-
-    .portfolio__item[data-category] {
-
-      display: block;
-
-    }
-
-
-
-    .portfolio__item.hidden {
-
-      display: none;
-
-    }
-
-
-
-    .portfolio__item--reel .portfolio__media {
-
-      aspect-ratio: 9 / 16;
-
-    }
-
-
-
-    .portfolio__item--post .portfolio__media {
-
-      aspect-ratio: 4 / 5;
-
-    }
-
-
+    .portfolio__item--reel .portfolio__media { aspect-ratio: 9 / 16; }
+    .portfolio__item--post .portfolio__media { aspect-ratio: 4 / 5; }
 
     .portfolio__media {
-
       width: 100%;
-
       aspect-ratio: 4 / 5;
-
       overflow: hidden;
-
       background: var(--color-bg-alt);
-
+      position: relative;
     }
-
-
 
     .portfolio__media img,
-
     .portfolio__media video {
-
       width: 100%;
-
       height: 100%;
-
       object-fit: cover;
-
       transition: transform 0.6s ease;
-
     }
-
-
 
     .portfolio__item:hover .portfolio__media img,
+    .portfolio__item:hover .portfolio__media video { transform: scale(1.04); }
 
-    .portfolio__item:hover .portfolio__media video {
+    .portfolio__media iframe { width: 100%; height: 100%; border: none; }
 
-      transform: scale(1.04);
-
-    }
-
-
-
-    .portfolio__media iframe {
-
+    /* Lazy load placeholder */
+    .iframe-placeholder {
       width: 100%;
-
       height: 100%;
-
+      background: var(--color-bg-alt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
       border: none;
-
+      font-family: var(--font-body);
     }
 
-
-
-    .portfolio__info {
-
-      padding: 16px 20px;
-
+    .iframe-placeholder__icon {
+      font-size: 2.2rem;
+      opacity: 0.5;
     }
 
+    .iframe-placeholder__text {
+      font-size: 0.82rem;
+      color: var(--color-text-light);
+    }
 
+    .portfolio__info { padding: 16px 20px; }
 
     .portfolio__info h4 {
-
       font-size: 0.92rem;
-
       font-weight: 600;
-
       margin-bottom: 4px;
-
     }
-
-
 
     .portfolio__info p {
-
       font-size: 0.8rem;
-
       color: var(--color-text-light);
-
     }
-
-
 
     .portfolio__link {
-
       display: inline-flex;
-
       align-items: center;
-
       gap: 4px;
-
       font-size: 0.8rem;
-
       color: var(--color-primary);
-
       font-weight: 500;
-
       margin-top: 8px;
-
     }
 
-
-
-    .portfolio__link:hover {
-
-      text-decoration: underline;
-
-    }
-
-
-
-    .works__grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-      gap: 24px;
-
-    }
-
-
-
-    .works__card {
-
-      background: var(--color-bg);
-
-      border: 1px solid var(--color-border);
-
-      border-radius: var(--radius-md);
-
-      overflow: hidden;
-
-      transition: var(--transition);
-
-    }
-
-
-
-    .works__card:hover {
-
-      box-shadow: var(--shadow-md);
-
-      transform: translateY(-3px);
-
-    }
-
-
-
-    .works__card-media {
-
-      aspect-ratio: 16 / 9;
-
-      background: var(--color-bg-alt);
-
-      overflow: hidden;
-
-    }
-
-
-
-    .works__card-media img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-    }
-
-
-
-    .works__card-media--reel {
-
-      aspect-ratio: 9 / 16;
-
-      max-width: 240px;
-
-      margin: 0 auto;
-
-    }
-
-
-
-    .works__card-media iframe {
-
-      width: 100%;
-
-      height: 100%;
-
-      border: none;
-
-    }
-
-
-
-    .works__card-body {
-
-      padding: 24px;
-
-    }
-
-
-
-    .works__card-tag {
-
-      display: inline-block;
-
-      font-size: 0.75rem;
-
+    .portfolio__link:hover { text-decoration: underline; }
+
+    /* ===== Works ===== */
+    .works__section-title {
+      font-size: 1.2rem;
       font-weight: 600;
-
-      letter-spacing: 0.06em;
-
-      color: var(--color-primary);
-
-      background: rgba(26,42,108,0.06);
-
-      padding: 4px 12px;
-
-      border-radius: 100px;
-
-      margin-bottom: 12px;
-
+      color: var(--color-primary-dark);
+      margin-bottom: 24px;
     }
 
+    .works__section-title + .portfolio__grid { margin-top: 0; }
 
-
-    .works__card-body h4 {
-
-      font-size: 1.05rem;
-
-      font-weight: 600;
-
-      margin-bottom: 8px;
-
-    }
-
-
-
-    .works__card-body p {
-
-      font-size: 0.88rem;
-
-      color: var(--color-text-secondary);
-
-      line-height: 1.7;
-
-    }
-
-
-
-    .works__spotify {
-
-      margin-top: 64px;
-
-      text-align: center;
-
-    }
-
-
+    .works__spotify { margin-top: 64px; text-align: center; }
 
     .works__spotify h3 {
-
       font-size: 1.2rem;
-
       font-weight: 600;
-
       margin-bottom: 24px;
-
       color: var(--color-primary-dark);
-
     }
-
-
 
     .works__spotify-embed {
-
       max-width: 600px;
-
       margin: 0 auto;
-
       border-radius: var(--radius-md);
-
       overflow: hidden;
-
       background: var(--color-bg-alt);
-
       border: 1px solid var(--color-border-light);
-
     }
 
+    .works__spotify-embed iframe { width: 100%; border: none; display: block; }
 
-
-    .works__spotify-embed iframe {
-
-      width: 100%;
-
-      border: none;
-
-      display: block;
-
-    }
-
-
-
+    /* ===== Courses ===== */
     .courses__grid {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-
       gap: 24px;
-
     }
-
-
 
     .course-card {
-
       background: var(--color-bg);
-
       border: 1.5px solid var(--color-border);
-
       border-radius: var(--radius-md);
-
       padding: 36px 32px;
-
       transition: var(--transition);
-
       position: relative;
-
       overflow: hidden;
-
+      display: flex;
+      flex-direction: column;
     }
-
-
 
     .course-card::before {
-
       content: '';
-
       position: absolute;
-
       top: 0;
-
       left: 0;
-
       width: 100%;
-
       height: 3px;
-
       background: var(--color-primary);
-
       transform: scaleX(0);
-
       transform-origin: left;
-
       transition: transform 0.4s ease;
-
     }
 
-
-
-    .course-card:hover::before {
-
-      transform: scaleX(1);
-
-    }
-
-
+    .course-card:hover::before { transform: scaleX(1); }
 
     .course-card:hover {
-
       border-color: var(--color-primary);
-
       box-shadow: var(--shadow-md);
-
     }
-
-
 
     .course-card__badge {
-
       display: inline-block;
-
       font-size: 0.75rem;
-
       font-weight: 600;
-
       color: var(--color-accent);
-
       background: rgba(232,184,75,0.12);
-
       padding: 4px 12px;
-
       border-radius: 100px;
-
       margin-bottom: 16px;
-
     }
-
-
 
     .course-card h3 {
-
       font-size: 1.2rem;
-
       font-weight: 700;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 12px;
-
     }
-
-
 
     .course-card p {
-
       font-size: 0.9rem;
-
       color: var(--color-text-secondary);
-
       margin-bottom: 20px;
-
       line-height: 1.7;
-
+      flex: 1;
     }
-
-
 
     .course-card__price {
-
       font-size: 1.6rem;
-
       font-weight: 700;
-
       color: var(--color-primary);
-
       margin-bottom: 4px;
-
     }
-
-
 
     .course-card__price small {
-
       font-size: 0.85rem;
-
       font-weight: 400;
-
       color: var(--color-text-light);
-
     }
-
-
 
     .course-card__features {
-
       list-style: none;
-
       margin-top: 20px;
-
       padding-top: 20px;
-
       border-top: 1px solid var(--color-border-light);
-
+      margin-bottom: 24px;
     }
-
-
 
     .course-card__features li {
-
       font-size: 0.88rem;
-
       color: var(--color-text-secondary);
-
       padding: 6px 0;
-
       display: flex;
-
       align-items: center;
-
       gap: 10px;
-
     }
-
-
 
     .course-card__features li::before {
-
       content: '\2713';
-
       font-weight: 700;
-
       color: var(--color-primary);
-
       font-size: 0.8rem;
-
     }
 
-
-
-    .courses__materials {
-
-      margin-top: 64px;
-
-      text-align: center;
-
+    .course-card__cta {
+      margin-top: auto;
     }
 
+    .course-card__cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
 
+    /* ===== Courses Materials ===== */
+    .courses__materials { margin-top: 64px; text-align: center; }
 
     .courses__materials h3 {
-
       font-size: 1.2rem;
-
       font-weight: 600;
-
       margin-bottom: 12px;
-
       color: var(--color-primary-dark);
-
     }
 
     .courses__materials > p {
-
       font-size: 0.92rem;
-
       color: var(--color-text-secondary);
-
       margin-bottom: 32px;
-
     }
 
     .courses__materials-subtitle {
-
       font-size: 1.05rem;
-
       font-weight: 600;
-
       color: var(--color-primary);
-
       margin-bottom: 20px;
-
       margin-top: 48px;
-
       text-align: left;
-
       display: flex;
-
       align-items: center;
-
       gap: 8px;
-
-    }
-    .courses__materials-subtitle:first-of-type {
-      margin-top: 0;
     }
 
-
+    .courses__materials-subtitle:first-of-type { margin-top: 0; }
 
     .materials__grid {
-
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 24px;
-
-      max-width: 100%;
-
-      margin: 0 auto;
-
     }
-
-
 
     .materials__item {
-
       background: var(--color-bg);
-
       border: 1px solid var(--color-border);
-
       border-radius: var(--radius-md);
-
       overflow: hidden;
-
       transition: var(--transition);
-
     }
-
-
 
     .materials__item:hover {
-
       box-shadow: var(--shadow-lg);
-
       transform: translateY(-4px);
-
     }
-
-
 
     .materials__item-media {
-
       width: 100%;
-
       aspect-ratio: 4 / 3;
-
       background: var(--color-bg-alt);
-
       overflow: hidden;
-
       cursor: pointer;
-
       position: relative;
-
     }
-
-
 
     .materials__item-media img {
-
       width: 100%;
-
       height: 100%;
-
       object-fit: contain;
-
       background: var(--color-bg-alt);
-
       transition: transform 0.5s ease;
-
       padding: 8px;
-
     }
 
-
-
-    .materials__item:hover .materials__item-media img {
-
-      transform: scale(1.03);
-
-    }
-
-
+    .materials__item:hover .materials__item-media img { transform: scale(1.03); }
 
     .materials__item-media--overlay {
-
       position: absolute;
-
       inset: 0;
-
       background: rgba(26,42,108,0.45);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       opacity: 0;
-
       transition: var(--transition);
-
     }
 
-
-
-    .materials__item:hover .materials__item-media--overlay {
-
-      opacity: 1;
-
-    }
-
-
+    .materials__item:hover .materials__item-media--overlay { opacity: 1; }
 
     .materials__item-media--overlay span {
-
       color: #fff;
-
       font-size: 0.85rem;
-
       font-weight: 600;
-
       background: rgba(0,0,0,0.3);
-
       padding: 8px 16px;
-
       border-radius: var(--radius-sm);
-
     }
 
-
-
-    .materials__item-caption {
-
-      padding: 16px 20px;
-
-      text-align: center;
-
-    }
-
-
+    .materials__item-caption { padding: 16px 20px; text-align: center; }
 
     .materials__item-caption h4 {
-
       font-size: 0.95rem;
-
       font-weight: 600;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 4px;
-
     }
 
-
-
-    .materials__item-caption p {
-
-      font-size: 0.82rem;
-
-      color: var(--color-text-light);
-
-    }
-
-
+    .materials__item-caption p { font-size: 0.82rem; color: var(--color-text-light); }
 
     .materials__grid--video {
-
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 24px;
-
-      max-width: 100%;
-
-      margin: 0 auto;
-
     }
-
-
 
     .materials__video-item {
-
       background: var(--color-bg);
-
       border: 1px solid var(--color-border);
-
       border-radius: var(--radius-md);
-
       overflow: hidden;
-
       transition: var(--transition);
-
     }
-
-
 
     .materials__video-item:hover {
-
       box-shadow: var(--shadow-lg);
-
       transform: translateY(-4px);
-
     }
 
+    .materials__video-media { width: 100%; aspect-ratio: 16 / 9; background: #000; }
 
+    .materials__video-media iframe { width: 100%; height: 100%; border: none; display: block; }
 
-    .materials__video-media {
-
-      width: 100%;
-
-      aspect-ratio: 16 / 9;
-
-      background: #000;
-
-    }
-
-
-
-    .materials__video-media iframe {
-
-      width: 100%;
-
-      height: 100%;
-
-      border: none;
-
-      display: block;
-
-    }
-
-
-
-    .materials__video-caption {
-
-      padding: 16px 20px;
-
-      text-align: center;
-
-    }
-
-
+    .materials__video-caption { padding: 16px 20px; text-align: center; }
 
     .materials__video-caption h4 {
-
       font-size: 0.95rem;
-
       font-weight: 600;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 4px;
-
     }
 
+    .materials__video-caption p { font-size: 0.82rem; color: var(--color-text-light); }
 
-
-    .materials__video-caption p {
-
-      font-size: 0.82rem;
-
-      color: var(--color-text-light);
-
-    }
-
-
-
-    @media (max-width: 900px) {
-
-      .materials__grid,
-
-      .materials__grid--video {
-
-        grid-template-columns: repeat(2, 1fr);
-
-      }
-
-    }
-
-
-
-    @media (max-width: 560px) {
-
-      .materials__grid,
-
-      .materials__grid--video {
-
-        grid-template-columns: 1fr;
-
-      }
-
-    }
-
-
-
-    .contact__grid {
-
+    /* ===== Testimonials ===== */
+    .testimonials__grid {
       display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 64px;
-
-      align-items: start;
-
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
     }
 
+    .testimonial-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+    }
 
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .testimonial-card__quote {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-card__text {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-card__footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-card__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+
+    .testimonial-card__meta {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+    }
+
+    .testimonial-card__stars {
+      color: var(--color-accent);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    /* ===== Contact ===== */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
 
     .contact__info h3 {
-
       font-size: 1.3rem;
-
       font-weight: 600;
-
       color: var(--color-primary-dark);
-
       margin-bottom: 16px;
-
     }
-
-
 
     .contact__info p {
-
       font-size: 0.95rem;
-
       color: var(--color-text-secondary);
-
       margin-bottom: 32px;
-
     }
-
-
 
     .contact__channels {
-
       list-style: none;
-
       display: flex;
-
       flex-direction: column;
-
       gap: 16px;
-
     }
-
-
 
     .contact__channel {
-
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
       font-size: 0.92rem;
-
       color: var(--color-text-secondary);
-
     }
-
-
 
     .contact__channel-icon {
-
       width: 42px;
-
       height: 42px;
-
       background: var(--color-bg-alt);
-
       border: 1px solid var(--color-border);
-
       border-radius: var(--radius-sm);
-
       display: flex;
-
       align-items: center;
-
       justify-content: center;
-
       font-size: 1.1rem;
-
       flex-shrink: 0;
-
     }
-
-
 
     .contact__form {
-
       background: var(--color-bg);
-
       border: 1px solid var(--color-border);
-
       border-radius: var(--radius-md);
-
       padding: 36px;
-
     }
 
-
-
-    .form-group {
-
-      margin-bottom: 20px;
-
-    }
-
-
+    .form-group { margin-bottom: 20px; }
 
     .form-group label {
-
       display: block;
-
       font-size: 0.85rem;
-
       font-weight: 600;
-
       color: var(--color-text);
-
       margin-bottom: 6px;
-
     }
-
-
 
     .form-group input,
-
     .form-group select,
-
     .form-group textarea {
-
       width: 100%;
-
       padding: 12px 16px;
-
       border: 1.5px solid var(--color-border);
-
       border-radius: var(--radius-sm);
-
       font-family: var(--font-body);
-
       font-size: 0.92rem;
-
       color: var(--color-text);
-
       background: var(--color-bg);
-
       transition: border-color var(--transition);
-
       outline: none;
-
     }
-
-
 
     .form-group input:focus,
-
     .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--color-primary); }
 
-    .form-group textarea:focus {
-
-      border-color: var(--color-primary);
-
-    }
-
-
-
-    .form-group textarea {
-
-      min-height: 120px;
-
-      resize: vertical;
-
-    }
-
-
+    .form-group textarea { min-height: 120px; resize: vertical; }
 
     .form-group select {
-
       appearance: none;
-
       -webkit-appearance: none;
-
       background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235a6072' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-
       background-repeat: no-repeat;
-
       background-position: right 16px center;
-
       padding-right: 40px;
-
     }
-
-
 
     .contact__form .btn {
-
       width: 100%;
-
       justify-content: center;
-
       padding: 16px;
-
       font-size: 1rem;
-
     }
 
+    /* Form feedback messages */
+    .form-feedback {
+      display: none;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin-top: 16px;
+      text-align: center;
+    }
 
+    .form-feedback--success {
+      background: rgba(76,175,112,0.1);
+      border: 1px solid rgba(76,175,112,0.3);
+      color: #2e7d52;
+    }
 
+    .form-feedback--error {
+      background: rgba(220,53,69,0.08);
+      border: 1px solid rgba(220,53,69,0.25);
+      color: #b02a37;
+    }
+
+    /* ===== Footer ===== */
     .footer {
-
       background: var(--color-primary-dark);
-
       color: rgba(255,255,255,0.6);
-
       padding: 48px 0 32px;
-
     }
-
-
 
     .footer__inner {
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
       flex-wrap: wrap;
-
       gap: 24px;
-
     }
 
+    .footer__brand { font-weight: 700; font-size: 1.05rem; color: #fff; }
 
-
-    .footer__brand {
-
-      font-weight: 700;
-
-      font-size: 1.05rem;
-
-      color: #fff;
-
-    }
-
-
-
-    .footer__links {
-
-      display: flex;
-
-      gap: 24px;
-
-      list-style: none;
-
-    }
-
-
+    .footer__links { display: flex; gap: 24px; list-style: none; }
 
     .footer__links a {
-
       font-size: 0.85rem;
-
       color: rgba(255,255,255,0.5);
-
       transition: color var(--transition);
-
     }
 
-
-
-    .footer__links a:hover {
-
-      color: #fff;
-
-    }
-
-
+    .footer__links a:hover { color: #fff; }
 
     .footer__copy {
-
       width: 100%;
-
       text-align: center;
-
       font-size: 0.8rem;
-
       margin-top: 24px;
-
       padding-top: 24px;
-
       border-top: 1px solid rgba(255,255,255,0.08);
-
     }
 
-
-
+    /* ===== Animations ===== */
     @keyframes fadeInUp {
-
-      from {
-
-        opacity: 0;
-
-        transform: translateY(24px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-
 
     .reveal {
-
       opacity: 0;
-
       transform: translateY(30px);
-
       transition: opacity 0.7s ease, transform 0.7s ease;
-
     }
 
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-
-    .reveal.visible {
-
-      opacity: 1;
-
-      transform: translateY(0);
-
-    }
-
-
-
+    /* ===== Responsive ===== */
     @media (max-width: 900px) {
-
-      .about__grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-      }
-
-
-
-      .about__cert-card {
-
-        position: static;
-
-        max-width: 360px;
-
-        margin: 0 auto;
-
-      }
-
-
-
-      .contact__grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-      }
-
+      .about__grid { grid-template-columns: 1fr; gap: 40px; }
+      .about__cert-card { position: static; max-width: 360px; margin: 0 auto; }
+      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
+      .materials__grid, .materials__grid--video { grid-template-columns: repeat(2, 1fr); }
     }
-
-
 
     @media (max-width: 768px) {
-
       .navbar__links {
-
         position: fixed;
-
         top: 68px;
-
         left: 0;
-
         width: 100%;
-
         background: rgba(255,255,255,0.98);
-
         backdrop-filter: blur(16px);
-
         flex-direction: column;
-
         gap: 0;
-
         padding: 8px 0;
-
         border-bottom: 1px solid var(--color-border);
-
         transform: translateY(-120%);
-
         opacity: 0;
-
         transition: transform 0.35s ease, opacity 0.35s ease;
-
         box-shadow: var(--shadow-md);
-
       }
 
-
-
-      .navbar__links.open {
-
-        transform: translateY(0);
-
-        opacity: 1;
-
-      }
-
-
+      .navbar__links.open { transform: translateY(0); opacity: 1; }
 
       .navbar__links a {
-
         display: block;
-
         padding: 14px 24px;
-
         font-size: 0.95rem;
-
         border-bottom: 1px solid var(--color-border-light);
-
       }
-
-
 
       .navbar__links a::after { display: none; }
+      .navbar__toggle { display: flex; }
 
+      .navbar__toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .navbar__toggle.active span:nth-child(2) { opacity: 0; }
+      .navbar__toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+      .hero__title { font-size: clamp(2rem, 7vw, 2.6rem); }
 
-      .navbar__toggle {
+      .section { padding: 72px 0; }
+      .section__header { margin-bottom: 40px; }
 
-        display: flex;
+      .portfolio__grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
 
-      }
+      .contact__form { padding: 24px; }
 
+      .footer__inner { flex-direction: column; text-align: center; }
 
-
-      .navbar__toggle.active span:nth-child(1) {
-
-        transform: rotate(45deg) translate(5px, 5px);
-
-      }
-
-
-
-      .navbar__toggle.active span:nth-child(2) {
-
-        opacity: 0;
-
-      }
-
-
-
-      .navbar__toggle.active span:nth-child(3) {
-
-        transform: rotate(-45deg) translate(5px, -5px);
-
-      }
-
-
-
-      .hero__title {
-
-        font-size: clamp(2rem, 7vw, 2.6rem);
-
-      }
-
-
-
-      .section {
-
-        padding: 72px 0;
-
-      }
-
-
-
-      .section__header {
-
-        margin-bottom: 40px;
-
-      }
-
-
-
-      .portfolio__grid {
-
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-        gap: 12px;
-
-      }
-
-
-
-      .contact__form {
-
-        padding: 24px;
-
-      }
-
-
-
-      .footer__inner {
-
-        flex-direction: column;
-
-        text-align: center;
-
-      }
-
-
-
-      .timeline-item {
-
-        flex-direction: column;
-
-        gap: 4px;
-
-      }
-
-
-
-      .timeline-year {
-
-        width: auto;
-
-      }
-
+      .timeline-item { flex-direction: column; gap: 4px; }
+      .timeline-year { width: auto; }
     }
 
-
+    @media (max-width: 560px) {
+      .materials__grid, .materials__grid--video { grid-template-columns: 1fr; }
+    }
 
     @media (max-width: 480px) {
-
-      .hero__actions {
-
-        flex-direction: column;
-
-        align-items: center;
-
-      }
-
-
-
-      .btn {
-
-        width: 100%;
-
-        justify-content: center;
-
-      }
-
-
-
-      .portfolio__grid {
-
-        grid-template-columns: 1fr 1fr;
-
-      }
-
-
-
-      .courses__grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
+      .hero__actions { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+      .portfolio__grid { grid-template-columns: 1fr 1fr; }
+      .courses__grid { grid-template-columns: 1fr; }
     }
-
   </style>
-
 </head>
-
 <body>
 
-
-
   <nav class="navbar" id="navbar">
-
     <div class="container navbar__inner">
-
       <a href="#hero" class="navbar__logo">
-
         <span class="navbar__logo-dot"></span>
-
         泰國紅綠燈 Win
-
       </a>
-
       <ul class="navbar__links" id="navLinks">
-
         <li><a href="#about">關於我</a></li>
-
         <li><a href="#portfolio">社群作品</a></li>
-
         <li><a href="#works">專業譯作</a></li>
-
         <li><a href="#courses">泰文課程</a></li>
-
         <li><a href="#contact">聯絡諮詢</a></li>
-
       </ul>
-
       <button class="navbar__toggle" id="navToggle" aria-label="選單">
-
-        <span></span>
-
-        <span></span>
-
-        <span></span>
-
+        <span></span><span></span><span></span>
       </button>
-
     </div>
-
   </nav>
-
-
 
   <section class="hero" id="hero">
     <div class="hero__dots"></div>
     <div class="hero__dots-accent"></div>
     <div class="hero__bg-pattern"></div>
-
     <div class="hero__content">
-
       <div class="hero__tag">
-
         <span class="thai">สวัสดีค่ะ</span> — 你好，我是 Win（阿燈）
-
       </div>
-
       <h1 class="hero__title">
-
         <span class="highlight">泰文教學</span> ×
-
         旅遊靈魂 ×
-
         <span class="highlight">專業翻譯</span>
-
       </h1>
-
       <div class="hero__separator">
-
         <span class="thai">✦</span>
-
       </div>
-
       <p class="hero__subtitle">
-
         朱拉隆功大學泰文檢定認證、深耕泰文教學與翻譯。<br />
-
         從藝人專訪到歌詞影視翻譯，用語言連結台灣與泰國的每一刻。
-
       </p>
-
       <div class="hero__actions">
-
         <a href="#courses" class="btn btn--primary">了解課程方案</a>
-
         <a href="#contact" class="btn btn--outline">合作洽詢</a>
-
       </div>
-
     </div>
-
   </section>
 
-
-
   <section class="section section--alt" id="about">
-
     <div class="container">
-
       <div class="section__header reveal">
-
         <span class="section__label">About Me</span>
-
-        <h2 class="section__title">關於 Win </h2>
-
+        <h2 class="section__title">關於 Win</h2>
       </div>
-
       <div class="about__grid">
-
         <div class="about__text reveal">
-
           <h3>語言是一座橋——我是造橋的人</h3>
-
           <p>
-
             我是 Win，大家也叫我阿燈，經營IG粉絲團泰國紅綠燈 Trafficthai_win 從2021年至今。第一次接觸泰文為2015年，一路從大學東南亞語言學程學到朱拉隆功大學語言班(CU-ITP)，
-
             對泰文的熱情從沒消退，反而愈學愈感興趣，待在泰國的日子除了讓我學到各個老師的教學方法論，也為我累積相當豐富的實戰經驗。
-
           </p>
-
           <p>
-
             在翻譯的實戰場域中，我曾翻譯過多首線上當紅樂團的歌曲，也當過藝人粉絲團的翻譯及活動的口譯人員。
-
             同時，我也以泰國旅遊 KOL 的身份，創作各種探索泰國的內容，包含日常生活分享、店面介紹、小吃推廣、旅遊行程等。
-
             讓台灣人透過泰文老師的角度，認識不一樣的泰國面貌。
-
           </p>
-
           <p>
-
             無論你想學泰文、需要專業翻譯、或尋找泰國在地的合作夥伴，我都期待與你的交集。
-
           </p>
-
-
 
           <div class="about__timeline">
-
             <h3 class="about__timeline-title">學經歷</h3>
 
             <div class="timeline-item">
-
               <span class="timeline-year">2013 – 2017</span>
-
               <div class="timeline-content">
-
                 <h4>國立政治大學 經濟學系</h4>
-
                 <p>選修東南亞語言學程(泰文)、藝人(逐月之月)粉絲團翻譯</p>
-
               </div>
-
             </div>
 
             <div class="timeline-item">
-
               <span class="timeline-year">2018 – 2020</span>
-
               <div class="timeline-content">
-
                 <h4>國立臺灣大學 財務金融研究所</h4>
-
                 <p>藝人(BKPP)粉絲團翻譯，包含見面會影片、應援計劃書、卡片等翻譯</p>
-
               </div>
-
             </div>
 
             <div class="timeline-item">
-
-              <span class="timeline-year">2021-2024</span>
-
+              <span class="timeline-year">2021 – 2024</span>
               <div class="timeline-content">
                 <h4>泰文實務經驗累積期 前往曼谷語言學校進修</h4>
-                <p>2021 創立粉絲專頁 泰國紅綠燈 Trfficthai_win 經營至今 </p>
-                <p>2023 藝人(ForceBook)粉絲團翻譯、藝人(OffGun)見面會應援影片、手幅翻譯 </p>
-                <p>2024 曼谷語言學校 Duke Language School </p>
-
+                <p>2021 創立粉絲專頁 泰國紅綠燈 Trafficthai_win 經營至今</p>
+                <p>2023 藝人(ForceBook)粉絲團翻譯、藝人(OffGun)見面會應援影片、手幅翻譯</p>
+                <p>2024 曼谷語言學校 Duke Language School</p>
               </div>
-
             </div>
 
             <div class="timeline-item">
-
               <span class="timeline-year">2025</span>
-
               <div class="timeline-content">
-
                 <h4>朱拉隆功大學語言班（CU-ITP）Level 7</h4>
-
                 <p>結業成績 97/100</p>
-
-                <p>取得朱拉泰文檢定(CUTFL)聽讀寫中 & 中高級(聽：C1/讀：B2+/寫：B1+)</p>
-
+                <p>取得朱拉泰文檢定(CUTFL)聽讀寫中 &amp; 中高級（聽：C1 / 讀：B2+ / 寫：B1+）</p>
                 <p>藝人(WilliamEst)粉絲見面會應援影片、卡片翻譯</p>
-
               </div>
-
             </div>
 
             <div class="timeline-item">
-
               <span class="timeline-year">2025 - 至今</span>
-
               <div class="timeline-content">
-
                 <h4>泰文教學 / 翻譯口譯 / 泰國旅遊 KOL</h4>
-
                 <p>專職泰文教學 授課時數 1000+ 小時</p>
-
-                <p>朱拉隆功大學工業設計系 「中文字體運用」演講者 謝捲子 隨行口譯</p>
-
-                <p>新北美術館 「建築的恐懼與療癒」藝術展 泰國藝術家 Boonserm Premthada 隨行口譯</p>
-
+                <p>朱拉隆功大學工業設計系「中文字體運用」演講者 謝捲子 隨行口譯</p>
+                <p>新北美術館「建築的恐懼與療癒」藝術展 泰國藝術家 Boonserm Premthada 隨行口譯</p>
               </div>
-
             </div>
 
           </div>
-
         </div>
-
-
 
         <div class="about__cert-card reveal">
-
           <div class="about__cert-icon">🎓</div>
-
           <h4>朱拉隆功大學泰文檢定認證</h4>
-
           <p>CUTFL 考試成績單</p>
-
           <div class="about__cert-thumb" id="certThumb" onclick="openLightbox()">
-
             <img src="images/chula-score.jpg" alt="朱大泰文考試成績單">
-
             <div class="about__cert-thumb__overlay">
-
               <span>點擊查看完整成績單</span>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-
     <button class="lightbox__close" onclick="closeLightbox(event)" aria-label="關閉">✕</button>
-
     <img class="lightbox__img" id="lightboxImg" src="images/chula-score.jpg" alt="朱大泰文考試成績單完整版" />
-
   </div>
 
-
-
   <section class="section" id="portfolio">
-
     <div class="container">
-
       <div class="section__header reveal">
-
         <span class="section__label">Portfolio</span>
-
         <h2 class="section__title">社群作品集</h2>
-
-        <p class="section__desc">
-
-          從藝人專訪到泰國店家探索，每一則內容都是文化交流的縮影
-
-        </p>
-
+        <p class="section__desc">從藝人專訪到泰國店家探索，每一則內容都是文化交流的縮影</p>
       </div>
-
-
 
       <div class="portfolio__tabs reveal">
-
         <button class="portfolio__tab active" data-filter="all">全部作品</button>
-
         <button class="portfolio__tab" data-filter="interview">藝人專訪</button>
-
         <button class="portfolio__tab" data-filter="life">泰國生活</button>
-
         <button class="portfolio__tab" data-filter="collab">品牌合作</button>
-
       </div>
-
-
 
       <div class="portfolio__grid reveal">
 
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DVBnIL4D_HU/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="泰文老師私藏的愛玉冰店"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DVBnIL4D_HU/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>泰國隱藏美食</h4>
-            <p>普吉在地小吃-愛玉冰推薦</p>
+            <p>普吉在地小吃－愛玉冰推薦</p>
             <a href="https://www.instagram.com/reel/DVBnIL4D_HU/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DV5RCBoD1rl/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="泰文老師追星實錄"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DV5RCBoD1rl/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>泰國音樂文化體驗</h4>
@@ -3125,152 +1527,162 @@
 
         <div class="portfolio__item portfolio__item--reel" data-category="life">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DWZEAnxAQdu/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="泰文老師的一天"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DWZEAnxAQdu/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>泰國生活日常</h4>
-            <p>深度探索泰國的每一面，從抹茶店的探索到遠端工作的生活分享，最後以逛夜市結束這一天，帶大家見證泰文老師平凡卻有趣的一天。</p>
+            <p>深度探索泰國的每一面，帶大家見證泰文老師平凡卻有趣的一天。</p>
             <a href="https://www.instagram.com/reel/DWZEAnxAQdu/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看 Reel →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/p/DIqlNCkvVo_/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="電影宣傳"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/p/DIqlNCkvVo_/embed/" aria-label="載入貼文">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>泰國電影《冥婚鬧泰大》</h4>
-            <p>電影《冥婚鬧泰大》贈票活動，藉由贈票活動向大眾宣傳電影，透過群眾分享的力量，讓更多人看到泰國影視的魅力。</p>
+            <p>電影《冥婚鬧泰大》贈票活動，藉由贈票活動向大眾宣傳電影。</p>
             <a href="https://www.instagram.com/p/DIqlNCkvVo_/" target="_blank" rel="noopener noreferrer" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/p/C-7YgJQvqAr/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="泰國樂團專場宣傳"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/p/C-7YgJQvqAr/embed/" aria-label="載入貼文">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>泰國樂團專場表演</h4>
-            <p>泰國樂團 Tilly Birds 抵台舉辦專場音樂表演，透過貼文宣傳其音樂，搭配贈票活動的響應，促使更多人想要參與活動。</p>
+            <p>泰國樂團 Tilly Birds 抵台舉辦專場音樂表演，透過贈票活動促使更多人參與。</p>
             <a href="https://www.instagram.com/p/C-7YgJQvqAr/" target="_blank" rel="noopener noreferrer" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--post" data-category="collab">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/p/DKZSCESvKEj/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="品牌合作貼文 3"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/p/DKZSCESvKEj/embed/" aria-label="載入貼文">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>生活品牌推廣</h4>
-            <p>日常生活好物宣傳，藉由與泰文單字的連結，向大家推廣生活實用好物，讓大家認識新品牌的同時，也能同步學到日常生活常用單字。</p>
+            <p>日常生活好物宣傳，藉由與泰文單字的連結推廣生活實用好物。</p>
             <a href="https://www.instagram.com/p/DKZSCESvKEj/" target="_blank" rel="noopener noreferrer" class="portfolio__link">查看貼文 →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--post" data-category="interview">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/p/C8e3FHoBXoZ/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="阿燈訪泰星 WIM"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/p/C8e3FHoBXoZ/embed/" aria-label="載入貼文">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>阿燈訪泰星 WIM</h4>
-            <p>泰星 WIM 來台參加音樂祭《So Wonderful Festival - Prelude No.2》，希望透過本次的宣傳讓更多台灣人認識其音樂的魅力。</p>
+            <p>泰星 WIM 來台參加音樂祭《So Wonderful Festival》，讓更多台灣人認識其音樂魅力。</p>
             <a href="https://www.instagram.com/p/C8e3FHoBXoZ/" target="_blank" rel="noopener noreferrer" class="portfolio__link">前往 Instagram 查看 →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--post" data-category="interview">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/p/Cldz4KivMkv/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="阿燈訪泰星 Gabe Watkins"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/p/Cldz4KivMkv/embed/" aria-label="載入貼文">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
             <h4>阿燈訪泰星 Gabe Watkins</h4>
-            <p>泰澳混血歌手 Gabe Watkins 宣傳新歌 Sunsets，透過訪談了解他對自己音樂的理念，同時也讓大家了解他的過往經歷。</p>
+            <p>泰澳混血歌手 Gabe Watkins 宣傳新歌 Sunsets，透過訪談了解其音樂理念。</p>
             <a href="https://www.instagram.com/p/Cldz4KivMkv/" target="_blank" rel="noopener noreferrer" class="portfolio__link">前往 Instagram 查看 →</a>
           </div>
         </div>
 
       </div>
-
     </div>
-
   </section>
 
-
-
   <section class="section section--warm" id="works">
-
     <div class="container">
-
       <div class="section__header reveal">
-
-        <span class="section__label">Works & Media</span>
-
+        <span class="section__label">Works &amp; Media</span>
         <h2 class="section__title">專業譯作與媒體訪談</h2>
-
-        <p class="section__desc">
-
-          歌詞翻譯、電視節目訪談、Podcast——用翻譯說好每個故事
-
-        </p>
-
+        <p class="section__desc">歌詞翻譯、電視節目訪談、Podcast——用翻譯說好每個故事</p>
       </div>
 
-
-
-      <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-bottom:24px;">🎵 歌詞翻譯</h3>
-
+      <h3 class="works__section-title reveal">🎵 歌詞翻譯</h3>
       <div class="portfolio__grid reveal">
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DBtg4eYBRaN/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="歌詞翻譯 Reel 1"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DBtg4eYBRaN/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">歌詞翻譯</span>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">歌詞翻譯</span>
             <h4>泰文歌曲中譯</h4>
-            <p>Jeff Satur - ซ่อนไม่หา。精選泰文流行歌曲，以字幕形式呈現中文翻譯，讓台灣粉絲也能感受泰文歌曲的魅力。</p>
+            <p>Jeff Satur – ซ่อนไม่หา。以字幕呈現中文翻譯，讓台灣粉絲感受泰文歌曲魅力。</p>
             <a href="https://www.instagram.com/reel/DBtg4eYBRaN/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/C-xQf6rBy2q/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="歌詞翻譯 Reel 2"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/C-xQf6rBy2q/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">歌詞翻譯</span>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">歌詞翻譯</span>
             <h4>當紅泰國樂團歌曲</h4>
-            <p>Tilly Birds - คิด(แต่ไม่)ถึง。當紅泰團歌曲中文翻譯，帶你讀懂每句歌詞背後的情感故事。</p>
+            <p>Tilly Birds – คิด(แต่ไม่)ถึง。帶你讀懂每句歌詞背後的情感故事。</p>
             <a href="https://www.instagram.com/reel/C-xQf6rBy2q/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DDwW43rhnIx/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="歌詞翻譯 Reel 3"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DDwW43rhnIx/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">歌詞翻譯</span>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">歌詞翻譯</span>
             <h4>道地泰國情歌翻譯</h4>
-            <p>Joey Phuwasit - นะหน้าทอง。不僅是泰國當紅流行歌曲，泰國人當地也非常火紅的道地情歌，透過歌詞翻譯的方式介紹給更多的台灣人認識。</p>
+            <p>Joey Phuwasit – นะหน้าทอง。泰國當地非常火紅的道地情歌中文翻譯。</p>
             <a href="https://www.instagram.com/reel/DDwW43rhnIx/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看翻譯 Reel →</a>
           </div>
         </div>
 
       </div>
 
-
-
-      <h3 class="works__section-title reveal" style="font-size:1.2rem; font-weight:600; color:var(--color-primary-dark); margin-top:64px; margin-bottom:24px;">🎬 節目訪談翻譯</h3>
-
+      <h3 class="works__section-title reveal" style="margin-top:64px;">🎬 節目訪談翻譯</h3>
       <div class="portfolio__grid reveal">
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DSDCkK8j1Js/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="節目訪談翻譯 Reel 1"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DSDCkK8j1Js/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">節目訪談</span>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">節目訪談</span>
             <h4>電視節目訪談翻譯</h4>
             <p>泰國天團 POTATO 上節目分享來台灣參加 JAM JAM ASIA 音樂節的心得。</p>
             <a href="https://www.instagram.com/reel/DSDCkK8j1Js/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看訪談 Reel →</a>
@@ -3279,179 +1691,116 @@
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/DMDKyvpBJtE/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="節目訪談翻譯 Reel 2"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/DMDKyvpBJtE/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">節目訪談</span>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">節目訪談</span>
             <h4>藝人訪談翻譯</h4>
-            <p>泰國藝人 YOURMOOD 來台參加音樂祭表演前，訪談宣傳翻譯，讓更多台灣人認識他。</p>
+            <p>泰國藝人 YOURMOOD 來台參加音樂祭表演前訪談宣傳翻譯。</p>
             <a href="https://www.instagram.com/reel/DMDKyvpBJtE/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
 
         <div class="portfolio__item portfolio__item--reel">
           <div class="portfolio__media">
-            <iframe src="https://www.instagram.com/reel/C0zCTAkBIzt/embed/" sandbox="allow-scripts allow-same-origin" allowtransparency="true" allowfullscreen="true" scrolling="no" loading="lazy" title="節目訪談翻譯 Reel 3"></iframe>
+            <button class="iframe-placeholder" data-src="https://www.instagram.com/reel/C0zCTAkBIzt/embed/" aria-label="載入影片">
+              <span class="iframe-placeholder__icon">▶</span>
+              <span class="iframe-placeholder__text">點擊播放</span>
+            </button>
           </div>
           <div class="portfolio__info">
-            <span class="works__card-tag">VLOG</span>
-            <h4>演唱會VLOG記錄翻譯</h4>
-            <p>泰國樂團 GETSUONVA 抵台舉辦演唱會全程VLOG記錄翻譯，讓台灣粉絲與藝人間無距離，促進台泰音樂間的交流。</p>
+            <span class="works__card-tag" style="display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.06em;color:var(--color-primary);background:rgba(26,42,108,0.06);padding:4px 12px;border-radius:100px;margin-bottom:8px;">VLOG</span>
+            <h4>演唱會 VLOG 記錄翻譯</h4>
+            <p>泰國樂團 GETSUONVA 抵台舉辦演唱會全程 VLOG 記錄翻譯，促進台泰音樂交流。</p>
             <a href="https://www.instagram.com/reel/C0zCTAkBIzt/" target="_blank" rel="noopener noreferrer" class="portfolio__link">觀看訪談 Reel →</a>
           </div>
         </div>
 
       </div>
 
-
-
       <div class="works__spotify reveal">
-
         <h3>🎙️ Podcast 訪談</h3>
-
         <div class="works__spotify-embed">
-
-         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/4lw7a50Cqj1PTQrFMm4aik?utm_source=generator" sandbox="allow-scripts allow-same-origin" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
+          <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/4lw7a50Cqj1PTQrFMm4aik?utm_source=generator" sandbox="allow-scripts allow-same-origin" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
   <section class="section section--alt" id="courses">
-
     <div class="container">
-
       <div class="section__header reveal">
-
         <span class="section__label">Thai Courses</span>
-
         <h2 class="section__title">泰文課程方案</h2>
-
-        <p class="section__desc">
-
-          從零基礎到進階會話，量身打造你的泰文學習計畫
-
-        </p>
-
+        <p class="section__desc">從零基礎到進階會話，量身打造你的泰文學習計畫</p>
       </div>
-
-
 
       <div class="courses__grid reveal">
 
         <div class="course-card">
-
           <span class="course-card__badge">熱門選擇</span>
-
           <h3>精緻個人班（初階 一對一）</h3>
-
           <p>適合需要高度客製化學習曲線的同學，透過最貼合同學需求的教材，以及老師一對一的指導，以台灣人的視角最有效率的克服學習泰文的難關。</p>
-
-          <div class="course-card__price">
-
-            NT$ 700 <small>/ 小時</small>
-
-          </div>
-
+          <div class="course-card__price">NT$ 700 <small>/ 小時</small></div>
           <ul class="course-card__features">
-
             <li>自製精美講義教材</li>
-
             <li>定期回家作業與發音練習</li>
-
             <li>歌曲及流行用語等主題式學習</li>
-
-            <li>彈性上課時間 (自由決定)</li>
-
+            <li>彈性上課時間（自由決定）</li>
           </ul>
-
+          <div class="course-card__cta">
+            <a href="#contact" class="btn btn--primary btn--small" onclick="selectSubject('泰文課諮詢')">立即諮詢此課程</a>
+          </div>
         </div>
 
-
-
         <div class="course-card">
-
           <span class="course-card__badge">歡樂學習</span>
-
           <h3>歡樂團體班（初階 一對多）</h3>
-
           <p>適合希望有夥伴一同激勵向前的同學，透過同學間的互動獲得最真實的對話經驗，不僅要會說也要會聽，同時也是價格經濟實惠的選擇。</p>
-
-          <div class="course-card__price">
-
-            NT$ 380-400 <small>/ 小時</small>
-
-          </div>
-
+          <div class="course-card__price">NT$ 380–400 <small>/ 小時</small></div>
           <ul class="course-card__features">
-
             <li>基礎泰文訓練</li>
-
             <li>文法造句練習</li>
-
             <li>口說情境模擬演練</li>
-
-            <li>小班制 (2-4人) 團體環境</li>
-
+            <li>小班制（2–4 人）團體環境</li>
           </ul>
-
+          <div class="course-card__cta">
+            <a href="#contact" class="btn btn--primary btn--small" onclick="selectSubject('泰文課諮詢')">立即諮詢此課程</a>
+          </div>
         </div>
 
-
-
         <div class="course-card">
-
           <span class="course-card__badge">進階深造</span>
-
           <h3>全泰文會話班（中高階 一對一）</h3>
-
-          <p>想體驗完全以泰文上課的感覺嗎？想知道怎麼用泰文解釋泰文嗎？全泰文的對話將提供你最紮實的訓練，一對一的練習幫助你從台式發音進步到泰式發音。</p>
-
-          <div class="course-card__price">
-
-            NT$ 洽詢 <small>/ 小時</small>
-
-          </div>
-
+          <p>想體驗完全以泰文上課的感覺嗎？全泰文的對話將提供你最紮實的訓練，一對一的練習幫助你從台式發音進步到泰式發音。依程度客製報價，歡迎填表諮詢！</p>
+          <div class="course-card__price">NT$ 洽詢 <small>/ 小時</small></div>
           <ul class="course-card__features">
-
-            <li>沉浸式泰文訓練 (80%+ 泰文)</li>
-
+            <li>沉浸式泰文訓練（80%+ 泰文）</li>
             <li>全會話教材規劃</li>
-
-            <li>高度貼和日常生活主題</li>
-
+            <li>高度貼合日常生活主題</li>
             <li>提供口語咬字發音及口音上建議</li>
-
           </ul>
-
+          <div class="course-card__cta">
+            <a href="#contact" class="btn btn--outline btn--small" onclick="selectSubject('泰文課諮詢')">免費諮詢適合方案</a>
+          </div>
         </div>
 
       </div>
 
-
-
       <div class="courses__materials reveal">
-
         <h3>📚 自製講義與教學畫面</h3>
         <p>精心設計的講義教材與實際教學錄影，帶你一窺課堂的真實樣貌</p>
 
         <h4 class="courses__materials-subtitle">📖 自製精美講義</h4>
-
         <div class="materials__grid">
 
           <div class="materials__item">
             <div class="materials__item-media" onclick="openMaterialLightbox(this)">
               <img src="assets/action.png" alt="自製講義截圖 1" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--color-text-light);font-size:0.9rem;\'>講義預覽 1</div>'" />
-              <div class="materials__item-media--overlay">
-                <span>點擊放大查看</span>
-              </div>
+              <div class="materials__item-media--overlay"><span>點擊放大查看</span></div>
             </div>
             <div class="materials__item-caption">
               <h4>日常動詞與場所</h4>
@@ -3462,9 +1811,7 @@
           <div class="materials__item">
             <div class="materials__item-media" onclick="openMaterialLightbox(this)">
               <img src="assets/person.png" alt="自製講義截圖 2" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--color-text-light);font-size:0.9rem;\'>講義預覽 2</div>'" />
-              <div class="materials__item-media--overlay">
-                <span>點擊放大查看</span>
-              </div>
+              <div class="materials__item-media--overlay"><span>點擊放大查看</span></div>
             </div>
             <div class="materials__item-caption">
               <h4>自我介紹與代稱</h4>
@@ -3475,9 +1822,7 @@
           <div class="materials__item">
             <div class="materials__item-media" onclick="openMaterialLightbox(this)">
               <img src="assets/letter.png" alt="教學畫面截圖" onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--color-text-light);font-size:0.9rem;\'>教學畫面</div>'" />
-              <div class="materials__item-media--overlay">
-                <span>點擊放大查看</span>
-              </div>
+              <div class="materials__item-media--overlay"><span>點擊放大查看</span></div>
             </div>
             <div class="materials__item-caption">
               <h4>字母聲調課</h4>
@@ -3487,10 +1832,7 @@
 
         </div>
 
-
-
         <h4 class="courses__materials-subtitle">🎥 教學實錄影片</h4>
-
         <div class="materials__grid--video">
 
           <div class="materials__video-item">
@@ -3522,450 +1864,342 @@
             <div class="materials__video-caption">
               <h4>全泰文會話班</h4>
               <h4>課程主題：會話</h4>
-              <p>80%以上的泰文環境，讓大家用全泰文的方式沉浸式學習。</p>
+              <p>80% 以上的泰文環境，沉浸式學習體驗。</p>
             </div>
           </div>
 
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <section class="section" id="contact">
-
+  <!-- ===== 學生見證 ===== -->
+  <!-- ✅ 【你需要做的事 #2】把下面三張卡片的引號內容、姓名、課程類型換成真實學生說過的話 -->
+  <section class="section" id="testimonials">
     <div class="container">
-
       <div class="section__header reveal">
-
-        <span class="section__label">Contact</span>
-
-        <h2 class="section__title">聯絡與諮詢</h2>
-
-        <p class="section__desc">
-
-          無論是課程諮詢、翻譯委託或 KOL 合作，歡迎來信聊聊
-
-        </p>
-
+        <span class="section__label">Reviews</span>
+        <h2 class="section__title">學生怎麼說</h2>
+        <p class="section__desc">真實的學習回饋，是最好的課程說明</p>
       </div>
 
+      <div class="testimonials__grid reveal">
 
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card__quote">"</div>
+          <p class="testimonial-card__text">
+            <!-- 把這段話換成真實學生說的話，例如：「上了三個月之後，去泰國旅遊完全可以自己點餐問路，老師的教材設計得很生活化，讓我很快就能開口說泰文！」-->
+            雖然才上了三節課，但真的超超超滿意！５顆星給好給滿，教得很細又都很實用，所以就又果斷的續課啦嘿嘿，真的很謝謝你的自薦文當初有出現在我的脆！
+          </p>
+          <div class="testimonial-card__footer">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <div class="testimonial-card__name">學生 A</div>
+              <div class="testimonial-card__meta">學習 1 個月</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card__quote">"</div>
+          <p class="testimonial-card__text">
+            老師上課會額外補充在泰國生活真實面臨到的有趣事情，不是只有照著講義上教學，我覺得有自身體驗分享更重要，才能有畫面。
+          </p>
+          <div class="testimonial-card__footer">
+            <div class="testimonial-card__avatar">B</div>
+            <div>
+              <div class="testimonial-card__name">學生 B</div>
+              <div class="testimonial-card__meta">學習 3 個月</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card__quote">"</div>
+          <p class="testimonial-card__text">
+            在課堂上會不斷交叉運用之前有學習過的內容，就算不小心忘記，也可以藉這個機會慢慢熟悉。另外偶爾會穿插泰國文化的小介紹，讓課程內容很貼近日常，彷彿是在與朋友的聊天過程中，自然而然學習到這些知識。
+          </p>
+          <div class="testimonial-card__footer">
+            <div class="testimonial-card__avatar">C</div>
+            <div>
+              <div class="testimonial-card__name">學生 C（</div>
+              <div class="testimonial-card__meta">學習 2 個月</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__label">Contact</span>
+        <h2 class="section__title">聯絡與諮詢</h2>
+        <p class="section__desc">無論是課程諮詢、翻譯委託或 KOL 合作，歡迎來信聊聊</p>
+      </div>
 
       <div class="contact__grid">
-
         <div class="contact__info reveal">
-
           <h3>期待與你的交集 ✨</h3>
-
           <p>
-
             填寫右方表單，或透過社群帳號直接聯繫。<br />
-
-            我會在 1-2 個工作天內回覆你！
-
+            我會在 1–2 個工作天內回覆你！
           </p>
-
           <ul class="contact__channels">
 
             <li class="contact__channel">
-
               <span class="contact__channel-icon">📩</span>
-
-              <!-- ✅ 建議5：Email 以 JS 動態組合，防止爬蟲抓取 -->
-
               <span id="emailDisplay"></span>
-
             </li>
 
             <li class="contact__channel">
-
               <span class="contact__channel-icon">📷</span>
-
               <a href="https://www.instagram.com/trafficthai_win" target="_blank" rel="noopener noreferrer">IG：trafficthai_win</a>
-
             </li>
 
+        
+
           </ul>
-
         </div>
-
-
 
         <form class="contact__form reveal" id="contactForm">
           <div class="form-group">
-
             <label for="name">姓名</label>
-
             <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required />
-
           </div>
-
           <div class="form-group">
-
             <label for="email">Email</label>
-
             <input type="email" id="email" name="email" placeholder="your@email.com" required />
-
           </div>
-
           <div class="form-group">
-
             <label for="subject">聯絡主旨</label>
-
             <select id="subject" name="subject" required>
-
               <option value="" disabled selected>請選擇聯絡主旨</option>
-
               <option value="泰文課諮詢">泰文課諮詢</option>
-
               <option value="泰文 KOL 合作">泰文 KOL 合作</option>
-
               <option value="泰文翻譯委託">泰文翻譯委託</option>
-
               <option value="其他">其他</option>
-
             </select>
-
           </div>
-
           <div class="form-group">
-
             <label for="message">訊息內容</label>
-
             <textarea id="message" name="message" placeholder="請描述您的需求，我會盡快回覆您！" required></textarea>
-
           </div>
+          <button type="submit" class="btn btn--primary" id="submitBtn">送出訊息</button>
 
-          <button type="submit" class="btn btn--primary">送出訊息</button>
-
+          <!-- 成功 / 失敗提示（取代原本的 alert 彈窗） -->
+          <div class="form-feedback form-feedback--success" id="formSuccess">
+            🙏 感謝您的訊息！我會在 1–2 個工作天內回覆您。
+          </div>
+          <div class="form-feedback form-feedback--error" id="formError">
+            ⚠️ 送出時發生問題，請稍後再試，或直接透過 Email / IG 聯繫我。
+          </div>
         </form>
-
       </div>
-
     </div>
-
   </section>
 
-
-
   <footer class="footer">
-
     <div class="container footer__inner">
-
       <span class="footer__brand">泰國紅綠燈 Win</span>
-
       <ul class="footer__links">
-
         <li><a href="#about">關於我</a></li>
-
         <li><a href="#portfolio">作品集</a></li>
-
         <li><a href="#courses">課程</a></li>
-
         <li><a href="#contact">聯絡</a></li>
-
       </ul>
-
-      <p class="footer__copy">
-
-        © 2026 泰國紅綠燈 Win. All rights reserved.
-
-      </p>
-
+      <p class="footer__copy">© 2026 泰國紅綠燈 Win. All rights reserved.</p>
     </div>
-
   </footer>
 
-
-
   <script>
-/* ===== 表單提交到 Google Sheets ===== */
-const contactForm = document.getElementById('contactForm');
-const submitBtn = contactForm.querySelector('button[type="submit"]');
-
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // 防止重複送出
-  submitBtn.disabled = true;
-  submitBtn.textContent = '送出中...';
-  
-  const formData = new FormData(contactForm);
-  
-  // ⚠️ 把下面這行的 URL 換成你第三步拿到的部署 URL
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzg1QsGy-cH4ARYdBfvHOkhVxvDmN_AMD3ekQ2a6vUdISYbfYpp9mTt9RhYlOia96TW/exec';
-  
-  fetch(scriptURL, {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.result === 'success') {
-      alert('感謝您的訊息！我會盡快回覆您 🙏');
-      contactForm.reset();
-    } else {
-      alert('送出時發生錯誤，請稍後再試或直接透過 Email 聯繫。');
+    /* ===== 課程卡片 CTA：自動選取主旨並滾到聯絡區 ===== */
+    function selectSubject(value) {
+      setTimeout(function() {
+        var select = document.getElementById('subject');
+        if (select) select.value = value;
+      }, 400);
     }
-  })
-  .catch(error => {
-    // Google Apps Script 有時會 redirect，但資料其實已寫入
-    alert('感謝您的訊息！我會盡快回覆您 🙏');
-    contactForm.reset();
-  })
-  .finally(() => {
-    submitBtn.disabled = false;
-    submitBtn.textContent = '送出訊息';
-  });
-});
 
-    /* ===== 建議5：Email 混淆，避免爬蟲直接抓取 ===== */
+    /* ===== 表單送出（取代 alert，改用頁內提示） ===== */
+    var contactForm = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var formSuccess = document.getElementById('formSuccess');
+    var formError = document.getElementById('formError');
 
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送出中…';
+      formSuccess.style.display = 'none';
+      formError.style.display = 'none';
+
+      var formData = new FormData(contactForm);
+      var scriptURL = 'https://script.google.com/macros/s/AKfycbzg1QsGy-cH4ARYdBfvHOkhVxvDmN_AMD3ekQ2a6vUdISYbfYpp9mTt9RhYlOia96TW/exec';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+          if (data.result === 'success') {
+            formSuccess.style.display = 'block';
+            contactForm.reset();
+          } else {
+            formError.style.display = 'block';
+          }
+        })
+        .catch(function() {
+          /* Google Apps Script 有時會 redirect，但資料已寫入 */
+          formSuccess.style.display = 'block';
+          contactForm.reset();
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '送出訊息';
+        });
+    });
+
+    /* ===== Email 混淆 ===== */
     (function() {
-
       var u = 'taithaitrafficlight';
-
       var d = 'gmail.com';
-
       var el = document.getElementById('emailDisplay');
-
       if (el) {
-
         var addr = u + '@' + d;
-
         el.innerHTML = '<a href="ma' + 'ilto:' + addr + '">' + addr + '</a>';
-
       }
-
     })();
 
-
-
-    const navToggle = document.getElementById('navToggle');
-
-    const navLinks = document.getElementById('navLinks');
-
-
-
-    navToggle.addEventListener('click', () => {
-
-      navToggle.classList.toggle('active');
-
-      navLinks.classList.toggle('open');
-
-    });
-
-
-
-    navLinks.querySelectorAll('a').forEach(link => {
-
-      link.addEventListener('click', () => {
-
-        navToggle.classList.remove('active');
-
-        navLinks.classList.remove('open');
-
+    /* ===== Instagram 懶加載（點擊後才載入 iframe） ===== */
+    document.querySelectorAll('.iframe-placeholder').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var src = btn.getAttribute('data-src');
+        if (!src) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.sandbox = 'allow-scripts allow-same-origin';
+        iframe.allowTransparency = true;
+        iframe.allowFullscreen = true;
+        iframe.scrolling = 'no';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        btn.parentNode.replaceChild(iframe, btn);
       });
-
     });
 
+    /* ===== Navbar ===== */
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
 
-
-    const navbar = document.getElementById('navbar');
-
-    let lastScroll = 0;
-
-
-
-    window.addEventListener('scroll', () => {
-
-      const currentScroll = window.pageYOffset;
-
-      navbar.classList.toggle('scrolled', currentScroll > 20);
-
-      lastScroll = currentScroll;
-
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
     });
 
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
 
+    var navbar = document.getElementById('navbar');
 
-    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', function() {
+      navbar.classList.toggle('scrolled', window.pageYOffset > 20);
+    });
 
-    const navAnchors = navLinks.querySelectorAll('a');
-
-
+    /* ===== Active nav highlight ===== */
+    var sections = document.querySelectorAll('section[id]');
+    var navAnchors = navLinks.querySelectorAll('a');
 
     function updateActiveNav() {
-
-      const scrollPos = window.scrollY + 120;
-
-      sections.forEach(section => {
-
-        const top = section.offsetTop;
-
-        const height = section.offsetHeight;
-
-        const id = section.getAttribute('id');
-
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function(section) {
+        var top = section.offsetTop;
+        var height = section.offsetHeight;
+        var id = section.getAttribute('id');
         if (scrollPos >= top && scrollPos < top + height) {
-
-          navAnchors.forEach(a => {
-
+          navAnchors.forEach(function(a) {
             a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-
           });
-
         }
-
       });
-
     }
-
-
 
     window.addEventListener('scroll', updateActiveNav);
-
     updateActiveNav();
 
-
-
-    const lightbox = document.getElementById('lightbox');
-
-    const lightboxImg = document.getElementById('lightboxImg');
-
-
+    /* ===== Lightbox ===== */
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
 
     function openLightbox() {
-
       lightboxImg.src = 'images/chula-score.jpg';
-
       lightboxImg.alt = '朱大泰文考試成績單完整版';
-
       lightbox.classList.add('open');
-
       document.body.style.overflow = 'hidden';
-
     }
-
-
 
     function openMaterialLightbox(el) {
-
-      const img = el.querySelector('img');
-
+      var img = el.querySelector('img');
       if (img) {
-
         lightboxImg.src = img.src;
-
         lightboxImg.alt = img.alt;
-
         lightbox.classList.add('open');
-
         document.body.style.overflow = 'hidden';
-
       }
-
     }
-
-
 
     function closeLightbox(e) {
-
       if (e && e.target.classList.contains('lightbox__img')) return;
-
       lightbox.classList.remove('open');
-
       document.body.style.overflow = '';
-
     }
 
-
-
-    document.addEventListener('keydown', (e) => {
-
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox(e);
-
     });
 
+    /* ===== Portfolio tabs ===== */
+    var tabs = document.querySelectorAll('.portfolio__tab');
+    var items = document.querySelectorAll('.portfolio__item');
 
-
-    const tabs = document.querySelectorAll('.portfolio__tab');
-
-    const items = document.querySelectorAll('.portfolio__item');
-
-
-
-    tabs.forEach(tab => {
-
-      tab.addEventListener('click', () => {
-
-        tabs.forEach(t => t.classList.remove('active'));
-
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
         tab.classList.add('active');
-
-
-
-        const filter = tab.dataset.filter;
-
-
-
-        items.forEach(item => {
-
+        var filter = tab.dataset.filter;
+        items.forEach(function(item) {
           if (filter === 'all' || item.dataset.category === filter) {
-
             item.classList.remove('hidden');
-
           } else {
-
             item.classList.add('hidden');
-
           }
-
         });
-
       });
-
     });
 
-
-
-    const reveals = document.querySelectorAll('.reveal');
-
-
+    /* ===== Scroll reveal ===== */
+    var reveals = document.querySelectorAll('.reveal');
 
     function handleReveal() {
-
-      const windowHeight = window.innerHeight;
-
-      reveals.forEach(el => {
-
-        const top = el.getBoundingClientRect().top;
-
-        if (top < windowHeight - 80) {
-
+      var windowHeight = window.innerHeight;
+      reveals.forEach(function(el) {
+        if (el.getBoundingClientRect().top < windowHeight - 80) {
           el.classList.add('visible');
-
         }
-
       });
-
     }
 
-
-
     window.addEventListener('scroll', handleReveal);
-
     window.addEventListener('load', handleReveal);
-
   </script>
 
-
-
 </body>
-
 </html>
